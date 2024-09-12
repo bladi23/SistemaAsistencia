@@ -133,4 +133,7 @@
   <data name="luna-de-la-estacion-espacial" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\luna-de-la-estacion-espacial.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logoBladolex" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoBladolex.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

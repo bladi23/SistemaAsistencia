@@ -100,5 +100,8 @@
   <ItemGroup>
     <None Include="Resources\luna-de-la-estacion-espacial.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoBladolex.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
