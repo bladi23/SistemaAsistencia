@@ -26,5 +26,15 @@ namespace SistemaAsistencia.VIEWS
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+            panelBienvenida.Dock = DockStyle.Fill;
+        }
     }
 }
