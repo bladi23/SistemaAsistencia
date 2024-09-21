@@ -46,6 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Config\Conexion.cs" />
+    <Compile Include="Config\ControlErrores.cs" />
+    <Compile Include="Contollers\UsuariosController.cs" />
+    <Compile Include="Models\UsuariosModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VIEWS\frm_Login.cs">
@@ -98,11 +102,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CONFIG\" />
-    <Folder Include="CONTROLLERS\" />
-    <Folder Include="MODELS\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\despertador.png" />
   </ItemGroup>

@@ -7,8 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaAsistencia.Models
+
+
 
 namespace SistemaAsistencia.VIEWS
+
 {
     public partial class frm_Login : Form
     {
