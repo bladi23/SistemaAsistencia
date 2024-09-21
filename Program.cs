@@ -19,4 +19,17 @@ namespace SistemaAsistencia
             Application.Run(new VIEWS.MenuPrincipal());
         }
     }
+
+    public static class ConfiguracionProyecto
+    {
+        public static int IDusuario { get; set; }
+        public static string usuario { get; set; }
+        public static string rol { get; set; }
+    }
+
+
+
+
+
+
 }
