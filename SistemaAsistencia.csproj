@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="Config\Conexion.cs" />
     <Compile Include="Config\ControlErrores.cs" />
-    <Compile Include="Controlles\UsuariosController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Models\UsuariosModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
