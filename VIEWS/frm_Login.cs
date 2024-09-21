@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SistemaAsistencia.Models
+using SistemaAsistencia.Controlles;
+using SistemaAsistencia.Models;
 
 
 
@@ -57,7 +58,7 @@ namespace SistemaAsistencia.VIEWS
 
                     frm_MenuPrincipal _frm_usuarios = new frm_MenuPrincipal();
                     this.Hide();
-                    _frm_usuarios.AjustarMenuSegunRol(usuariomodel.Roles);
+                   // _frm_usuarios.AjustarMenuSegunRol(usuariomodel.Roles);
                     _frm_usuarios.Show();
                 }
                 else

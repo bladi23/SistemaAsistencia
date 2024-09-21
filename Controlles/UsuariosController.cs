@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaAsistencia.NewFolder1
+namespace SistemaAsistencia.Controlles
 {
     internal class UsuariosController
     {
+
         public UsuariosModel InsertarUsuario(UsuariosModel usuario)
         {
             return UsuariosModel.Insertar(usuario);
@@ -38,6 +39,5 @@ namespace SistemaAsistencia.NewFolder1
         {
             return UsuariosModel.Autenticar(nombreUsuario, password);
         }
-
     }
 }

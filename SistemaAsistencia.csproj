@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="Config\Conexion.cs" />
     <Compile Include="Config\ControlErrores.cs" />
-    <Compile Include="Contollers\UsuariosController.cs" />
+    <Compile Include="Controlles\UsuariosController.cs" />
     <Compile Include="Models\UsuariosModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,11 +58,11 @@
     <Compile Include="VIEWS\frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEWS\MenuPrincipal.cs">
+    <Compile Include="VIEWS\frm_MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VIEWS\MenuPrincipal.Designer.cs">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    <Compile Include="VIEWS\frm_MenuPrincipal.Designer.cs">
+      <DependentUpon>frm_MenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEWS\Personal.cs">
       <SubType>UserControl</SubType>
@@ -83,8 +83,8 @@
     <EmbeddedResource Include="VIEWS\frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VIEWS\MenuPrincipal.resx">
-      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="VIEWS\frm_MenuPrincipal.resx">
+      <DependentUpon>frm_MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEWS\Personal.resx">
       <DependentUpon>Personal.cs</DependentUpon>

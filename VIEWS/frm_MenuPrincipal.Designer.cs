@@ -1,6 +1,6 @@
 ﻿namespace SistemaAsistencia.VIEWS
 {
-    partial class MenuPrincipal
+    partial class frm_MenuPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -485,7 +485,7 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "BIENVENIDO A BLADOLEX";
             // 
-            // MenuPrincipal
+            // frm_MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -493,7 +493,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "MenuPrincipal";
+            this.Name = "frm_MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuPrincipal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

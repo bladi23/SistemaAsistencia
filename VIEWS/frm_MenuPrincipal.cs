@@ -10,13 +10,25 @@ using System.Windows.Forms;
 
 namespace SistemaAsistencia.VIEWS
 {
-    public partial class MenuPrincipal : Form
+    public partial class frm_MenuPrincipal : Form
     {
-        public MenuPrincipal()
+        public frm_MenuPrincipal()
         {
             InitializeComponent();
         }
 
+      /*  public void AjustarMenuSegunRol(string rol)
+        {
+            if (rol == "Cajero")
+            {
+                UsuariosToolStripMenuItem1.Enabled = false;
+            }
+            else if (rol == "Administrador")
+            {
+                UsuariosToolStripMenuItem1.Enabled = true;
+            }
+        }
+      */
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 

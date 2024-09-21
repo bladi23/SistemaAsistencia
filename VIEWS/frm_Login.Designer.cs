@@ -36,6 +36,7 @@
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.lbl_Contrasenia = new System.Windows.Forms.Label();
             this.btn_Salir = new System.Windows.Forms.Button();
+            this.lbl_mensaje = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_Usuario
@@ -66,7 +67,6 @@
             this.txt_Usuario.Name = "txt_Usuario";
             this.txt_Usuario.Size = new System.Drawing.Size(286, 30);
             this.txt_Usuario.TabIndex = 2;
-           
             // 
             // txt_Contrasenia
             // 
@@ -75,11 +75,10 @@
             this.txt_Contrasenia.Name = "txt_Contrasenia";
             this.txt_Contrasenia.Size = new System.Drawing.Size(286, 30);
             this.txt_Contrasenia.TabIndex = 3;
-          
             // 
             // btn_Ingresar
             // 
-            this.btn_Ingresar.Location = new System.Drawing.Point(151, 187);
+            this.btn_Ingresar.Location = new System.Drawing.Point(149, 203);
             this.btn_Ingresar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Ingresar.Name = "btn_Ingresar";
             this.btn_Ingresar.Size = new System.Drawing.Size(112, 36);
@@ -90,7 +89,7 @@
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.Location = new System.Drawing.Point(289, 187);
+            this.btn_Cancelar.Location = new System.Drawing.Point(295, 203);
             this.btn_Cancelar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(112, 36);
@@ -111,7 +110,7 @@
             // 
             // btn_Salir
             // 
-            this.btn_Salir.Location = new System.Drawing.Point(236, 253);
+            this.btn_Salir.Location = new System.Drawing.Point(205, 264);
             this.btn_Salir.Name = "btn_Salir";
             this.btn_Salir.Size = new System.Drawing.Size(75, 33);
             this.btn_Salir.TabIndex = 7;
@@ -119,11 +118,21 @@
             this.btn_Salir.UseVisualStyleBackColor = true;
             this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
+            // lbl_mensaje
+            // 
+            this.lbl_mensaje.AutoSize = true;
+            this.lbl_mensaje.Location = new System.Drawing.Point(104, 173);
+            this.lbl_mensaje.Name = "lbl_mensaje";
+            this.lbl_mensaje.Size = new System.Drawing.Size(64, 25);
+            this.lbl_mensaje.TabIndex = 8;
+            this.lbl_mensaje.Text = "label1";
+            // 
             // frm_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 298);
+            this.ClientSize = new System.Drawing.Size(486, 323);
+            this.Controls.Add(this.lbl_mensaje);
             this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.lbl_Contrasenia);
             this.Controls.Add(this.btn_Cancelar);
@@ -152,5 +161,6 @@
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.Label lbl_Contrasenia;
         private System.Windows.Forms.Button btn_Salir;
+        private System.Windows.Forms.Label lbl_mensaje;
     }
 }
