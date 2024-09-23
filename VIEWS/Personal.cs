@@ -21,5 +21,15 @@ namespace SistemaAsistencia.VIEWS
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel11_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
