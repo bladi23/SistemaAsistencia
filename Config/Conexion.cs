@@ -13,7 +13,7 @@ namespace SistemaAsistencia.Config
 
         static Conexion()
         {
-            connectionString = @"Server=.;Database=BancoDB;User Id=sa;Password=123;";
+            connectionString = @"Server=.;Database=BLADOLEX;User Id=sa;Password=123;";
         }
 
         public static SqlConnection GetConnection()

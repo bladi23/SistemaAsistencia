@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SistemaAsistencia.Config;
 
 namespace SistemaAsistencia.Models
 {
     internal class UsuariosModel
     {
-        public int ID { get; set; }
-        public string NombreUsuario { get; set; }
-        public string Password { get; set; }
-        public string Roles { get; set; }
+        public int usuario_id { get; set; }
+        public string nombre_usuario { get; set; }
+        public string contraseña { get; set; }
+        public string Rol { get; set; }
 
         public UsuariosModel() { }
 
@@ -23,15 +20,15 @@ namespace SistemaAsistencia.Models
             {
                 using (var conexion = Conexion.GetConnection())
                 {
-                    var consulta = "INSERT INTO usuario (nombre_usuario, password, roles) " +
-                                   "OUTPUT INSERTED.ID, INSERTED.nombre_usuario, INSERTED.password, INSERTED.roles " +
+                    var consulta = "INSERT INTO Usuarios (nombre_usuario, contraseña, rol) " +
+                                   "OUTPUT INSERTED.usuario_id, INSERTED.nombre_usuario, INSERTED.contraseña, INSERTED.rol " +
                                    "VALUES (@NombreUsuario, @Password, @Roles)";
 
                     using (var comando = new SqlCommand(consulta, conexion))
                     {
-                        comando.Parameters.AddWithValue("@NombreUsuario", usuario.NombreUsuario);
-                        comando.Parameters.AddWithValue("@Password", usuario.Password);
-                        comando.Parameters.AddWithValue("@Roles", usuario.Roles);
+                        comando.Parameters.AddWithValue("@NombreUsuario", usuario.nombre_usuario);
+                        comando.Parameters.AddWithValue("@Password", usuario.contraseña);
+                        comando.Parameters.AddWithValue("@Roles", usuario.Rol);
 
                         using (var lector = comando.ExecuteReader())
                         {
@@ -39,10 +36,10 @@ namespace SistemaAsistencia.Models
                             {
                                 return new UsuariosModel
                                 {
-                                    ID = Convert.ToInt32(lector["ID"]),
-                                    NombreUsuario = lector["nombre_usuario"].ToString(),
-                                    Password = lector["password"].ToString(),
-                                    Roles = lector["roles"].ToString()
+                                    usuario_id = Convert.ToInt32(lector["usuario_id"]),
+                                    nombre_usuario = lector["nombre_usuario"].ToString(),
+                                    contraseña = lector["contraseña"].ToString(),
+                                    Rol = lector["rol"].ToString()
                                 };
                             }
                         }
@@ -66,15 +63,15 @@ namespace SistemaAsistencia.Models
             {
                 using (var conexion = Conexion.GetConnection())
                 {
-                    var consulta = "UPDATE usuario SET nombre_usuario = @NombreUsuario, password = @Password, " +
-                                   "roles = @Roles WHERE ID = @ID";
+                    var consulta = "UPDATE Usuarios SET nombre_usuario = @NombreUsuario, contraseña = @Password, " +
+                                   "rol = @Roles WHERE usuario_id = @ID";
 
                     using (var comando = new SqlCommand(consulta, conexion))
                     {
-                        comando.Parameters.AddWithValue("@ID", usuario.ID.ToString());
-                        comando.Parameters.AddWithValue("@NombreUsuario", usuario.NombreUsuario.ToString());
-                        comando.Parameters.AddWithValue("@Password", usuario.Password.ToString());
-                        comando.Parameters.AddWithValue("@Roles", usuario.Roles.ToString());
+                        comando.Parameters.AddWithValue("@ID", usuario.usuario_id);
+                        comando.Parameters.AddWithValue("@NombreUsuario", usuario.nombre_usuario);
+                        comando.Parameters.AddWithValue("@Password", usuario.contraseña);
+                        comando.Parameters.AddWithValue("@Roles", usuario.Rol);
                         comando.ExecuteNonQuery();
                     }
                 }
@@ -98,7 +95,7 @@ namespace SistemaAsistencia.Models
             {
                 using (var conexion = Conexion.GetConnection())
                 {
-                    var consulta = "DELETE FROM usuario WHERE ID = @ID";
+                    var consulta = "DELETE FROM Usuarios WHERE usuario_id = @ID";
 
                     using (var comando = new SqlCommand(consulta, conexion))
                     {
@@ -126,7 +123,7 @@ namespace SistemaAsistencia.Models
             {
                 using (var conexion = Conexion.GetConnection())
                 {
-                    var consulta = "SELECT * FROM usuario WHERE ID = @ID";
+                    var consulta = "SELECT * FROM Usuarios WHERE usuario_id = @ID";
 
                     using (var comando = new SqlCommand(consulta, conexion))
                     {
@@ -138,10 +135,10 @@ namespace SistemaAsistencia.Models
                             {
                                 return new UsuariosModel
                                 {
-                                    ID = Convert.ToInt32(lector["ID"]),
-                                    NombreUsuario = lector["nombre_usuario"].ToString(),
-                                    Password = lector["password"].ToString(),
-                                    Roles = lector["roles"].ToString()
+                                    usuario_id = Convert.ToInt32(lector["usuario_id"]),
+                                    nombre_usuario = lector["nombre_usuario"].ToString(),
+                                    contraseña = lector["contraseña"].ToString(),
+                                    Rol = lector["rol"].ToString()
                                 };
                             }
                         }
@@ -167,7 +164,7 @@ namespace SistemaAsistencia.Models
             {
                 using (var conexion = Conexion.GetConnection())
                 {
-                    var consulta = "SELECT * FROM usuario";
+                    var consulta = "SELECT * FROM Usuarios";
 
                     using (var comando = new SqlCommand(consulta, conexion))
                     {
@@ -177,10 +174,10 @@ namespace SistemaAsistencia.Models
                             {
                                 usuarios.Add(new UsuariosModel
                                 {
-                                    ID = Convert.ToInt32(lector["ID"]),
-                                    NombreUsuario = lector["nombre_usuario"].ToString(),
-                                    Password = lector["password"].ToString(),
-                                    Roles = lector["roles"].ToString()
+                                    usuario_id = Convert.ToInt32(lector["usuario_id"]),
+                                    nombre_usuario = lector["nombre_usuario"].ToString(),
+                                    contraseña = lector["contraseña"].ToString(),
+                                    Rol = lector["rol"].ToString()
                                 });
                             }
                         }
@@ -198,13 +195,14 @@ namespace SistemaAsistencia.Models
 
             return usuarios;
         }
+
         public static UsuariosModel Autenticar(string nombreUsuario, string password)
         {
             try
             {
                 using (var conexion = Conexion.GetConnection())
                 {
-                    string consulta = "SELECT * FROM usuario WHERE nombre_usuario = @NombreUsuario AND password = @Password";
+                    string consulta = "SELECT * FROM Usuarios WHERE nombre_usuario = @NombreUsuario AND contraseña = @Password";
                     using (var comando = new SqlCommand(consulta, conexion))
                     {
                         comando.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
@@ -213,13 +211,12 @@ namespace SistemaAsistencia.Models
                         {
                             if (lector.Read())
                             {
-
                                 return new UsuariosModel
                                 {
-                                    ID = Convert.ToInt32(lector["ID"]),
-                                    NombreUsuario = lector["nombre_usuario"].ToString(),
-                                    Password = lector["password"].ToString(),
-                                    Roles = lector["roles"].ToString()
+                                    usuario_id = Convert.ToInt32(lector["usuario_id"]),
+                                    nombre_usuario = lector["nombre_usuario"].ToString(),
+                                    contraseña = lector["contraseña"].ToString(),
+                                    Rol = lector["rol"].ToString()
                                 };
                             }
                             else
@@ -239,35 +236,35 @@ namespace SistemaAsistencia.Models
                 throw new Exception("Error al autenticar el usuario: " + ex.Message);
             }
         }
+
         public UsuariosModel OtroAutenticar(string nombreUsuario, string password)
         {
             try
             {
                 using (var conexion = Conexion.GetConnection())
                 {
-                    string consulta = "SELECT * FROM usuario WHERE nombre_usuario ='" + nombreUsuario + "'";
+                    string consulta = "SELECT * FROM Usuarios WHERE nombre_usuario = @NombreUsuario";
                     using (var comando = new SqlCommand(consulta, conexion))
                     {
+                        comando.Parameters.AddWithValue("@NombreUsuario", nombreUsuario);
                         using (var lector = comando.ExecuteReader())
                         {
                             if (lector.Read())
                             {
-                                if (lector["password"].ToString() == password)
+                                if (lector["contraseña"].ToString() == password)
                                 {
                                     return new UsuariosModel
                                     {
-                                        ID = Convert.ToInt32(lector["ID"]),
-                                        NombreUsuario = lector["nombre_usuario"].ToString(),
-                                        Password = lector["password"].ToString(),
-                                        Roles = lector["roles"].ToString()
+                                        usuario_id = Convert.ToInt32(lector["usuario_id"]),
+                                        nombre_usuario = lector["nombre_usuario"].ToString(),
+                                        contraseña = lector["contraseña"].ToString(),
+                                        Rol = lector["rol"].ToString()
                                     };
                                 }
                                 else
                                 {
                                     return null;
                                 }
-
-
                             }
                             else
                             {
@@ -286,11 +283,5 @@ namespace SistemaAsistencia.Models
                 throw new Exception("Error al autenticar el usuario: " + ex.Message);
             }
         }
-
-
-
-
-
-
     }
 }

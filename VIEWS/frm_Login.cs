@@ -52,13 +52,12 @@ namespace SistemaAsistencia.VIEWS
                     lbl_mensaje.Text = "Ingreso exitoso";
                     this.Hide();
 
-                    ConfiguracionProyecto.IDusuario = usuariomodel.ID;
-                    ConfiguracionProyecto.usuario = usuariomodel.NombreUsuario;
-                    ConfiguracionProyecto.rol = usuariomodel.Roles;
+                    ConfiguracionProyecto.IDusuario = usuariomodel.usuario_id;
+                    ConfiguracionProyecto.usuario = usuariomodel.nombre_usuario;
+                    ConfiguracionProyecto.rol = usuariomodel.Rol;
 
                     frm_MenuPrincipal _frm_usuarios = new frm_MenuPrincipal();
-                    this.Hide();
-                   // _frm_usuarios.AjustarMenuSegunRol(usuariomodel.Roles);
+                    // _frm_usuarios.AjustarMenuSegunRol(usuariomodel.Roles);
                     _frm_usuarios.Show();
                 }
                 else
