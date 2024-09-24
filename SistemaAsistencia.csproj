@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Config\Conexion.cs" />
     <Compile Include="Config\ControlErrores.cs" />
+    <Compile Include="Controllers\Bases.cs" />
     <Compile Include="Controllers\CargoController.cs" />
     <Compile Include="Controllers\DepartamentoController.cs" />
     <Compile Include="Models\CargoModels.cs" />

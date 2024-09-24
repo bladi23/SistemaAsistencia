@@ -25,7 +25,6 @@ namespace SistemaAsistencia.Models
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@nombre_departamento", departamento.nombre_departamento);
-                        command.Parameters.AddWithValue("@", departamento.nombre_departamento);
                         command.ExecuteNonQuery();
                         return true;
                     }
@@ -44,7 +43,7 @@ namespace SistemaAsistencia.Models
             {
                 using (var connection = Config.Conexion.GetConnection())
                 {
-                    using (var command = new SqlCommand("editarPersonal", connection))
+                    using (var command = new SqlCommand("editarDepartamento", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@departamento_id", departamento.departamento_id);
@@ -56,7 +55,7 @@ namespace SistemaAsistencia.Models
             }
             catch (SqlException ex)
             {
-                Console.WriteLine($"Error al insertar el personal: {ex.Message}");
+                Console.WriteLine($"Error al insertar el departamento: {ex.Message}");
                 return false;
             }
         }
@@ -67,7 +66,7 @@ namespace SistemaAsistencia.Models
             {
                 using (var connection = Config.Conexion.GetConnection())
                 {
-                    using (var command = new SqlCommand("BuscarPersonal", connection))
+                    using (var command = new SqlCommand("BuscarDepartamento", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@Buscador", buscador);

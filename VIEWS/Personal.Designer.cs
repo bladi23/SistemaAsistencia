@@ -41,15 +41,13 @@
             this.btn_primeraPagina = new System.Windows.Forms.Button();
             this.btn_ultimaPagina = new System.Windows.Forms.Button();
             this.PanelRegistros = new System.Windows.Forms.Panel();
-            this.cmb_Cargo = new System.Windows.Forms.ComboBox();
-            this.cmb_Departamento = new System.Windows.Forms.ComboBox();
             this.btn_agregaCargoDepartamento = new System.Windows.Forms.Button();
             this.btn_regresar = new System.Windows.Forms.Button();
             this.PanelCargos = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txt_agg_departamento = new System.Windows.Forms.TextBox();
+            this.txt_agg_cargo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -62,6 +60,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txt_departamento = new System.Windows.Forms.TextBox();
+            this.txt_cargo = new System.Windows.Forms.TextBox();
+            this.data_lista_cargos = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -69,6 +70,7 @@
             this.PanelRegistros.SuspendLayout();
             this.PanelCargos.SuspendLayout();
             this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.data_lista_cargos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,7 +83,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1326, 112);
+            this.panel1.Size = new System.Drawing.Size(1527, 112);
             this.panel1.TabIndex = 0;
             // 
             // btn_agregar
@@ -147,7 +149,7 @@
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Black;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1326, 606);
+            this.dataGridView1.Size = new System.Drawing.Size(1527, 606);
             this.dataGridView1.TabIndex = 1;
             // 
             // PanelPaginado
@@ -160,7 +162,7 @@
             this.PanelPaginado.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelPaginado.Location = new System.Drawing.Point(0, 718);
             this.PanelPaginado.Name = "PanelPaginado";
-            this.PanelPaginado.Size = new System.Drawing.Size(1326, 100);
+            this.PanelPaginado.Size = new System.Drawing.Size(1527, 100);
             this.PanelPaginado.TabIndex = 2;
             // 
             // btn_paginaSiguiente
@@ -206,8 +208,9 @@
             // PanelRegistros
             // 
             this.PanelRegistros.BackColor = System.Drawing.Color.DarkGray;
-            this.PanelRegistros.Controls.Add(this.cmb_Cargo);
-            this.PanelRegistros.Controls.Add(this.cmb_Departamento);
+            this.PanelRegistros.Controls.Add(this.data_lista_cargos);
+            this.PanelRegistros.Controls.Add(this.txt_cargo);
+            this.PanelRegistros.Controls.Add(this.txt_departamento);
             this.PanelRegistros.Controls.Add(this.btn_agregaCargoDepartamento);
             this.PanelRegistros.Controls.Add(this.btn_regresar);
             this.PanelRegistros.Controls.Add(this.PanelCargos);
@@ -223,32 +226,13 @@
             this.PanelRegistros.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PanelRegistros.Location = new System.Drawing.Point(51, 128);
             this.PanelRegistros.Name = "PanelRegistros";
-            this.PanelRegistros.Size = new System.Drawing.Size(1230, 572);
+            this.PanelRegistros.Size = new System.Drawing.Size(1473, 572);
             this.PanelRegistros.TabIndex = 3;
             this.PanelRegistros.Visible = false;
             // 
-            // cmb_Cargo
-            // 
-            this.cmb_Cargo.FormattingEnabled = true;
-            this.cmb_Cargo.Location = new System.Drawing.Point(287, 293);
-            this.cmb_Cargo.Margin = new System.Windows.Forms.Padding(2);
-            this.cmb_Cargo.Name = "cmb_Cargo";
-            this.cmb_Cargo.Size = new System.Drawing.Size(227, 28);
-            this.cmb_Cargo.TabIndex = 24;
-            // 
-            // cmb_Departamento
-            // 
-            this.cmb_Departamento.FormattingEnabled = true;
-            this.cmb_Departamento.Location = new System.Drawing.Point(287, 235);
-            this.cmb_Departamento.Margin = new System.Windows.Forms.Padding(2);
-            this.cmb_Departamento.Name = "cmb_Departamento";
-            this.cmb_Departamento.Size = new System.Drawing.Size(227, 28);
-            this.cmb_Departamento.TabIndex = 23;
-            this.cmb_Departamento.SelectedIndexChanged += new System.EventHandler(this.cmb_Departamento_SelectedIndexChanged);
-            // 
             // btn_agregaCargoDepartamento
             // 
-            this.btn_agregaCargoDepartamento.Location = new System.Drawing.Point(541, 234);
+            this.btn_agregaCargoDepartamento.Location = new System.Drawing.Point(442, 230);
             this.btn_agregaCargoDepartamento.Name = "btn_agregaCargoDepartamento";
             this.btn_agregaCargoDepartamento.Size = new System.Drawing.Size(282, 29);
             this.btn_agregaCargoDepartamento.TabIndex = 22;
@@ -260,7 +244,7 @@
             this.btn_regresar.BackColor = System.Drawing.Color.Transparent;
             this.btn_regresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_regresar.Image = global::SistemaAsistencia.Properties.Resources.volver_flecha;
-            this.btn_regresar.Location = new System.Drawing.Point(761, 43);
+            this.btn_regresar.Location = new System.Drawing.Point(662, 39);
             this.btn_regresar.Name = "btn_regresar";
             this.btn_regresar.Size = new System.Drawing.Size(103, 80);
             this.btn_regresar.TabIndex = 21;
@@ -270,11 +254,11 @@
             // 
             this.PanelCargos.Controls.Add(this.button1);
             this.PanelCargos.Controls.Add(this.button2);
-            this.PanelCargos.Controls.Add(this.textBox4);
-            this.PanelCargos.Controls.Add(this.textBox7);
+            this.PanelCargos.Controls.Add(this.txt_agg_departamento);
+            this.PanelCargos.Controls.Add(this.txt_agg_cargo);
             this.PanelCargos.Controls.Add(this.label8);
             this.PanelCargos.Controls.Add(this.label6);
-            this.PanelCargos.Location = new System.Drawing.Point(728, 315);
+            this.PanelCargos.Location = new System.Drawing.Point(1006, 153);
             this.PanelCargos.Name = "PanelCargos";
             this.PanelCargos.Size = new System.Drawing.Size(401, 234);
             this.PanelCargos.TabIndex = 20;
@@ -297,25 +281,25 @@
             this.button2.Text = "Guardar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // txt_agg_departamento
             // 
-            this.textBox4.BackColor = System.Drawing.Color.DarkGray;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(155, 57);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(179, 26);
-            this.textBox4.TabIndex = 22;
+            this.txt_agg_departamento.BackColor = System.Drawing.Color.DarkGray;
+            this.txt_agg_departamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_agg_departamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_agg_departamento.Location = new System.Drawing.Point(155, 57);
+            this.txt_agg_departamento.Name = "txt_agg_departamento";
+            this.txt_agg_departamento.Size = new System.Drawing.Size(179, 26);
+            this.txt_agg_departamento.TabIndex = 22;
             // 
-            // textBox7
+            // txt_agg_cargo
             // 
-            this.textBox7.BackColor = System.Drawing.Color.DarkGray;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(155, 100);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(179, 26);
-            this.textBox7.TabIndex = 16;
+            this.txt_agg_cargo.BackColor = System.Drawing.Color.DarkGray;
+            this.txt_agg_cargo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_agg_cargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_agg_cargo.Location = new System.Drawing.Point(155, 100);
+            this.txt_agg_cargo.Name = "txt_agg_cargo";
+            this.txt_agg_cargo.Size = new System.Drawing.Size(179, 26);
+            this.txt_agg_cargo.TabIndex = 16;
             // 
             // label8
             // 
@@ -339,7 +323,7 @@
             // 
             this.panel10.Controls.Add(this.btn_guardar_cambios_personal);
             this.panel10.Controls.Add(this.btn_guardar_personal);
-            this.panel10.Location = new System.Drawing.Point(287, 337);
+            this.panel10.Location = new System.Drawing.Point(188, 333);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(321, 98);
             this.panel10.TabIndex = 19;
@@ -356,7 +340,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(156, 242);
+            this.label4.Location = new System.Drawing.Point(57, 238);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(116, 20);
             this.label4.TabIndex = 15;
@@ -367,7 +351,7 @@
             this.txt_cedula.BackColor = System.Drawing.Color.DarkGray;
             this.txt_cedula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_cedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cedula.Location = new System.Drawing.Point(287, 183);
+            this.txt_cedula.Location = new System.Drawing.Point(188, 179);
             this.txt_cedula.Name = "txt_cedula";
             this.txt_cedula.Size = new System.Drawing.Size(464, 26);
             this.txt_cedula.TabIndex = 11;
@@ -377,7 +361,7 @@
             this.txt_apellido.BackColor = System.Drawing.Color.DarkGray;
             this.txt_apellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_apellido.Location = new System.Drawing.Point(287, 136);
+            this.txt_apellido.Location = new System.Drawing.Point(188, 132);
             this.txt_apellido.Name = "txt_apellido";
             this.txt_apellido.Size = new System.Drawing.Size(464, 26);
             this.txt_apellido.TabIndex = 7;
@@ -387,7 +371,7 @@
             this.txt_nombre.BackColor = System.Drawing.Color.DarkGray;
             this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre.Location = new System.Drawing.Point(287, 90);
+            this.txt_nombre.Location = new System.Drawing.Point(188, 86);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(464, 26);
             this.txt_nombre.TabIndex = 5;
@@ -395,7 +379,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(188, 135);
+            this.label5.Location = new System.Drawing.Point(89, 131);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 20);
             this.label5.TabIndex = 4;
@@ -404,7 +388,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(150, 189);
+            this.label3.Location = new System.Drawing.Point(51, 185);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 20);
             this.label3.TabIndex = 2;
@@ -413,7 +397,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(201, 293);
+            this.label2.Location = new System.Drawing.Point(102, 289);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 20);
             this.label2.TabIndex = 1;
@@ -422,11 +406,43 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(192, 90);
+            this.label1.Location = new System.Drawing.Point(93, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre:";
+            // 
+            // txt_departamento
+            // 
+            this.txt_departamento.BackColor = System.Drawing.Color.DarkGray;
+            this.txt_departamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_departamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_departamento.Location = new System.Drawing.Point(188, 232);
+            this.txt_departamento.Name = "txt_departamento";
+            this.txt_departamento.Size = new System.Drawing.Size(248, 26);
+            this.txt_departamento.TabIndex = 23;
+            // 
+            // txt_cargo
+            // 
+            this.txt_cargo.BackColor = System.Drawing.Color.DarkGray;
+            this.txt_cargo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_cargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_cargo.Location = new System.Drawing.Point(188, 283);
+            this.txt_cargo.Name = "txt_cargo";
+            this.txt_cargo.Size = new System.Drawing.Size(248, 26);
+            this.txt_cargo.TabIndex = 24;
+            // 
+            // data_lista_cargos
+            // 
+            this.data_lista_cargos.AllowUserToAddRows = false;
+            this.data_lista_cargos.AllowUserToDeleteRows = false;
+            this.data_lista_cargos.AllowUserToResizeRows = false;
+            this.data_lista_cargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_lista_cargos.Location = new System.Drawing.Point(554, 291);
+            this.data_lista_cargos.Name = "data_lista_cargos";
+            this.data_lista_cargos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.data_lista_cargos.Size = new System.Drawing.Size(336, 240);
+            this.data_lista_cargos.TabIndex = 25;
             // 
             // Personal
             // 
@@ -437,7 +453,7 @@
             this.Controls.Add(this.PanelPaginado);
             this.Controls.Add(this.panel1);
             this.Name = "Personal";
-            this.Size = new System.Drawing.Size(1326, 818);
+            this.Size = new System.Drawing.Size(1527, 818);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -448,6 +464,7 @@
             this.PanelCargos.ResumeLayout(false);
             this.PanelCargos.PerformLayout();
             this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.data_lista_cargos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -472,7 +489,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel PanelCargos;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txt_agg_cargo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_guardar_cambios_personal;
         private System.Windows.Forms.Button btn_primeraPagina;
@@ -481,12 +498,13 @@
         private System.Windows.Forms.Button btn_paginaAnterior;
         private System.Windows.Forms.Button btn_regresar;
         private System.Windows.Forms.Button btn_agregaCargoDepartamento;
-        private System.Windows.Forms.ComboBox cmb_Cargo;
-        private System.Windows.Forms.ComboBox cmb_Departamento;
         private System.Windows.Forms.Button btn_agregar;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_agg_departamento;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txt_cargo;
+        private System.Windows.Forms.TextBox txt_departamento;
+        private System.Windows.Forms.DataGridView data_lista_cargos;
     }
 }
