@@ -47,13 +47,18 @@ namespace SistemaAsistencia.VIEWS
         }
         private void Limpiar ()
         {
-            txt_Nombre.Clear();
-            txt_Apellido.Clear();
-            txt_Cedula.Clear();
+            txt_nombre.Clear();
+            txt_apellido.Clear();
+            txt_cedula.Clear();
             cmb_Cargo.SelectedIndex = -1;
             cmb_Departamento.SelectedIndex = -1;
-            dt_fecha_contratacion.Value = DateTime.Now;
-            cb_estado.SelectedIndex = -1;
+            
+            
+        }
+
+        private void cmb_Departamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

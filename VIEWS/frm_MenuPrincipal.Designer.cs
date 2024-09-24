@@ -32,26 +32,20 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel21 = new System.Windows.Forms.Panel();
             this.panel18 = new System.Windows.Forms.Panel();
-            this.btnEstaciones = new System.Windows.Forms.Button();
             this.panel19 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.btnRespaldo = new System.Windows.Forms.Button();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.btnRestaurar = new System.Windows.Forms.Button();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.btnUsuarios = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.btnRegistro = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnPersonal = new System.Windows.Forms.Button();
@@ -59,21 +53,27 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel23 = new System.Windows.Forms.Panel();
             this.panel22 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.PanelPadre = new System.Windows.Forms.Panel();
             this.panelBienvenida = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnEstaciones = new System.Windows.Forms.Button();
+            this.btnRespaldo = new System.Windows.Forms.Button();
+            this.btnRestaurar = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnRegistro = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel17.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel18.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.PanelPadre.SuspendLayout();
             this.panelBienvenida.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -127,18 +127,6 @@
             this.label1.Text = "BLADOLEX";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = global::SistemaAsistencia.Properties.Resources.logoBladolex;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 84);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(160, 99);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // panel21
             // 
             this.panel21.Dock = System.Windows.Forms.DockStyle.Top;
@@ -157,23 +145,6 @@
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(160, 83);
             this.panel18.TabIndex = 5;
-            // 
-            // btnEstaciones
-            // 
-            this.btnEstaciones.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnEstaciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnEstaciones.FlatAppearance.BorderSize = 0;
-            this.btnEstaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstaciones.Image = global::SistemaAsistencia.Properties.Resources.luna_de_la_estacion_espacial;
-            this.btnEstaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstaciones.Location = new System.Drawing.Point(13, 11);
-            this.btnEstaciones.Name = "btnEstaciones";
-            this.btnEstaciones.Size = new System.Drawing.Size(147, 72);
-            this.btnEstaciones.TabIndex = 3;
-            this.btnEstaciones.Text = "Estaciones";
-            this.btnEstaciones.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEstaciones.UseVisualStyleBackColor = false;
             // 
             // panel19
             // 
@@ -202,23 +173,6 @@
             this.panel14.Size = new System.Drawing.Size(160, 83);
             this.panel14.TabIndex = 3;
             // 
-            // btnRespaldo
-            // 
-            this.btnRespaldo.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnRespaldo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRespaldo.FlatAppearance.BorderSize = 0;
-            this.btnRespaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRespaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRespaldo.Image = global::SistemaAsistencia.Properties.Resources.respaldo;
-            this.btnRespaldo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRespaldo.Location = new System.Drawing.Point(13, 11);
-            this.btnRespaldo.Name = "btnRespaldo";
-            this.btnRespaldo.Size = new System.Drawing.Size(147, 72);
-            this.btnRespaldo.TabIndex = 3;
-            this.btnRespaldo.Text = "Respaldo";
-            this.btnRespaldo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRespaldo.UseVisualStyleBackColor = false;
-            // 
             // panel15
             // 
             this.panel15.Dock = System.Windows.Forms.DockStyle.Left;
@@ -245,23 +199,6 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(160, 83);
             this.panel11.TabIndex = 2;
-            // 
-            // btnRestaurar
-            // 
-            this.btnRestaurar.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnRestaurar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRestaurar.FlatAppearance.BorderSize = 0;
-            this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestaurar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRestaurar.Image = global::SistemaAsistencia.Properties.Resources.tiempo_pasado;
-            this.btnRestaurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRestaurar.Location = new System.Drawing.Point(13, 11);
-            this.btnRestaurar.Name = "btnRestaurar";
-            this.btnRestaurar.Size = new System.Drawing.Size(147, 72);
-            this.btnRestaurar.TabIndex = 3;
-            this.btnRestaurar.Text = "Restaurar BDD";
-            this.btnRestaurar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRestaurar.UseVisualStyleBackColor = false;
             // 
             // panel12
             // 
@@ -290,23 +227,6 @@
             this.panel8.Size = new System.Drawing.Size(160, 83);
             this.panel8.TabIndex = 1;
             // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnUsuarios.FlatAppearance.BorderSize = 0;
-            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.Image = global::SistemaAsistencia.Properties.Resources.usuarios_alt;
-            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(13, 11);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(147, 72);
-            this.btnUsuarios.TabIndex = 3;
-            this.btnUsuarios.Text = "Usuario ";
-            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUsuarios.UseVisualStyleBackColor = false;
-            // 
             // panel9
             // 
             this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
@@ -333,23 +253,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(160, 83);
             this.panel5.TabIndex = 0;
-            // 
-            // btnRegistro
-            // 
-            this.btnRegistro.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.btnRegistro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRegistro.FlatAppearance.BorderSize = 0;
-            this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistro.Image = global::SistemaAsistencia.Properties.Resources.despertador;
-            this.btnRegistro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegistro.Location = new System.Drawing.Point(13, 10);
-            this.btnRegistro.Name = "btnRegistro";
-            this.btnRegistro.Size = new System.Drawing.Size(147, 73);
-            this.btnRegistro.TabIndex = 3;
-            this.btnRegistro.Text = "Registro";
-            this.btnRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRegistro.UseVisualStyleBackColor = false;
             // 
             // panel7
             // 
@@ -421,15 +324,15 @@
             this.panel22.Size = new System.Drawing.Size(38, 108);
             this.panel22.TabIndex = 0;
             // 
-            // panel2
+            // PanelPadre
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panel2.Controls.Add(this.panelBienvenida);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(160, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1131, 1061);
-            this.panel2.TabIndex = 1;
+            this.PanelPadre.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.PanelPadre.Controls.Add(this.panelBienvenida);
+            this.PanelPadre.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelPadre.Location = new System.Drawing.Point(160, 0);
+            this.PanelPadre.Name = "PanelPadre";
+            this.PanelPadre.Size = new System.Drawing.Size(1131, 1061);
+            this.PanelPadre.TabIndex = 1;
             // 
             // panelBienvenida
             // 
@@ -451,12 +354,109 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "BIENVENIDO A BLADOLEX";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Image = global::SistemaAsistencia.Properties.Resources.logoBladolex;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 84);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(160, 99);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // btnEstaciones
+            // 
+            this.btnEstaciones.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnEstaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEstaciones.FlatAppearance.BorderSize = 0;
+            this.btnEstaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEstaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstaciones.Image = global::SistemaAsistencia.Properties.Resources.luna_de_la_estacion_espacial;
+            this.btnEstaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEstaciones.Location = new System.Drawing.Point(13, 11);
+            this.btnEstaciones.Name = "btnEstaciones";
+            this.btnEstaciones.Size = new System.Drawing.Size(147, 72);
+            this.btnEstaciones.TabIndex = 3;
+            this.btnEstaciones.Text = "Estaciones";
+            this.btnEstaciones.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEstaciones.UseVisualStyleBackColor = false;
+            // 
+            // btnRespaldo
+            // 
+            this.btnRespaldo.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnRespaldo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRespaldo.FlatAppearance.BorderSize = 0;
+            this.btnRespaldo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRespaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRespaldo.Image = global::SistemaAsistencia.Properties.Resources.respaldo;
+            this.btnRespaldo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRespaldo.Location = new System.Drawing.Point(13, 11);
+            this.btnRespaldo.Name = "btnRespaldo";
+            this.btnRespaldo.Size = new System.Drawing.Size(147, 72);
+            this.btnRespaldo.TabIndex = 3;
+            this.btnRespaldo.Text = "Respaldo";
+            this.btnRespaldo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRespaldo.UseVisualStyleBackColor = false;
+            // 
+            // btnRestaurar
+            // 
+            this.btnRestaurar.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnRestaurar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRestaurar.FlatAppearance.BorderSize = 0;
+            this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRestaurar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRestaurar.Image = global::SistemaAsistencia.Properties.Resources.tiempo_pasado;
+            this.btnRestaurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRestaurar.Location = new System.Drawing.Point(13, 11);
+            this.btnRestaurar.Name = "btnRestaurar";
+            this.btnRestaurar.Size = new System.Drawing.Size(147, 72);
+            this.btnRestaurar.TabIndex = 3;
+            this.btnRestaurar.Text = "Restaurar BDD";
+            this.btnRestaurar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRestaurar.UseVisualStyleBackColor = false;
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnUsuarios.FlatAppearance.BorderSize = 0;
+            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.Image = global::SistemaAsistencia.Properties.Resources.usuarios_alt;
+            this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsuarios.Location = new System.Drawing.Point(13, 11);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(147, 72);
+            this.btnUsuarios.TabIndex = 3;
+            this.btnUsuarios.Text = "Usuario ";
+            this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUsuarios.UseVisualStyleBackColor = false;
+            // 
+            // btnRegistro
+            // 
+            this.btnRegistro.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.btnRegistro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRegistro.FlatAppearance.BorderSize = 0;
+            this.btnRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistro.Image = global::SistemaAsistencia.Properties.Resources.despertador;
+            this.btnRegistro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistro.Location = new System.Drawing.Point(13, 10);
+            this.btnRegistro.Name = "btnRegistro";
+            this.btnRegistro.Size = new System.Drawing.Size(147, 73);
+            this.btnRegistro.TabIndex = 3;
+            this.btnRegistro.Text = "Registro";
+            this.btnRegistro.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegistro.UseVisualStyleBackColor = false;
+            // 
             // frm_MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1291, 1061);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.PanelPadre);
             this.Controls.Add(this.panel1);
             this.Name = "frm_MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -467,15 +467,15 @@
             this.panel4.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel18.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.PanelPadre.ResumeLayout(false);
             this.panelBienvenida.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -483,7 +483,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel PanelPadre;
         private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnPersonal;
