@@ -7,6 +7,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using SistemaAsistencia.Models;
+using System.Security.Cryptography;
+using System.Security.Policy;
 
 
 namespace SistemaAsistencia.Controllers
@@ -94,7 +96,7 @@ namespace SistemaAsistencia.Controllers
             }
         }
 
-        public void MostrarPersonal(DataGridView dgv)
+        public void mostrarPersonal(DataGridView dgv, int desde, int hasta)
         {
             try
             {
@@ -103,6 +105,41 @@ namespace SistemaAsistencia.Controllers
                     using (var command = new SqlCommand("mostrarPersonal", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@Desde", desde);
+                        command.Parameters.AddWithValue("@Hasta", hasta);
+
+                        using (var adapter = new SqlDataAdapter(command))
+                        {
+                            using (var table = new DataTable())
+                            {
+                                adapter.Fill(table);
+                                dgv.DataSource = table;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error al mostrar el personal: {ex.Message}");
+            }
+        }
+
+        public void BuscarPersonal(DataGridView dgv, int desde, int hasta, string buscador)
+        {
+            try
+            {
+                using (var connection = Config.Conexion.GetConnection())
+                {
+                    using (var command = new SqlCommand("BuscarPersonal", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@Desde", desde);
+                        command.Parameters.AddWithValue("@Hasta", hasta);
+                        command.Parameters.AddWithValue("@Buscador", buscador);
+
+
+
                         using (var adapter = new SqlDataAdapter(command))
                         {
                             using (var table = new DataTable())
