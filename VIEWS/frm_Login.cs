@@ -42,6 +42,7 @@ namespace SistemaAsistencia.VIEWS
 
         private void btn_Ingresar_Click(object sender, EventArgs e)
         {
+
             #region
             try
             {
