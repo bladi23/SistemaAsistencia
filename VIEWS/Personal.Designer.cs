@@ -421,6 +421,7 @@
             this.txt_departamento.Name = "txt_departamento";
             this.txt_departamento.Size = new System.Drawing.Size(248, 26);
             this.txt_departamento.TabIndex = 23;
+            this.txt_departamento.TextChanged += new System.EventHandler(this.txt_departamento_TextChanged);
             // 
             // txt_cargo
             // 
@@ -438,10 +439,10 @@
             this.data_lista_cargos.AllowUserToDeleteRows = false;
             this.data_lista_cargos.AllowUserToResizeRows = false;
             this.data_lista_cargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_lista_cargos.Location = new System.Drawing.Point(554, 291);
+            this.data_lista_cargos.Location = new System.Drawing.Point(554, 179);
             this.data_lista_cargos.Name = "data_lista_cargos";
             this.data_lista_cargos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.data_lista_cargos.Size = new System.Drawing.Size(336, 240);
+            this.data_lista_cargos.Size = new System.Drawing.Size(531, 352);
             this.data_lista_cargos.TabIndex = 25;
             // 
             // Personal

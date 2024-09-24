@@ -67,6 +67,9 @@ namespace SistemaAsistencia.VIEWS
 
             // Llamar al método BuscarDepartamento y pasar el DataGridView junto con el criterio de búsqueda
             departamentoModel.BuscarDepartamento(data_lista_cargos, buscador);
+
+            // Aplicar diseño del DataGridView usando Bases.DisenoDtv
+            Bases.DisenoDtv(ref data_lista_cargos);
         }
 
 
@@ -86,11 +89,17 @@ namespace SistemaAsistencia.VIEWS
             txt_nombre.Clear();
             txt_apellido.Clear();
             txt_cedula.Clear();   
+            BuscarDepartamento();
         }
 
         private void cmb_Departamento_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void txt_departamento_TextChanged(object sender, EventArgs e)
+        {
+            BuscarDepartamento();
         }
     }
 }
