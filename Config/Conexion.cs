@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace SistemaAsistencia.Config
 {
-    internal class Conexion
+    public class Conexion
     {
         private static readonly string connectionString;
 
         static Conexion()
         {
-            connectionString = @"Server=.;Database=BLADOLEX;User Id=sa;Password=123;";
+            connectionString = @"Server=BLADIMIR-DESKTO\SQLEXPRESS;Database=BLADOLEX;User Id=sa;Password=123;";
         }
 
         public static SqlConnection GetConnection()

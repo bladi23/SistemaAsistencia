@@ -48,9 +48,14 @@
   <ItemGroup>
     <Compile Include="Config\Conexion.cs" />
     <Compile Include="Config\ControlErrores.cs" />
-    <Compile Include="Controllers\RegistroController.cs" />
+    <Compile Include="Controllers\Bases.cs" />
+    <Compile Include="Controllers\CargoController.cs" />
+    <Compile Include="Controllers\DepartamentoController.cs" />
+    <Compile Include="Models\CargoModels.cs" />
+    <Compile Include="Models\DepartamentoModel.cs" />
+    <Compile Include="Models\PersonalModels.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
-    <Compile Include="Models\RegistroModel.cs" />
+    <Compile Include="Controllers\PersonalControlers.cs" />
     <Compile Include="Models\UsuariosModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,12 +70,6 @@
     </Compile>
     <Compile Include="VIEWS\frm_MenuPrincipal.Designer.cs">
       <DependentUpon>frm_MenuPrincipal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VIEWS\frm_Registro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VIEWS\frm_Registro.Designer.cs">
-      <DependentUpon>frm_Registro.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEWS\Personal.cs">
       <SubType>UserControl</SubType>
@@ -93,9 +92,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEWS\frm_MenuPrincipal.resx">
       <DependentUpon>frm_MenuPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VIEWS\frm_Registro.resx">
-      <DependentUpon>frm_Registro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEWS\Personal.resx">
       <DependentUpon>Personal.cs</DependentUpon>
@@ -136,6 +132,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar-usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar-usuario %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
