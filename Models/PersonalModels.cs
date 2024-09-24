@@ -44,7 +44,7 @@ namespace SistemaAsistencia.Models
             }
         }
 
-        public bool EditarPersonal(Controllers.PersonalControlers personal)
+        public bool editarPersonal(Controllers.PersonalControlers personal)
         {
             try
             {
@@ -69,7 +69,7 @@ namespace SistemaAsistencia.Models
             }
             catch (SqlException ex)
             {
-                Console.WriteLine($"Error al insertar el personal: {ex.Message}");
+                Console.WriteLine($"Error al editar el personal: {ex.Message}");
                 return false;
             }
         }
@@ -91,7 +91,7 @@ namespace SistemaAsistencia.Models
             }
             catch (SqlException ex)
             {
-                Console.WriteLine($"Error al insertar el personal: {ex.Message}");
+                Console.WriteLine($"Error al eliminar el personal: {ex.Message}");
                 return false;
             }
         }

@@ -439,11 +439,12 @@
             this.data_lista_cargos.AllowUserToDeleteRows = false;
             this.data_lista_cargos.AllowUserToResizeRows = false;
             this.data_lista_cargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_lista_cargos.Location = new System.Drawing.Point(554, 179);
+            this.data_lista_cargos.Location = new System.Drawing.Point(539, 289);
             this.data_lista_cargos.Name = "data_lista_cargos";
             this.data_lista_cargos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.data_lista_cargos.Size = new System.Drawing.Size(531, 352);
+            this.data_lista_cargos.Size = new System.Drawing.Size(449, 187);
             this.data_lista_cargos.TabIndex = 25;
+            this.data_lista_cargos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_lista_cargos_CellContentClick);
             // 
             // Personal
             // 

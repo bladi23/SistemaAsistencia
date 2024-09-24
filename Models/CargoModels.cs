@@ -34,7 +34,7 @@ namespace SistemaAsistencia.Models
             }
         }
 
-        public bool EditarCargo(Controllers.CargoController cargo)
+        public bool editarCargo(Controllers.CargoController cargo)
         {
             try
             {
@@ -58,7 +58,7 @@ namespace SistemaAsistencia.Models
             }
         }
 
-        public void BuscarCargo(DataGridView dgv, string buscador)
+        public void buscarCargos(ref DataTable dt, string buscador)
         {
             try
             {
@@ -67,23 +67,21 @@ namespace SistemaAsistencia.Models
                     using (var command = new SqlCommand("buscarCargos", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@Buscador", buscador);
+                        command.Parameters.AddWithValue("@buscador", buscador);
 
                         using (var adapter = new SqlDataAdapter(command))
                         {
-                            using (var table = new DataTable())
-                            {
-                                adapter.Fill(table);
-                                dgv.DataSource = table;
-                            }
+                            // Llenar el DataTable con los datos obtenidos
+                            adapter.Fill(dt);
                         }
                     }
                 }
             }
             catch (SqlException ex)
             {
-                Console.WriteLine($"Error al buscar los cargos: {ex.Message}");
+                Console.WriteLine($"Error al mostrar el cargo: {ex.Message}");
             }
         }
+
     }
 }

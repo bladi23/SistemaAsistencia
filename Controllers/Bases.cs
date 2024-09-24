@@ -13,7 +13,7 @@ namespace SistemaAsistencia.Controllers
         public static void DisenoDtv(ref DataGridView Listado) 
         {
             Listado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            Listado.BackgroundColor = Color.Red;
+            Listado.BackgroundColor = Color.Gray;
         }
     }
 }

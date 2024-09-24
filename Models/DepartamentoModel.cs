@@ -60,26 +60,21 @@ namespace SistemaAsistencia.Models
             }
         }
 
-        public void BuscarDepartamento(DataGridView dgv,  string buscador)
+        public void buscarDepartamentos(ref DataTable dt, string buscador)
         {
             try
             {
                 using (var connection = Config.Conexion.GetConnection())
                 {
-                    using (var command = new SqlCommand("BuscarDepartamento", connection))
+                    using (var command = new SqlCommand("buscarDepartamentos", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@Buscador", buscador);
-
-
+                        command.Parameters.AddWithValue("@buscador", buscador);
 
                         using (var adapter = new SqlDataAdapter(command))
                         {
-                            using (var table = new DataTable())
-                            {
-                                adapter.Fill(table);
-                                dgv.DataSource = table;
-                            }
+                            // Llenar el DataTable con los datos obtenidos
+                            adapter.Fill(dt);
                         }
                     }
                 }

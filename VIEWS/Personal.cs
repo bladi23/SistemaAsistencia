@@ -52,24 +52,19 @@ namespace SistemaAsistencia.VIEWS
             departamentoControlers.nombre_departamento = txt_agg_cargo.Text;
             if(departamentoModels.InsertarDepartamento(departamentoControlers))
             {
-               txt_agg_cargo.Clear();
+               BuscarDepartamento();
                
             }
             
         }
         private void BuscarDepartamento()
         {
-            // Crear instancia del modelo
+            DataTable dt = new DataTable();
             DepartamentoModel departamentoModel = new DepartamentoModel();
-
-            // Obtener el texto del TextBox para usarlo como criterio de búsqueda
-            string buscador = txt_departamento.Text;
-
-            // Llamar al método BuscarDepartamento y pasar el DataGridView junto con el criterio de búsqueda
-            departamentoModel.BuscarDepartamento(data_lista_cargos, buscador);
-
-            // Aplicar diseño del DataGridView usando Bases.DisenoDtv
+            departamentoModel.buscarDepartamentos(ref dt, txt_departamento.Text);
+            data_lista_cargos.DataSource = dt;
             Bases.DisenoDtv(ref data_lista_cargos);
+            
         }
 
 
@@ -100,6 +95,11 @@ namespace SistemaAsistencia.VIEWS
         private void txt_departamento_TextChanged(object sender, EventArgs e)
         {
             BuscarDepartamento();
+        }
+
+        private void data_lista_cargos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
