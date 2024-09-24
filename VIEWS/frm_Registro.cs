@@ -85,7 +85,7 @@ namespace SistemaAsistencia.VIEWS
         private string ObtenerNombreYApellidoPorId(int idHuella)
         {
             // Llamar al método estático de EmpleadoosModel para obtener el nombre y apellido
-            string nombreYApellido = EmpleadosModel.ObtenerNombreYApellidoPorId(idHuella);
+            string nombreYApellido = RegistroModel.ObtenerNombreYApellidoPorId(idHuella);
             return nombreYApellido;
         }
 

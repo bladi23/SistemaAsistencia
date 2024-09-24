@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SistemaAsistencia.Models
 {
-    internal class EmpleadosModel
+    internal class RegistroModel
     {
         // Propiedades del modelo de empleado
         public int empleado_id { get; set; }

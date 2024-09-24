@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace SistemaAsistencia.Controllers
 {
-    internal class EmpleadosController
+    internal class RegistroController
     {
         public string ObtenerNombreYApellidoPorId(int idHuella)
         {
-            return EmpleadosModel.ObtenerNombreYApellidoPorId(idHuella);
+            return RegistroModel.ObtenerNombreYApellidoPorId(idHuella);
         }
     }
 }
