@@ -39,5 +39,8 @@ namespace SistemaAsistencia.Controlles
         {
             return UsuariosModel.Autenticar(nombreUsuario, password);
         }
+
+
+       
     }
 }

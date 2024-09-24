@@ -283,5 +283,9 @@ namespace SistemaAsistencia.Models
                 throw new Exception("Error al autenticar el usuario: " + ex.Message);
             }
         }
+
+        
+
+
     }
 }
