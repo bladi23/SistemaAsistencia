@@ -62,6 +62,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_departamento = new System.Windows.Forms.TextBox();
             this.txt_cargo = new System.Windows.Forms.TextBox();
+            this.data_lista_departamentos = new System.Windows.Forms.DataGridView();
             this.data_lista_cargos = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,6 +71,7 @@
             this.PanelRegistros.SuspendLayout();
             this.PanelCargos.SuspendLayout();
             this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.data_lista_departamentos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.data_lista_cargos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,6 +211,7 @@
             // 
             this.PanelRegistros.BackColor = System.Drawing.Color.DarkGray;
             this.PanelRegistros.Controls.Add(this.data_lista_cargos);
+            this.PanelRegistros.Controls.Add(this.data_lista_departamentos);
             this.PanelRegistros.Controls.Add(this.txt_cargo);
             this.PanelRegistros.Controls.Add(this.txt_departamento);
             this.PanelRegistros.Controls.Add(this.btn_agregaCargoDepartamento);
@@ -258,7 +261,7 @@
             this.PanelCargos.Controls.Add(this.txt_agg_cargo);
             this.PanelCargos.Controls.Add(this.label8);
             this.PanelCargos.Controls.Add(this.label6);
-            this.PanelCargos.Location = new System.Drawing.Point(1006, 153);
+            this.PanelCargos.Location = new System.Drawing.Point(1031, 39);
             this.PanelCargos.Name = "PanelCargos";
             this.PanelCargos.Size = new System.Drawing.Size(401, 234);
             this.PanelCargos.TabIndex = 20;
@@ -433,18 +436,30 @@
             this.txt_cargo.Size = new System.Drawing.Size(248, 26);
             this.txt_cargo.TabIndex = 24;
             // 
+            // data_lista_departamentos
+            // 
+            this.data_lista_departamentos.AllowUserToAddRows = false;
+            this.data_lista_departamentos.AllowUserToDeleteRows = false;
+            this.data_lista_departamentos.AllowUserToResizeRows = false;
+            this.data_lista_departamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_lista_departamentos.Location = new System.Drawing.Point(539, 289);
+            this.data_lista_departamentos.Name = "data_lista_departamentos";
+            this.data_lista_departamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.data_lista_departamentos.Size = new System.Drawing.Size(449, 187);
+            this.data_lista_departamentos.TabIndex = 25;
+            this.data_lista_departamentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_lista_cargos_CellContentClick);
+            // 
             // data_lista_cargos
             // 
             this.data_lista_cargos.AllowUserToAddRows = false;
             this.data_lista_cargos.AllowUserToDeleteRows = false;
             this.data_lista_cargos.AllowUserToResizeRows = false;
             this.data_lista_cargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.data_lista_cargos.Location = new System.Drawing.Point(539, 289);
+            this.data_lista_cargos.Location = new System.Drawing.Point(1009, 365);
             this.data_lista_cargos.Name = "data_lista_cargos";
             this.data_lista_cargos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.data_lista_cargos.Size = new System.Drawing.Size(449, 187);
-            this.data_lista_cargos.TabIndex = 25;
-            this.data_lista_cargos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_lista_cargos_CellContentClick);
+            this.data_lista_cargos.TabIndex = 26;
             // 
             // Personal
             // 
@@ -466,6 +481,7 @@
             this.PanelCargos.ResumeLayout(false);
             this.PanelCargos.PerformLayout();
             this.panel10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.data_lista_departamentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.data_lista_cargos)).EndInit();
             this.ResumeLayout(false);
 
@@ -507,6 +523,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txt_cargo;
         private System.Windows.Forms.TextBox txt_departamento;
+        private System.Windows.Forms.DataGridView data_lista_departamentos;
         private System.Windows.Forms.DataGridView data_lista_cargos;
     }
 }

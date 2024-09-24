@@ -58,30 +58,39 @@ namespace SistemaAsistencia.Models
             }
         }
 
-        public void buscarCargos(ref DataTable dt, string buscador)
+        public void buscarCargos(ref DataTable dt)
         {
             try
             {
                 using (var connection = Config.Conexion.GetConnection())
                 {
-                    using (var command = new SqlCommand("buscarCargos", connection))
+                    using (var command = new SqlCommand("ObtenerCargosConNombreDepartamento", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@buscador", buscador);
 
                         using (var adapter = new SqlDataAdapter(command))
                         {
-                            // Llenar el DataTable con los datos obtenidos
+                            dt.Clear(); // Limpia el DataTable antes de llenarlo
                             adapter.Fill(dt);
+
+                            if (dt.Rows.Count == 0)
+                            {
+                                Console.WriteLine("No se encontraron datos para los cargos.");
+                            }
                         }
                     }
                 }
             }
             catch (SqlException ex)
             {
-                Console.WriteLine($"Error al mostrar el cargo: {ex.Message}");
+                Console.WriteLine($"Error al mostrar los cargos: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error inesperado: {ex.Message}");
             }
         }
+
 
     }
 }
