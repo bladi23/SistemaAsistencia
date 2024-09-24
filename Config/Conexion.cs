@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SistemaAsistencia.Config
 {
-    internal class Conexion
+    public class Conexion
     {
         private static readonly string connectionString;
 
