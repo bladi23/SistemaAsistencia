@@ -48,6 +48,10 @@
   <ItemGroup>
     <Compile Include="Config\Conexion.cs" />
     <Compile Include="Config\ControlErrores.cs" />
+    <Compile Include="Controllers\CargoController.cs" />
+    <Compile Include="Controllers\DepartamentoController.cs" />
+    <Compile Include="Models\CargoModels.cs" />
+    <Compile Include="Models\DepartamentoModel.cs" />
     <Compile Include="Models\PersonalModels.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\PersonalControlers.cs" />

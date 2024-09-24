@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_agregar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_guardar_personal = new System.Windows.Forms.Button();
@@ -42,8 +44,13 @@
             this.cmb_Cargo = new System.Windows.Forms.ComboBox();
             this.cmb_Departamento = new System.Windows.Forms.ComboBox();
             this.btn_agregaCargoDepartamento = new System.Windows.Forms.Button();
+            this.btn_regresar = new System.Windows.Forms.Button();
             this.PanelCargos = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btn_guardar_cambios_personal = new System.Windows.Forms.Button();
@@ -55,20 +62,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_regresar = new System.Windows.Forms.Button();
-            this.btn_agregar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.PanelPaginado.SuspendLayout();
             this.PanelRegistros.SuspendLayout();
             this.PanelCargos.SuspendLayout();
             this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,6 +83,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1326, 112);
             this.panel1.TabIndex = 0;
+            // 
+            // btn_agregar
+            // 
+            this.btn_agregar.Image = global::SistemaAsistencia.Properties.Resources.agregar_usuario__1_;
+            this.btn_agregar.Location = new System.Drawing.Point(1112, 18);
+            this.btn_agregar.Name = "btn_agregar";
+            this.btn_agregar.Size = new System.Drawing.Size(89, 84);
+            this.btn_agregar.TabIndex = 3;
+            this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaAsistencia.Properties.Resources.buscar;
+            this.pictureBox1.Location = new System.Drawing.Point(350, 58);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 43);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // panel3
             // 
@@ -205,12 +225,13 @@
             this.PanelRegistros.Name = "PanelRegistros";
             this.PanelRegistros.Size = new System.Drawing.Size(1230, 572);
             this.PanelRegistros.TabIndex = 3;
+            this.PanelRegistros.Visible = false;
             // 
             // cmb_Cargo
             // 
             this.cmb_Cargo.FormattingEnabled = true;
             this.cmb_Cargo.Location = new System.Drawing.Point(287, 293);
-            this.cmb_Cargo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_Cargo.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_Cargo.Name = "cmb_Cargo";
             this.cmb_Cargo.Size = new System.Drawing.Size(227, 28);
             this.cmb_Cargo.TabIndex = 24;
@@ -219,7 +240,7 @@
             // 
             this.cmb_Departamento.FormattingEnabled = true;
             this.cmb_Departamento.Location = new System.Drawing.Point(287, 235);
-            this.cmb_Departamento.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmb_Departamento.Margin = new System.Windows.Forms.Padding(2);
             this.cmb_Departamento.Name = "cmb_Departamento";
             this.cmb_Departamento.Size = new System.Drawing.Size(227, 28);
             this.cmb_Departamento.TabIndex = 23;
@@ -234,6 +255,17 @@
             this.btn_agregaCargoDepartamento.Text = "+ Agregar Cargo / Departamento";
             this.btn_agregaCargoDepartamento.UseVisualStyleBackColor = true;
             // 
+            // btn_regresar
+            // 
+            this.btn_regresar.BackColor = System.Drawing.Color.Transparent;
+            this.btn_regresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_regresar.Image = global::SistemaAsistencia.Properties.Resources.volver_flecha;
+            this.btn_regresar.Location = new System.Drawing.Point(761, 43);
+            this.btn_regresar.Name = "btn_regresar";
+            this.btn_regresar.Size = new System.Drawing.Size(103, 80);
+            this.btn_regresar.TabIndex = 21;
+            this.btn_regresar.UseVisualStyleBackColor = false;
+            // 
             // PanelCargos
             // 
             this.PanelCargos.Controls.Add(this.button1);
@@ -247,6 +279,34 @@
             this.PanelCargos.Size = new System.Drawing.Size(401, 234);
             this.PanelCargos.TabIndex = 20;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(196, 151);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 63);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Guardar *";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(52, 151);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(138, 63);
+            this.button2.TabIndex = 24;
+            this.button2.Text = "Guardar";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.Color.DarkGray;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(155, 57);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(179, 26);
+            this.textBox4.TabIndex = 22;
+            // 
             // textBox7
             // 
             this.textBox7.BackColor = System.Drawing.Color.DarkGray;
@@ -256,6 +316,15 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(179, 26);
             this.textBox7.TabIndex = 16;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 57);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(120, 20);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Departamento: ";
             // 
             // label6
             // 
@@ -272,7 +341,7 @@
             this.panel10.Controls.Add(this.btn_guardar_personal);
             this.panel10.Location = new System.Drawing.Point(287, 337);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(298, 98);
+            this.panel10.Size = new System.Drawing.Size(321, 98);
             this.panel10.TabIndex = 19;
             // 
             // btn_guardar_cambios_personal
@@ -359,74 +428,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre:";
             // 
-            // btn_regresar
-            // 
-            this.btn_regresar.BackColor = System.Drawing.Color.Transparent;
-            this.btn_regresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_regresar.Image = global::SistemaAsistencia.Properties.Resources.volver_flecha;
-            this.btn_regresar.Location = new System.Drawing.Point(761, 43);
-            this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(103, 80);
-            this.btn_regresar.TabIndex = 21;
-            this.btn_regresar.UseVisualStyleBackColor = false;
-            // 
-            // btn_agregar
-            // 
-            this.btn_agregar.Image = global::SistemaAsistencia.Properties.Resources.agregar_usuario__1_;
-            this.btn_agregar.Location = new System.Drawing.Point(1112, 18);
-            this.btn_agregar.Name = "btn_agregar";
-            this.btn_agregar.Size = new System.Drawing.Size(89, 84);
-            this.btn_agregar.TabIndex = 3;
-            this.btn_agregar.UseVisualStyleBackColor = true;
-            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SistemaAsistencia.Properties.Resources.buscar;
-            this.pictureBox1.Location = new System.Drawing.Point(350, 65);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.DarkGray;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(155, 57);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(179, 26);
-            this.textBox4.TabIndex = 22;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 57);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(120, 20);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Departamento: ";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(196, 151);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 63);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Guardar *";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(52, 151);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 63);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Guardar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // Personal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -439,6 +440,7 @@
             this.Size = new System.Drawing.Size(1326, 818);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.PanelPaginado.ResumeLayout(false);
             this.PanelRegistros.ResumeLayout(false);
@@ -446,7 +448,6 @@
             this.PanelCargos.ResumeLayout(false);
             this.PanelCargos.PerformLayout();
             this.panel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

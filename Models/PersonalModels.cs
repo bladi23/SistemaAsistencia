@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using SistemaAsistencia.Models;
+using SistemaAsistencia.Controllers;
 using System.Security.Cryptography;
 using System.Security.Policy;
 
 
-namespace SistemaAsistencia.Controllers
+namespace SistemaAsistencia.Models
 {
     public class PersonalModels
     {
-        public bool InsertarPersonal(Models.PersonalControlers personal)
+        public bool InsertarPersonal(Controllers.PersonalControlers personal)
         {
             try
             {
@@ -44,7 +44,7 @@ namespace SistemaAsistencia.Controllers
             }
         }
 
-        public bool EditarPersonal(Models.PersonalControlers personal)
+        public bool EditarPersonal(Controllers.PersonalControlers personal)
         {
             try
             {
@@ -74,7 +74,7 @@ namespace SistemaAsistencia.Controllers
             }
         }
 
-        public bool eliminarPersonal(Models.PersonalControlers personal)
+        public bool eliminarPersonal(Controllers.PersonalControlers personal)
         {
             try
             {
