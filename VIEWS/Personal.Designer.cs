@@ -43,17 +43,13 @@
             this.cmb_Departamento = new System.Windows.Forms.ComboBox();
             this.btn_agregaCargoDepartamento = new System.Windows.Forms.Button();
             this.PanelCargos = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.btn_guardar_cambios_personal = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.panelIdentificacion = new System.Windows.Forms.Panel();
             this.txt_cedula = new System.Windows.Forms.TextBox();
-            this.panelApellido = new System.Windows.Forms.Panel();
             this.txt_apellido = new System.Windows.Forms.TextBox();
-            this.panelNombre = new System.Windows.Forms.Panel();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,7 +58,6 @@
             this.btn_regresar = new System.Windows.Forms.Button();
             this.btn_agregar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -198,11 +193,8 @@
             this.PanelRegistros.Controls.Add(this.PanelCargos);
             this.PanelRegistros.Controls.Add(this.panel10);
             this.PanelRegistros.Controls.Add(this.label4);
-            this.PanelRegistros.Controls.Add(this.panelIdentificacion);
             this.PanelRegistros.Controls.Add(this.txt_cedula);
-            this.PanelRegistros.Controls.Add(this.panelApellido);
             this.PanelRegistros.Controls.Add(this.txt_apellido);
-            this.PanelRegistros.Controls.Add(this.panelNombre);
             this.PanelRegistros.Controls.Add(this.txt_nombre);
             this.PanelRegistros.Controls.Add(this.label5);
             this.PanelRegistros.Controls.Add(this.label3);
@@ -246,9 +238,7 @@
             // 
             this.PanelCargos.Controls.Add(this.button1);
             this.PanelCargos.Controls.Add(this.button2);
-            this.PanelCargos.Controls.Add(this.panel2);
             this.PanelCargos.Controls.Add(this.textBox4);
-            this.PanelCargos.Controls.Add(this.panel12);
             this.PanelCargos.Controls.Add(this.textBox7);
             this.PanelCargos.Controls.Add(this.label8);
             this.PanelCargos.Controls.Add(this.label6);
@@ -257,22 +247,14 @@
             this.PanelCargos.Size = new System.Drawing.Size(401, 234);
             this.PanelCargos.TabIndex = 20;
             // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.White;
-            this.panel12.Location = new System.Drawing.Point(155, 109);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(130, 10);
-            this.panel12.TabIndex = 17;
-            // 
             // textBox7
             // 
             this.textBox7.BackColor = System.Drawing.Color.DarkGray;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(155, 93);
+            this.textBox7.Location = new System.Drawing.Point(155, 100);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(130, 19);
+            this.textBox7.Size = new System.Drawing.Size(179, 26);
             this.textBox7.TabIndex = 16;
             // 
             // label6
@@ -311,58 +293,34 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "Departamento:";
             // 
-            // panelIdentificacion
-            // 
-            this.panelIdentificacion.BackColor = System.Drawing.Color.White;
-            this.panelIdentificacion.Location = new System.Drawing.Point(287, 201);
-            this.panelIdentificacion.Name = "panelIdentificacion";
-            this.panelIdentificacion.Size = new System.Drawing.Size(246, 10);
-            this.panelIdentificacion.TabIndex = 12;
-            // 
             // txt_cedula
             // 
             this.txt_cedula.BackColor = System.Drawing.Color.DarkGray;
-            this.txt_cedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_cedula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_cedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cedula.Location = new System.Drawing.Point(287, 176);
+            this.txt_cedula.Location = new System.Drawing.Point(287, 183);
             this.txt_cedula.Name = "txt_cedula";
-            this.txt_cedula.Size = new System.Drawing.Size(246, 19);
+            this.txt_cedula.Size = new System.Drawing.Size(464, 26);
             this.txt_cedula.TabIndex = 11;
-            // 
-            // panelApellido
-            // 
-            this.panelApellido.BackColor = System.Drawing.Color.White;
-            this.panelApellido.Location = new System.Drawing.Point(287, 145);
-            this.panelApellido.Name = "panelApellido";
-            this.panelApellido.Size = new System.Drawing.Size(464, 10);
-            this.panelApellido.TabIndex = 8;
             // 
             // txt_apellido
             // 
             this.txt_apellido.BackColor = System.Drawing.Color.DarkGray;
-            this.txt_apellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_apellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_apellido.Location = new System.Drawing.Point(287, 116);
+            this.txt_apellido.Location = new System.Drawing.Point(287, 136);
             this.txt_apellido.Name = "txt_apellido";
-            this.txt_apellido.Size = new System.Drawing.Size(464, 19);
+            this.txt_apellido.Size = new System.Drawing.Size(464, 26);
             this.txt_apellido.TabIndex = 7;
-            // 
-            // panelNombre
-            // 
-            this.panelNombre.BackColor = System.Drawing.Color.White;
-            this.panelNombre.Location = new System.Drawing.Point(287, 100);
-            this.panelNombre.Name = "panelNombre";
-            this.panelNombre.Size = new System.Drawing.Size(464, 10);
-            this.panelNombre.TabIndex = 6;
             // 
             // txt_nombre
             // 
             this.txt_nombre.BackColor = System.Drawing.Color.DarkGray;
-            this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre.Location = new System.Drawing.Point(287, 71);
+            this.txt_nombre.Location = new System.Drawing.Point(287, 90);
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(464, 19);
+            this.txt_nombre.Size = new System.Drawing.Size(464, 26);
             this.txt_nombre.TabIndex = 5;
             // 
             // label5
@@ -432,22 +390,14 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(155, 67);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(130, 10);
-            this.panel2.TabIndex = 23;
-            // 
             // textBox4
             // 
             this.textBox4.BackColor = System.Drawing.Color.DarkGray;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(155, 42);
+            this.textBox4.Location = new System.Drawing.Point(155, 57);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(130, 19);
+            this.textBox4.Size = new System.Drawing.Size(179, 26);
             this.textBox4.TabIndex = 22;
             // 
             // label8
@@ -510,11 +460,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel PanelRegistros;
-        private System.Windows.Forms.Panel panelIdentificacion;
         private System.Windows.Forms.TextBox txt_cedula;
-        private System.Windows.Forms.Panel panelApellido;
         private System.Windows.Forms.TextBox txt_apellido;
-        private System.Windows.Forms.Panel panelNombre;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
@@ -524,7 +471,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel PanelCargos;
-        private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_guardar_cambios_personal;
@@ -537,7 +483,6 @@
         private System.Windows.Forms.ComboBox cmb_Cargo;
         private System.Windows.Forms.ComboBox cmb_Departamento;
         private System.Windows.Forms.Button btn_agregar;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;

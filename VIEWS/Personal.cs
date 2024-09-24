@@ -43,17 +43,14 @@ namespace SistemaAsistencia.VIEWS
             PanelRegistros.Dock = DockStyle.Fill;
             btn_guardar_personal.Visible = true;
             btn_guardar_cambios_personal.Visible = false;
-            
+            Limpiar();
+
         }
         private void Limpiar ()
         {
             txt_nombre.Clear();
             txt_apellido.Clear();
-            txt_cedula.Clear();
-            cmb_Cargo.SelectedIndex = -1;
-            cmb_Departamento.SelectedIndex = -1;
-            
-            
+            txt_cedula.Clear();   
         }
 
         private void cmb_Departamento_SelectedIndexChanged(object sender, EventArgs e)
