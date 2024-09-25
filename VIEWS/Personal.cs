@@ -28,11 +28,6 @@ namespace SistemaAsistencia.VIEWS
            
           
         }
-
-        
-
-     
-
         private void btn_guardar_Click(object sender, EventArgs e)
         {
            
@@ -150,6 +145,7 @@ namespace SistemaAsistencia.VIEWS
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
+            LocalizarDtvDepartamento();
             PanelDepartamento.Visible = false;
             PanelCargo.Visible = false;
             PanelRegistros.Visible = true;
@@ -161,6 +157,15 @@ namespace SistemaAsistencia.VIEWS
 
 
         }
+        private void LocalizarDtvDepartamento()
+        {
+            data_lista_departamentos.Location = new Point(panel5.Location.X, panel5.Location.Y);
+            data_lista_departamentos.Size = new Size(469, 130);
+            data_lista_departamentos.Visible = true;
+            Panel_btn_guardar_personal.Visible = false;
+            
+        }
+
         private void Limpiar ()
         {
             txt_nombre.Clear();
@@ -251,6 +256,11 @@ namespace SistemaAsistencia.VIEWS
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_regresar_Click(object sender, EventArgs e)
         {
 
         }
