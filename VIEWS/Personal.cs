@@ -154,6 +154,16 @@ namespace SistemaAsistencia.VIEWS
         {
 
         }
+
+        private void btn_agregarDepartamento_Click(object sender, EventArgs e)
+        {
+            PanelDepartamento.Visible = true;  
+            PanelDepartamento.Dock = DockStyle.Fill;    
+            PanelDepartamento.BringToFront();
+            btn_guardarDepar.Visible = true;
+            btn_guardarCambiosDepart.Visible = false;
+            txt_agg_departamento.Clear();
+        }
     }
 }
 
