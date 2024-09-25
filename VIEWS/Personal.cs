@@ -29,6 +29,7 @@ namespace SistemaAsistencia.VIEWS
           
         }
         int departamento_id;
+        int cargo_id;
         private void btn_guardar_Click(object sender, EventArgs e)
         {
            
@@ -121,23 +122,13 @@ namespace SistemaAsistencia.VIEWS
         //}
         private void buscarCargos()
         {
-            // Crear un DataTable para almacenar los datos
+            
             DataTable dt = new DataTable();
-
-            // Crear una instancia del modelo de cargos
             CargoModels cargoModel = new CargoModels();
-
-            // Llamar al método que busca los cargos
-            cargoModel.buscarCargos(ref dt); // Asegúrate de que este método no requiera un parámetro para buscar
-
-            // Asignar el DataTable como fuente de datos para el DataGridView
+            cargoModel.buscarCargos(ref dt, txt_cargo.Text); 
             data_lista_cargos.DataSource = dt;
-
-            // Personalizar el diseño del DataGridView
             Bases.DisenoDtv(ref data_lista_cargos);
-            data_lista_cargos.Visible = true;
-
-            // Opcional: Verificar si se encontraron datos
+            data_lista_cargos.Visible = true; 
             if (dt.Rows.Count == 0)
             {
                 MessageBox.Show("No se encontraron cargos para mostrar.");
@@ -162,7 +153,7 @@ namespace SistemaAsistencia.VIEWS
         }
         private void LocalizarDtvDepartamento()
         {
-            data_lista_departamentos.Location = new Point(panel5.Location.X, panel5.Location.Y);
+            //data_lista_departamentos.Location = new Point(panel5.Location.X, panel5.Location.Y);
             data_lista_departamentos.Size = new Size(469, 130);
             data_lista_departamentos.Visible = true;
             Panel_btn_guardar_personal.Visible = false;
@@ -170,7 +161,7 @@ namespace SistemaAsistencia.VIEWS
         }
         private void LocalizarDtvCargo()
         {
-            data_lista_cargos.Location = new Point(panel6.Location.X, panel6.Location.Y);
+            //data_lista_cargos.Location = new Point(panel6.Location.X, panel6.Location.Y);
             data_lista_cargos.Size = new Size(469, 130);
             data_lista_cargos.Visible = true;
             Panel_btn_guardar_personal.Visible = false;
@@ -322,6 +313,26 @@ namespace SistemaAsistencia.VIEWS
         private void btn_volver_departamentos_Click(object sender, EventArgs e)
         {
             PanelDepartamento.Visible = false;
+        }
+
+        private void data_lista_cargos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == data_lista_cargos.Columns["EditarC"].Index)
+            {
+                ObtenerCargosEditar();
+            }
+        }
+
+
+        private void ObtenerCargosEditar()
+        {
+            cargo_id = Convert.ToInt32(data_lista_cargos.SelectedCells[1].Value);
+            txt_agg_cargo.Text = data_lista_cargos.SelectedCells[2].Value.ToString();
+            btn_guardarCargo.Visible = false;
+            btn_guardarCambioCargo.Visible = true;
+            PanelCargo.Visible = true;
+            PanelCargo.Dock = DockStyle.Fill;
+            PanelCargo.BringToFront();
         }
     }
 }

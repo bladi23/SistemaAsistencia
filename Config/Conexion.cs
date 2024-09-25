@@ -13,7 +13,8 @@ namespace SistemaAsistencia.Config
 
         static Conexion()
         {
-            connectionString = @"Server=BLADIMIR-DESKTO\SQLEXPRESS;Database=BLADOLEX;User Id=sa;Password=123;";
+            connectionString = @"Server=.;Database=BLADOLEX;User Id=sa;Password=123;";
+            //BLADIMIR-DESKTO\SQLEXPRESS
         }
 
         public static SqlConnection GetConnection()

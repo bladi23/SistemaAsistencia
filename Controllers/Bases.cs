@@ -13,14 +13,14 @@ namespace SistemaAsistencia.Controllers
         public static void DisenoDtv(ref DataGridView Listado) 
         {
             Listado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            Listado.BackgroundColor = Color.FromArgb(167, 167, 167);
+            Listado.BackgroundColor = Color.FromArgb(169, 169, 169);
             Listado.RowHeadersVisible = false;
             Listado.EnableHeadersVisualStyles = false;
             Listado.BorderStyle = BorderStyle.None;
             Listado.CellBorderStyle = DataGridViewCellBorderStyle.None;
             Listado.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             DataGridViewCellStyle cabecera = new DataGridViewCellStyle();
-            cabecera.BackColor = Color.FromArgb(167, 167, 167);
+            cabecera.BackColor = Color.FromArgb(169, 169, 169);
             cabecera.ForeColor = Color.Black;
             cabecera.Font = new Font("Arial", 12);
             Listado.ColumnHeadersDefaultCellStyle = cabecera;

@@ -58,16 +58,16 @@ namespace SistemaAsistencia.Models
             }
         }
 
-        public void buscarCargos(ref DataTable dt)
+        public void buscarCargos(ref DataTable dt, string buscador)
         {
             try
             {
                 using (var connection = Config.Conexion.GetConnection())
                 {
-                    using (var command = new SqlCommand("ObtenerCargosConNombreDepartamento", connection))
+                    using (var command = new SqlCommand("buscarCargos", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-
+                        command.Parameters.AddWithValue("@buscador", buscador);
                         using (var adapter = new SqlDataAdapter(command))
                         {
                             dt.Clear(); // Limpia el DataTable antes de llenarlo
