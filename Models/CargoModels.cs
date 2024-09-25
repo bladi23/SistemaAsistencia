@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace SistemaAsistencia.Models
 {
+
+
+
     public class CargoModels
     {
         public bool InsertarCargo(Controllers.CargoController cargo)

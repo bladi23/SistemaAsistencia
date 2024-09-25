@@ -55,7 +55,7 @@ namespace SistemaAsistencia.Models
             }
             catch (SqlException ex)
             {
-                Console.WriteLine($"Error al insertar el departamento: {ex.Message}");
+                Console.WriteLine($"Error al Editar el departamento: {ex.Message}");
                 return false;
             }
         }

@@ -51,9 +51,9 @@
             this.btn_agregarDepartamento = new System.Windows.Forms.Button();
             this.PanelCargo = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lista_departamentos = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_editarCampo = new System.Windows.Forms.Button();
             this.btn_volver_Cargos = new System.Windows.Forms.Button();
             this.btn_aggCargo = new System.Windows.Forms.Button();
             this.txt_agg_cargo = new System.Windows.Forms.TextBox();
@@ -67,6 +67,7 @@
             this.PanelDepartamento = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btn_editarDepartamento = new System.Windows.Forms.Button();
             this.btn_volver_departamentos = new System.Windows.Forms.Button();
             this.btn_aggDepartameno = new System.Windows.Forms.Button();
             this.txt_agg_departamento = new System.Windows.Forms.TextBox();
@@ -82,8 +83,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btn_editarDepartamento = new System.Windows.Forms.Button();
-            this.btn_editarCampo = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBxLupaBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -371,8 +371,8 @@
             // 
             // PanelCargo
             // 
+            this.PanelCargo.Controls.Add(this.comboBox1);
             this.PanelCargo.Controls.Add(this.panel3);
-            this.PanelCargo.Controls.Add(this.lista_departamentos);
             this.PanelCargo.Controls.Add(this.label6);
             this.PanelCargo.Controls.Add(this.panel4);
             this.PanelCargo.Controls.Add(this.txt_agg_cargo);
@@ -391,16 +391,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(250, 1);
             this.panel3.TabIndex = 32;
-            // 
-            // lista_departamentos
-            // 
-            this.lista_departamentos.FormattingEnabled = true;
-            this.lista_departamentos.Location = new System.Drawing.Point(169, 65);
-            this.lista_departamentos.Margin = new System.Windows.Forms.Padding(4);
-            this.lista_departamentos.Name = "lista_departamentos";
-            this.lista_departamentos.Size = new System.Drawing.Size(203, 33);
-            this.lista_departamentos.TabIndex = 26;
-            this.lista_departamentos.SelectedIndexChanged += new System.EventHandler(this.lista_departamentos_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -423,6 +413,18 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(546, 76);
             this.panel4.TabIndex = 24;
+            // 
+            // btn_editarCampo
+            // 
+            this.btn_editarCampo.BackColor = System.Drawing.Color.Silver;
+            this.btn_editarCampo.Location = new System.Drawing.Point(4, 10);
+            this.btn_editarCampo.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_editarCampo.Name = "btn_editarCampo";
+            this.btn_editarCampo.Size = new System.Drawing.Size(171, 62);
+            this.btn_editarCampo.TabIndex = 24;
+            this.btn_editarCampo.Text = "Editar";
+            this.btn_editarCampo.UseVisualStyleBackColor = false;
+            this.btn_editarCampo.Click += new System.EventHandler(this.btn_editarCampo_Click);
             // 
             // btn_volver_Cargos
             // 
@@ -584,6 +586,18 @@
             this.panel2.Size = new System.Drawing.Size(576, 103);
             this.panel2.TabIndex = 23;
             // 
+            // btn_editarDepartamento
+            // 
+            this.btn_editarDepartamento.BackColor = System.Drawing.Color.Silver;
+            this.btn_editarDepartamento.Location = new System.Drawing.Point(9, 17);
+            this.btn_editarDepartamento.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_editarDepartamento.Name = "btn_editarDepartamento";
+            this.btn_editarDepartamento.Size = new System.Drawing.Size(171, 62);
+            this.btn_editarDepartamento.TabIndex = 23;
+            this.btn_editarDepartamento.Text = "Editar";
+            this.btn_editarDepartamento.UseVisualStyleBackColor = false;
+            this.btn_editarDepartamento.Click += new System.EventHandler(this.btn_editarDepartamento_Click);
+            // 
             // btn_volver_departamentos
             // 
             this.btn_volver_departamentos.BackColor = System.Drawing.Color.Transparent;
@@ -742,27 +756,15 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 125;
             // 
-            // btn_editarDepartamento
+            // comboBox1
             // 
-            this.btn_editarDepartamento.BackColor = System.Drawing.Color.Silver;
-            this.btn_editarDepartamento.Location = new System.Drawing.Point(9, 17);
-            this.btn_editarDepartamento.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_editarDepartamento.Name = "btn_editarDepartamento";
-            this.btn_editarDepartamento.Size = new System.Drawing.Size(171, 62);
-            this.btn_editarDepartamento.TabIndex = 23;
-            this.btn_editarDepartamento.Text = "Editar";
-            this.btn_editarDepartamento.UseVisualStyleBackColor = false;
-            // 
-            // btn_editarCampo
-            // 
-            this.btn_editarCampo.BackColor = System.Drawing.Color.Silver;
-            this.btn_editarCampo.Location = new System.Drawing.Point(4, 10);
-            this.btn_editarCampo.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_editarCampo.Name = "btn_editarCampo";
-            this.btn_editarCampo.Size = new System.Drawing.Size(171, 62);
-            this.btn_editarCampo.TabIndex = 24;
-            this.btn_editarCampo.Text = "Editar";
-            this.btn_editarCampo.UseVisualStyleBackColor = false;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(168, 66);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(250, 33);
+            this.comboBox1.TabIndex = 36;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Personal
             // 
@@ -838,7 +840,6 @@
         private System.Windows.Forms.Button btn_aggDepartameno;
         private System.Windows.Forms.Button btn_agregarDepartamento;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox lista_departamentos;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn EditarD;
         private System.Windows.Forms.Button btn_volver_departamentos;
@@ -853,5 +854,6 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button btn_editarCampo;
         private System.Windows.Forms.Button btn_editarDepartamento;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

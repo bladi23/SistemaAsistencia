@@ -65,15 +65,47 @@ namespace SistemaAsistencia.VIEWS
             
             
         }
+
+        private void EditarDepartamento()
+        {
+            if (!string.IsNullOrEmpty(txt_agg_departamento.Text))
+            {
+                DepartamentoController departamentoControlers = new DepartamentoController();
+                DepartamentoModel departamentoModels = new DepartamentoModel();
+
+                
+                departamentoControlers.departamento_id = departamento_id; 
+                departamentoControlers.nombre_departamento = txt_agg_departamento.Text;
+
+                if (departamentoModels.EditarDepartamento(departamentoControlers))
+                {
+                    txt_departamento.Clear();
+                    buscarDepartamentos();
+                    PanelDepartamento.Visible = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Agregar el Departamento");
+            }
+        }
+
+
+
+
+
+
+
+
         private void InsertarCargo()
         {
-            if (!string.IsNullOrEmpty(txt_agg_cargo.Text) && lista_departamentos.SelectedValue != null)
+            if (!string.IsNullOrEmpty(txt_agg_cargo.Text) && comboBox1.SelectedValue != null)
             {
                 CargoController cargoController = new CargoController();
                 CargoModels cargoModel = new CargoModels();
 
                 cargoController.nombre_cargo = txt_agg_cargo.Text;
-                cargoController.departamento_id = Convert.ToInt32(lista_departamentos.SelectedValue);  // Obtener el ID del departamento
+                cargoController.departamento_id = Convert.ToInt32(comboBox1.SelectedValue);  // Obtener el ID del departamento
 
                 if (cargoModel.InsertarCargo(cargoController))
                 {
@@ -89,7 +121,37 @@ namespace SistemaAsistencia.VIEWS
         }
 
 
-     
+
+
+
+        private void EditarCargo()
+        {
+            if (!string.IsNullOrEmpty(txt_agg_cargo.Text))
+            {
+                CargoController cargoController = new CargoController();
+                CargoModels cargoModel = new CargoModels();
+
+                
+                cargoController.cargo_id = cargo_id; 
+                cargoController.nombre_cargo = txt_agg_cargo.Text;
+               cargoController.departamento_id = Convert.ToInt32(comboBox1.SelectedValue);
+              
+
+                if (cargoModel.editarCargo(cargoController))
+                {
+                    txt_cargo.Clear();
+                    buscarCargos();
+                    PanelCargo.Visible = false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Agregar el Cargo");
+            }
+        }
+
+
+
         private void buscarDepartamentos()
         {
             DataTable dt = new DataTable();
@@ -181,12 +243,7 @@ namespace SistemaAsistencia.VIEWS
 
         private void btn_agregarDepartamento_Click(object sender, EventArgs e)
         {
-            //PanelDepartamento.Visible = true;  
-            //PanelDepartamento.Dock = DockStyle.Fill;    
-            //PanelDepartamento.BringToFront();
-            //btn_guardarDepar.Visible = true;
-            //btn_guardarCambiosDepart.Visible = false;
-            //txt_agg_departamento.Clear();
+       
             btn_aggDepartameno.Visible = true;
             btn_editarDepartamento.Visible = false;
             PanelDepartamento.Visible = true;
@@ -222,9 +279,9 @@ namespace SistemaAsistencia.VIEWS
                             DataTable dt = new DataTable();
                             adapter.Fill(dt);
 
-                            lista_departamentos.DataSource = dt;
-                            lista_departamentos.DisplayMember = "nombre_departamento";  // Lo que se mostrará
-                            lista_departamentos.ValueMember = "departamento_id";  // El valor real que será usado (departamento_id)
+                            comboBox1.DataSource = dt;
+                            comboBox1.DisplayMember = "nombre_departamento";  // Lo que se mostrará
+                            comboBox1.ValueMember = "departamento_id";  // El valor real que será usado (departamento_id)
                         }
                     }
                 }
@@ -265,8 +322,6 @@ namespace SistemaAsistencia.VIEWS
             {
                 ObtenerDatosDepartamento();
             }
-            
-
         }
         private void ObtenerDatosDepartamento()
         {
@@ -342,6 +397,20 @@ namespace SistemaAsistencia.VIEWS
             PanelCargo.Visible = false;
         }
 
+        private void btn_editarDepartamento_Click(object sender, EventArgs e)
+        {
+            EditarDepartamento();
+        }
+
+        private void btn_editarCampo_Click(object sender, EventArgs e)
+        {
+            EditarCargo();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //CargarDepartamentos();
+        }
     }
 }
 
