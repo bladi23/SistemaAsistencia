@@ -50,6 +50,7 @@
             this.EditarD = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_agregarDepartamento = new System.Windows.Forms.Button();
             this.PanelCargo = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -83,7 +84,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lbl_fecha_Contratacion = new System.Windows.Forms.Label();
+            this.dtp_fechaContratacion = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBxLupaBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -246,6 +248,8 @@
             // PanelRegistros
             // 
             this.PanelRegistros.BackColor = System.Drawing.Color.DarkGray;
+            this.PanelRegistros.Controls.Add(this.dtp_fechaContratacion);
+            this.PanelRegistros.Controls.Add(this.lbl_fecha_Contratacion);
             this.PanelRegistros.Controls.Add(this.panel12);
             this.PanelRegistros.Controls.Add(this.panel11);
             this.PanelRegistros.Controls.Add(this.panel10);
@@ -280,7 +284,7 @@
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.DimGray;
-            this.panel12.Location = new System.Drawing.Point(160, 471);
+            this.panel12.Location = new System.Drawing.Point(160, 442);
             this.panel12.Margin = new System.Windows.Forms.Padding(4);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(330, 1);
@@ -383,6 +387,16 @@
             this.PanelCargo.Size = new System.Drawing.Size(546, 223);
             this.PanelCargo.TabIndex = 26;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(168, 66);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(250, 33);
+            this.comboBox1.TabIndex = 36;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DimGray;
@@ -475,7 +489,7 @@
             // btn_agregarCargo
             // 
             this.btn_agregarCargo.BackColor = System.Drawing.Color.Silver;
-            this.btn_agregarCargo.Location = new System.Drawing.Point(520, 436);
+            this.btn_agregarCargo.Location = new System.Drawing.Point(520, 407);
             this.btn_agregarCargo.Margin = new System.Windows.Forms.Padding(4);
             this.btn_agregarCargo.Name = "btn_agregarCargo";
             this.btn_agregarCargo.Size = new System.Drawing.Size(280, 36);
@@ -493,7 +507,7 @@
             this.data_lista_cargos.ColumnHeadersVisible = false;
             this.data_lista_cargos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EditarC});
-            this.data_lista_cargos.Location = new System.Drawing.Point(156, 475);
+            this.data_lista_cargos.Location = new System.Drawing.Point(156, 446);
             this.data_lista_cargos.Margin = new System.Windows.Forms.Padding(4);
             this.data_lista_cargos.Name = "data_lista_cargos";
             this.data_lista_cargos.RowHeadersWidth = 51;
@@ -503,7 +517,7 @@
             this.data_lista_cargos.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Gray;
             this.data_lista_cargos.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.data_lista_cargos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.data_lista_cargos.Size = new System.Drawing.Size(437, 126);
+            this.data_lista_cargos.Size = new System.Drawing.Size(437, 136);
             this.data_lista_cargos.TabIndex = 26;
             this.data_lista_cargos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_lista_cargos_CellContentClick_1);
             // 
@@ -521,7 +535,7 @@
             this.txt_cargo.BackColor = System.Drawing.Color.DarkGray;
             this.txt_cargo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_cargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cargo.Location = new System.Drawing.Point(160, 442);
+            this.txt_cargo.Location = new System.Drawing.Point(160, 413);
             this.txt_cargo.Margin = new System.Windows.Forms.Padding(4);
             this.txt_cargo.Name = "txt_cargo";
             this.txt_cargo.Size = new System.Drawing.Size(330, 23);
@@ -648,7 +662,7 @@
             // 
             this.Panel_btn_guardar_personal.Controls.Add(this.btn_guardar_cambios_personal);
             this.Panel_btn_guardar_personal.Controls.Add(this.btn_guardar_personal);
-            this.Panel_btn_guardar_personal.Location = new System.Drawing.Point(316, 673);
+            this.Panel_btn_guardar_personal.Location = new System.Drawing.Point(235, 714);
             this.Panel_btn_guardar_personal.Margin = new System.Windows.Forms.Padding(4);
             this.Panel_btn_guardar_personal.Name = "Panel_btn_guardar_personal";
             this.Panel_btn_guardar_personal.Size = new System.Drawing.Size(387, 80);
@@ -684,6 +698,7 @@
             this.txt_cedula.Name = "txt_cedula";
             this.txt_cedula.Size = new System.Drawing.Size(721, 23);
             this.txt_cedula.TabIndex = 11;
+            this.txt_cedula.TextChanged += new System.EventHandler(this.txt_cedula_TextChanged);
             // 
             // txt_apellido
             // 
@@ -726,11 +741,12 @@
             this.label3.Size = new System.Drawing.Size(136, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Identificación: ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 447);
+            this.label2.Location = new System.Drawing.Point(69, 418);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 25);
@@ -756,15 +772,22 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 125;
             // 
-            // comboBox1
+            // lbl_fecha_Contratacion
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(168, 66);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(250, 33);
-            this.comboBox1.TabIndex = 36;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.lbl_fecha_Contratacion.AutoSize = true;
+            this.lbl_fecha_Contratacion.Location = new System.Drawing.Point(7, 628);
+            this.lbl_fecha_Contratacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_fecha_Contratacion.Name = "lbl_fecha_Contratacion";
+            this.lbl_fecha_Contratacion.Size = new System.Drawing.Size(216, 25);
+            this.lbl_fecha_Contratacion.TabIndex = 36;
+            this.lbl_fecha_Contratacion.Text = "Fecha de Contratación:";
+            // 
+            // dtp_fechaContratacion
+            // 
+            this.dtp_fechaContratacion.Location = new System.Drawing.Point(255, 617);
+            this.dtp_fechaContratacion.Name = "dtp_fechaContratacion";
+            this.dtp_fechaContratacion.Size = new System.Drawing.Size(387, 30);
+            this.dtp_fechaContratacion.TabIndex = 37;
             // 
             // Personal
             // 
@@ -855,5 +878,7 @@
         private System.Windows.Forms.Button btn_editarCampo;
         private System.Windows.Forms.Button btn_editarDepartamento;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label lbl_fecha_Contratacion;
+        private System.Windows.Forms.DateTimePicker dtp_fechaContratacion;
     }
 }

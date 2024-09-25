@@ -30,7 +30,7 @@ namespace SistemaAsistencia.Models
                         command.Parameters.AddWithValue("@departamento_id", personal.departamento_id);
                         command.Parameters.AddWithValue("@cargo_id", personal.cargo_id);
                         command.Parameters.AddWithValue("@fecha_contratacion", personal.fecha_contratacion);
-                        command.Parameters.AddWithValue("@estado", personal.estado);
+                       
                         
 
                         command.ExecuteNonQuery();
@@ -41,6 +41,7 @@ namespace SistemaAsistencia.Models
             catch (SqlException ex)
             {
                 Console.WriteLine($"Error al insertar el personal: {ex.Message}");
+                MessageBox.Show("Error al insertar el personal, el número de Indentificadión ya existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -97,7 +98,7 @@ namespace SistemaAsistencia.Models
             }
         }
 
-        public void mostrarPersonal(DataGridView dgv, int desde, int hasta)
+        public void mostrarPersonal(ref DataTable dt, int desde, int hasta)
         {
             try
             {
@@ -111,11 +112,7 @@ namespace SistemaAsistencia.Models
 
                         using (var adapter = new SqlDataAdapter(command))
                         {
-                            using (var table = new DataTable())
-                            {
-                                adapter.Fill(table);
-                                dgv.DataSource = table;
-                            }
+                            adapter.Fill(dt);
                         }
                     }
                 }
@@ -125,6 +122,39 @@ namespace SistemaAsistencia.Models
                 Console.WriteLine($"Error al mostrar el personal: {ex.Message}");
             }
         }
+
+
+
+
+
+        //public void mostrarPersonal(DataGridView dgv, int desde, int hasta)
+        //{
+        //    try
+        //    {
+        //        using (var connection = Config.Conexion.GetConnection())
+        //        {
+        //            using (var command = new SqlCommand("mostrarPersonal", connection))
+        //            {
+        //                command.CommandType = CommandType.StoredProcedure;
+        //                command.Parameters.AddWithValue("@Desde", desde);
+        //                command.Parameters.AddWithValue("@Hasta", hasta);
+
+        //                using (var adapter = new SqlDataAdapter(command))
+        //                {
+        //                    using (var table = new DataTable())
+        //                    {
+        //                        adapter.Fill(table);
+        //                        dgv.DataSource = table;
+        //                    }
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch (SqlException ex)
+        //    {
+        //        Console.WriteLine($"Error al mostrar el personal: {ex.Message}");
+        //    }
+        //}
 
         public void BuscarPersonal(DataGridView dgv, int desde, int hasta, string buscador)
         {

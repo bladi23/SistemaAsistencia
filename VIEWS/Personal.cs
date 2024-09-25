@@ -35,6 +35,7 @@ namespace SistemaAsistencia.VIEWS
         int contador;
         int empleado_id;
         private int items_por_pagina = 10;
+        string estado;
         int totalPaginas;
 
         private void btn_guardar_Click(object sender, EventArgs e)
@@ -60,7 +61,15 @@ namespace SistemaAsistencia.VIEWS
         {
             DataTable dt = new DataTable(); 
             PersonalControlers personalControlers = new PersonalControlers();
-            personalControlers.personalControlers(ref dt, );
+            PersonalModels personalModels = new PersonalModels();
+            personalModels.mostrarPersonal(ref dt, desde, hasta);
+            // Asignar el DataTable al DataGridView
+            dataGridView1.DataSource = dt;
+
+            // Opcional: Ajustar el diseño del DataGridView
+            Bases.DisenoDtv(ref dataGridView1);
+            dataGridView1.Visible = true;
+            PanelPaginado.Visible = true;
         }
         private void InsertarPersonal()
         {
@@ -71,8 +80,10 @@ namespace SistemaAsistencia.VIEWS
             personalControlers.cedula = txt_cedula.Text;
             personalControlers.departamento_id = departamento_id;
             personalControlers.cargo_id = cargo_id;
+            personalControlers.fecha_contratacion = dtp_fechaContratacion.Value;
             if (personalModel.InsertarPersonal(personalControlers)== true)
-            {   
+            {
+                mostrarPersonal();
                 PanelRegistros.Visible= false;
             }
             
@@ -217,13 +228,14 @@ namespace SistemaAsistencia.VIEWS
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            LocalizarDtvDepartamento();
-            LocalizarDtvCargo();
+            //LocalizarDtvDepartamento();
+            //LocalizarDtvCargo();
             PanelDepartamento.Visible = false;
             PanelCargo.Visible = false;
             PanelRegistros.Visible = true;
             PanelPaginado.Visible = false;
             PanelRegistros.Dock = DockStyle.Fill;
+            Panel_btn_guardar_personal.Visible = true;  
             btn_guardar_personal.Visible = true;
             btn_guardar_cambios_personal.Visible = false;
             Limpiar();
@@ -444,6 +456,18 @@ namespace SistemaAsistencia.VIEWS
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //CargarDepartamentos();
+        }
+
+      
+
+        private void txt_cedula_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
