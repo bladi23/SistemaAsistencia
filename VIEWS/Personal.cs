@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using SistemaAsistencia.Controlles;
 using SistemaAsistencia.Models;
 using SistemaAsistencia.Controllers;
+using System.Data.SqlClient;
 
 namespace SistemaAsistencia.VIEWS
 {
@@ -23,6 +24,7 @@ namespace SistemaAsistencia.VIEWS
         public Personal()
         {
             InitializeComponent();
+            CargarDepartamentos();
            
           
         }
@@ -74,12 +76,12 @@ namespace SistemaAsistencia.VIEWS
                 CargoModels cargoModel = new CargoModels();
 
                 cargoController.nombre_cargo = txt_agg_cargo.Text;
-                cargoController.departamento_id = Convert.ToInt32(lista_departamentos.SelectedValue);  // Obtiene el ID del departamento seleccionado
+                cargoController.departamento_id = Convert.ToInt32(lista_departamentos.SelectedValue);  // Obtener el ID del departamento
 
                 if (cargoModel.InsertarCargo(cargoController))
                 {
                     txt_agg_cargo.Clear();
-                    buscarCargos();
+                    buscarCargos();  // Refresca la lista de cargos
                     PanelCargo.Visible = false;
                 }
             }
@@ -88,6 +90,7 @@ namespace SistemaAsistencia.VIEWS
                 MessageBox.Show("Agregar el Cargo y seleccionar un Departamento");
             }
         }
+
 
         //private void InsertarCargo()
         //{
@@ -215,6 +218,41 @@ namespace SistemaAsistencia.VIEWS
         private void btn_guardarCargo_Click(object sender, EventArgs e)
         {
             InsertarCargo();
+        }
+        private void CargarDepartamentos()
+        {
+            try
+            {
+                using (var connection = Config.Conexion.GetConnection())
+                {
+                    using (var command = new SqlCommand("SELECT departamento_id, nombre_departamento FROM Departamentos", connection))
+                    {
+                        using (var adapter = new SqlDataAdapter(command))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+
+                            lista_departamentos.DataSource = dt;
+                            lista_departamentos.DisplayMember = "nombre_departamento";  // Lo que se mostrará
+                            lista_departamentos.ValueMember = "departamento_id";  // El valor real que será usado (departamento_id)
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error al cargar los departamentos: {ex.Message}");
+            }
+        }
+
+        private void lista_departamentos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CargarDepartamentos();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

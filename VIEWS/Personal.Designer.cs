@@ -96,7 +96,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1527, 112);
+            this.panel1.Size = new System.Drawing.Size(1586, 112);
             this.panel1.TabIndex = 0;
             // 
             // btn_agregar
@@ -162,8 +162,9 @@
             this.dataGridView1.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView1.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Black;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1527, 606);
+            this.dataGridView1.Size = new System.Drawing.Size(1586, 628);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // PanelPaginado
             // 
@@ -173,9 +174,9 @@
             this.PanelPaginado.Controls.Add(this.btn_primeraPagina);
             this.PanelPaginado.Controls.Add(this.btn_ultimaPagina);
             this.PanelPaginado.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelPaginado.Location = new System.Drawing.Point(0, 718);
+            this.PanelPaginado.Location = new System.Drawing.Point(0, 740);
             this.PanelPaginado.Name = "PanelPaginado";
-            this.PanelPaginado.Size = new System.Drawing.Size(1527, 100);
+            this.PanelPaginado.Size = new System.Drawing.Size(1586, 100);
             this.PanelPaginado.TabIndex = 2;
             // 
             // btn_paginaSiguiente
@@ -563,6 +564,7 @@
             this.lista_departamentos.Name = "lista_departamentos";
             this.lista_departamentos.Size = new System.Drawing.Size(153, 28);
             this.lista_departamentos.TabIndex = 26;
+            this.lista_departamentos.SelectedIndexChanged += new System.EventHandler(this.lista_departamentos_SelectedIndexChanged);
             // 
             // Personal
             // 
@@ -573,7 +575,7 @@
             this.Controls.Add(this.PanelPaginado);
             this.Controls.Add(this.panel1);
             this.Name = "Personal";
-            this.Size = new System.Drawing.Size(1527, 818);
+            this.Size = new System.Drawing.Size(1586, 840);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
