@@ -41,18 +41,21 @@
             this.btn_primeraPagina = new System.Windows.Forms.Button();
             this.btn_ultimaPagina = new System.Windows.Forms.Button();
             this.PanelRegistros = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.data_lista_departamentos = new System.Windows.Forms.DataGridView();
             this.EditarD = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.btn_agregarDepartamento = new System.Windows.Forms.Button();
             this.PanelCargo = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.lista_departamentos = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btn_volver_Cargos = new System.Windows.Forms.Button();
-            this.btn_guardarCambioCargo = new System.Windows.Forms.Button();
-            this.btn_guardarCargo = new System.Windows.Forms.Button();
+            this.btn_aggCargo = new System.Windows.Forms.Button();
             this.txt_agg_cargo = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btn_agregarCargo = new System.Windows.Forms.Button();
@@ -62,10 +65,10 @@
             this.txt_departamento = new System.Windows.Forms.TextBox();
             this.btn_regresar = new System.Windows.Forms.Button();
             this.PanelDepartamento = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_volver_departamentos = new System.Windows.Forms.Button();
-            this.btn_guardarCambiosDepart = new System.Windows.Forms.Button();
-            this.btn_guardarDepar = new System.Windows.Forms.Button();
+            this.btn_aggDepartameno = new System.Windows.Forms.Button();
             this.txt_agg_departamento = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.Panel_btn_guardar_personal = new System.Windows.Forms.Panel();
@@ -79,13 +82,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
+            this.btn_editarDepartamento = new System.Windows.Forms.Button();
+            this.btn_editarCampo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBxLupaBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -254,8 +252,6 @@
             this.PanelRegistros.Controls.Add(this.panel9);
             this.PanelRegistros.Controls.Add(this.panel8);
             this.PanelRegistros.Controls.Add(this.data_lista_departamentos);
-            this.PanelRegistros.Controls.Add(this.panel6);
-            this.PanelRegistros.Controls.Add(this.panel5);
             this.PanelRegistros.Controls.Add(this.btn_agregarDepartamento);
             this.PanelRegistros.Controls.Add(this.PanelCargo);
             this.PanelRegistros.Controls.Add(this.btn_agregarCargo);
@@ -281,16 +277,62 @@
             this.PanelRegistros.TabIndex = 3;
             this.PanelRegistros.Visible = false;
             // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.DimGray;
+            this.panel12.Location = new System.Drawing.Point(160, 471);
+            this.panel12.Margin = new System.Windows.Forms.Padding(4);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(330, 1);
+            this.panel12.TabIndex = 35;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.DimGray;
+            this.panel11.Location = new System.Drawing.Point(156, 227);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(330, 1);
+            this.panel11.TabIndex = 34;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.DimGray;
+            this.panel10.Location = new System.Drawing.Point(156, 169);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(721, 1);
+            this.panel10.TabIndex = 33;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.DimGray;
+            this.panel9.Location = new System.Drawing.Point(156, 111);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(721, 1);
+            this.panel9.TabIndex = 32;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.DimGray;
+            this.panel8.Location = new System.Drawing.Point(156, 54);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(721, 1);
+            this.panel8.TabIndex = 31;
+            // 
             // data_lista_departamentos
             // 
             this.data_lista_departamentos.AllowUserToAddRows = false;
             this.data_lista_departamentos.AllowUserToDeleteRows = false;
             this.data_lista_departamentos.AllowUserToResizeRows = false;
             this.data_lista_departamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_lista_departamentos.ColumnHeadersVisible = false;
             this.data_lista_departamentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EditarD});
             this.data_lista_departamentos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.data_lista_departamentos.Location = new System.Drawing.Point(156, 254);
+            this.data_lista_departamentos.Location = new System.Drawing.Point(156, 230);
             this.data_lista_departamentos.Margin = new System.Windows.Forms.Padding(4);
             this.data_lista_departamentos.Name = "data_lista_departamentos";
             this.data_lista_departamentos.RowHeadersWidth = 51;
@@ -314,22 +356,6 @@
             this.EditarD.Name = "EditarD";
             this.EditarD.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.EditarD.Width = 125;
-            // 
-            // panel6
-            // 
-            this.panel6.Location = new System.Drawing.Point(160, 480);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(327, 12);
-            this.panel6.TabIndex = 30;
-            // 
-            // panel5
-            // 
-            this.panel5.Location = new System.Drawing.Point(156, 234);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(327, 12);
-            this.panel5.TabIndex = 29;
             // 
             // btn_agregarDepartamento
             // 
@@ -357,6 +383,15 @@
             this.PanelCargo.Size = new System.Drawing.Size(546, 223);
             this.PanelCargo.TabIndex = 26;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DimGray;
+            this.panel3.Location = new System.Drawing.Point(168, 45);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(250, 1);
+            this.panel3.TabIndex = 32;
+            // 
             // lista_departamentos
             // 
             this.lista_departamentos.FormattingEnabled = true;
@@ -379,9 +414,9 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btn_editarCampo);
             this.panel4.Controls.Add(this.btn_volver_Cargos);
-            this.panel4.Controls.Add(this.btn_guardarCambioCargo);
-            this.panel4.Controls.Add(this.btn_guardarCargo);
+            this.panel4.Controls.Add(this.btn_aggCargo);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 147);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
@@ -394,36 +429,25 @@
             this.btn_volver_Cargos.BackColor = System.Drawing.Color.Transparent;
             this.btn_volver_Cargos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_volver_Cargos.Image = global::SistemaAsistencia.Properties.Resources.volver_flecha;
-            this.btn_volver_Cargos.Location = new System.Drawing.Point(397, 4);
+            this.btn_volver_Cargos.Location = new System.Drawing.Point(359, 16);
             this.btn_volver_Cargos.Margin = new System.Windows.Forms.Padding(4);
             this.btn_volver_Cargos.Name = "btn_volver_Cargos";
-            this.btn_volver_Cargos.Size = new System.Drawing.Size(103, 62);
+            this.btn_volver_Cargos.Size = new System.Drawing.Size(103, 56);
             this.btn_volver_Cargos.TabIndex = 23;
             this.btn_volver_Cargos.UseVisualStyleBackColor = false;
             this.btn_volver_Cargos.Click += new System.EventHandler(this.btn_volver_Cargos_Click);
             // 
-            // btn_guardarCambioCargo
+            // btn_aggCargo
             // 
-            this.btn_guardarCambioCargo.BackColor = System.Drawing.Color.Silver;
-            this.btn_guardarCambioCargo.Location = new System.Drawing.Point(204, 4);
-            this.btn_guardarCambioCargo.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_guardarCambioCargo.Name = "btn_guardarCambioCargo";
-            this.btn_guardarCambioCargo.Size = new System.Drawing.Size(168, 62);
-            this.btn_guardarCambioCargo.TabIndex = 4;
-            this.btn_guardarCambioCargo.Text = "Guardar *";
-            this.btn_guardarCambioCargo.UseVisualStyleBackColor = false;
-            // 
-            // btn_guardarCargo
-            // 
-            this.btn_guardarCargo.BackColor = System.Drawing.Color.Silver;
-            this.btn_guardarCargo.Location = new System.Drawing.Point(20, 4);
-            this.btn_guardarCargo.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_guardarCargo.Name = "btn_guardarCargo";
-            this.btn_guardarCargo.Size = new System.Drawing.Size(171, 62);
-            this.btn_guardarCargo.TabIndex = 3;
-            this.btn_guardarCargo.Text = "Guardar";
-            this.btn_guardarCargo.UseVisualStyleBackColor = false;
-            this.btn_guardarCargo.Click += new System.EventHandler(this.btn_guardarCargo_Click);
+            this.btn_aggCargo.BackColor = System.Drawing.Color.Silver;
+            this.btn_aggCargo.Location = new System.Drawing.Point(180, 10);
+            this.btn_aggCargo.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_aggCargo.Name = "btn_aggCargo";
+            this.btn_aggCargo.Size = new System.Drawing.Size(171, 62);
+            this.btn_aggCargo.TabIndex = 3;
+            this.btn_aggCargo.Text = "Agregar";
+            this.btn_aggCargo.UseVisualStyleBackColor = false;
+            this.btn_aggCargo.Click += new System.EventHandler(this.btn_guardarCargo_Click);
             // 
             // txt_agg_cargo
             // 
@@ -464,9 +488,10 @@
             this.data_lista_cargos.AllowUserToDeleteRows = false;
             this.data_lista_cargos.AllowUserToResizeRows = false;
             this.data_lista_cargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_lista_cargos.ColumnHeadersVisible = false;
             this.data_lista_cargos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EditarC});
-            this.data_lista_cargos.Location = new System.Drawing.Point(156, 500);
+            this.data_lista_cargos.Location = new System.Drawing.Point(156, 475);
             this.data_lista_cargos.Margin = new System.Windows.Forms.Padding(4);
             this.data_lista_cargos.Name = "data_lista_cargos";
             this.data_lista_cargos.RowHeadersWidth = 51;
@@ -538,11 +563,20 @@
             this.PanelDepartamento.Size = new System.Drawing.Size(576, 199);
             this.PanelDepartamento.TabIndex = 20;
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.DimGray;
+            this.panel7.Location = new System.Drawing.Point(158, 46);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(250, 1);
+            this.panel7.TabIndex = 31;
+            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btn_editarDepartamento);
             this.panel2.Controls.Add(this.btn_volver_departamentos);
-            this.panel2.Controls.Add(this.btn_guardarCambiosDepart);
-            this.panel2.Controls.Add(this.btn_guardarDepar);
+            this.panel2.Controls.Add(this.btn_aggDepartameno);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 96);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
@@ -555,36 +589,25 @@
             this.btn_volver_departamentos.BackColor = System.Drawing.Color.Transparent;
             this.btn_volver_departamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_volver_departamentos.Image = global::SistemaAsistencia.Properties.Resources.volver_flecha;
-            this.btn_volver_departamentos.Location = new System.Drawing.Point(397, 4);
+            this.btn_volver_departamentos.Location = new System.Drawing.Point(377, 23);
             this.btn_volver_departamentos.Margin = new System.Windows.Forms.Padding(4);
             this.btn_volver_departamentos.Name = "btn_volver_departamentos";
-            this.btn_volver_departamentos.Size = new System.Drawing.Size(103, 62);
+            this.btn_volver_departamentos.Size = new System.Drawing.Size(103, 56);
             this.btn_volver_departamentos.TabIndex = 22;
             this.btn_volver_departamentos.UseVisualStyleBackColor = false;
             this.btn_volver_departamentos.Click += new System.EventHandler(this.btn_volver_departamentos_Click);
             // 
-            // btn_guardarCambiosDepart
+            // btn_aggDepartameno
             // 
-            this.btn_guardarCambiosDepart.BackColor = System.Drawing.Color.Silver;
-            this.btn_guardarCambiosDepart.Location = new System.Drawing.Point(204, 4);
-            this.btn_guardarCambiosDepart.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_guardarCambiosDepart.Name = "btn_guardarCambiosDepart";
-            this.btn_guardarCambiosDepart.Size = new System.Drawing.Size(168, 62);
-            this.btn_guardarCambiosDepart.TabIndex = 4;
-            this.btn_guardarCambiosDepart.Text = "Guardar *";
-            this.btn_guardarCambiosDepart.UseVisualStyleBackColor = false;
-            // 
-            // btn_guardarDepar
-            // 
-            this.btn_guardarDepar.BackColor = System.Drawing.Color.Silver;
-            this.btn_guardarDepar.Location = new System.Drawing.Point(20, 4);
-            this.btn_guardarDepar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_guardarDepar.Name = "btn_guardarDepar";
-            this.btn_guardarDepar.Size = new System.Drawing.Size(171, 62);
-            this.btn_guardarDepar.TabIndex = 3;
-            this.btn_guardarDepar.Text = "Guardar";
-            this.btn_guardarDepar.UseVisualStyleBackColor = false;
-            this.btn_guardarDepar.Click += new System.EventHandler(this.btn_guardarDepar_Click);
+            this.btn_aggDepartameno.BackColor = System.Drawing.Color.Silver;
+            this.btn_aggDepartameno.Location = new System.Drawing.Point(198, 17);
+            this.btn_aggDepartameno.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_aggDepartameno.Name = "btn_aggDepartameno";
+            this.btn_aggDepartameno.Size = new System.Drawing.Size(171, 62);
+            this.btn_aggDepartameno.TabIndex = 3;
+            this.btn_aggDepartameno.Text = "Agregar";
+            this.btn_aggDepartameno.UseVisualStyleBackColor = false;
+            this.btn_aggDepartameno.Click += new System.EventHandler(this.btn_guardarDepar_Click);
             // 
             // txt_agg_departamento
             // 
@@ -719,68 +742,27 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 125;
             // 
-            // panel7
+            // btn_editarDepartamento
             // 
-            this.panel7.BackColor = System.Drawing.Color.DimGray;
-            this.panel7.Location = new System.Drawing.Point(158, 46);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(250, 1);
-            this.panel7.TabIndex = 31;
+            this.btn_editarDepartamento.BackColor = System.Drawing.Color.Silver;
+            this.btn_editarDepartamento.Location = new System.Drawing.Point(9, 17);
+            this.btn_editarDepartamento.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_editarDepartamento.Name = "btn_editarDepartamento";
+            this.btn_editarDepartamento.Size = new System.Drawing.Size(171, 62);
+            this.btn_editarDepartamento.TabIndex = 23;
+            this.btn_editarDepartamento.Text = "Editar";
+            this.btn_editarDepartamento.UseVisualStyleBackColor = false;
             // 
-            // panel3
+            // btn_editarCampo
             // 
-            this.panel3.BackColor = System.Drawing.Color.DimGray;
-            this.panel3.Location = new System.Drawing.Point(168, 45);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(250, 1);
-            this.panel3.TabIndex = 32;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.DimGray;
-            this.panel8.Location = new System.Drawing.Point(156, 54);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(721, 1);
-            this.panel8.TabIndex = 31;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.DimGray;
-            this.panel9.Location = new System.Drawing.Point(156, 111);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(721, 1);
-            this.panel9.TabIndex = 32;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.DimGray;
-            this.panel10.Location = new System.Drawing.Point(156, 169);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(721, 1);
-            this.panel10.TabIndex = 33;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.DimGray;
-            this.panel11.Location = new System.Drawing.Point(156, 227);
-            this.panel11.Margin = new System.Windows.Forms.Padding(4);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(330, 1);
-            this.panel11.TabIndex = 34;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.DimGray;
-            this.panel12.Location = new System.Drawing.Point(160, 471);
-            this.panel12.Margin = new System.Windows.Forms.Padding(4);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(330, 1);
-            this.panel12.TabIndex = 35;
+            this.btn_editarCampo.BackColor = System.Drawing.Color.Silver;
+            this.btn_editarCampo.Location = new System.Drawing.Point(4, 10);
+            this.btn_editarCampo.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_editarCampo.Name = "btn_editarCampo";
+            this.btn_editarCampo.Size = new System.Drawing.Size(171, 62);
+            this.btn_editarCampo.TabIndex = 24;
+            this.btn_editarCampo.Text = "Editar";
+            this.btn_editarCampo.UseVisualStyleBackColor = false;
             // 
             // Personal
             // 
@@ -851,16 +833,12 @@
         private System.Windows.Forms.TextBox txt_agg_cargo;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btn_guardarCambioCargo;
-        private System.Windows.Forms.Button btn_guardarCargo;
+        private System.Windows.Forms.Button btn_aggCargo;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btn_guardarCambiosDepart;
-        private System.Windows.Forms.Button btn_guardarDepar;
+        private System.Windows.Forms.Button btn_aggDepartameno;
         private System.Windows.Forms.Button btn_agregarDepartamento;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox lista_departamentos;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn EditarD;
         private System.Windows.Forms.Button btn_volver_departamentos;
@@ -873,5 +851,7 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button btn_editarCampo;
+        private System.Windows.Forms.Button btn_editarDepartamento;
     }
 }

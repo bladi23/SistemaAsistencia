@@ -89,19 +89,7 @@ namespace SistemaAsistencia.VIEWS
         }
 
 
-        //private void InsertarCargo()
-        //{
-
-        //    CargoController cargoControlers = new CargoController();
-        //    CargoModels cargoModels = new CargoModels();
-        //    cargoControlers.nombre_cargo = txt_agg_cargo.Text;
-        //    if (cargoModels.InsertarCargo(cargoControlers))
-        //    {
-        //        buscarCargos();
-
-        //    }
-
-        //}
+     
         private void buscarDepartamentos()
         {
             DataTable dt = new DataTable();
@@ -109,17 +97,10 @@ namespace SistemaAsistencia.VIEWS
             departamentoModel.buscarDepartamentos(ref dt, txt_departamento.Text);
             data_lista_departamentos.DataSource = dt;
             Bases.DisenoDtv(ref data_lista_departamentos);
-            
+            data_lista_departamentos.Visible = true;
+            data_lista_departamentos.Columns[1].Visible = false;
         }
-        //private void buscarCargos()
-        //{
-        //    DataTable dt = new DataTable();
-        //    CargoModels cargoModel = new CargoModels();
-        //    cargoModel.buscarCargo(ref dt, txt_cargo.Text);
-        //    data_lista_cargos.DataSource = dt;
-        //    Bases.DisenoDtv(ref data_lista_cargos);
-
-        //}
+        
         private void buscarCargos()
         {
             
@@ -128,7 +109,9 @@ namespace SistemaAsistencia.VIEWS
             cargoModel.buscarCargos(ref dt, txt_cargo.Text); 
             data_lista_cargos.DataSource = dt;
             Bases.DisenoDtv(ref data_lista_cargos);
-            data_lista_cargos.Visible = true; 
+            data_lista_cargos.Visible = true;
+            data_lista_cargos.Columns[1].Visible = false;
+            data_lista_cargos.Columns[3].Visible = false;
             if (dt.Rows.Count == 0)
             {
                 MessageBox.Show("No se encontraron cargos para mostrar.");
@@ -198,12 +181,15 @@ namespace SistemaAsistencia.VIEWS
 
         private void btn_agregarDepartamento_Click(object sender, EventArgs e)
         {
-            PanelDepartamento.Visible = true;  
-            PanelDepartamento.Dock = DockStyle.Fill;    
-            PanelDepartamento.BringToFront();
-            btn_guardarDepar.Visible = true;
-            btn_guardarCambiosDepart.Visible = false;
-            txt_agg_departamento.Clear();
+            //PanelDepartamento.Visible = true;  
+            //PanelDepartamento.Dock = DockStyle.Fill;    
+            //PanelDepartamento.BringToFront();
+            //btn_guardarDepar.Visible = true;
+            //btn_guardarCambiosDepart.Visible = false;
+            //txt_agg_departamento.Clear();
+            btn_aggDepartameno.Visible = true;
+            btn_editarDepartamento.Visible = false;
+            PanelDepartamento.Visible = true;
         }
 
         private void btn_guardarDepar_Click(object sender, EventArgs e)
@@ -213,12 +199,10 @@ namespace SistemaAsistencia.VIEWS
 
         private void btn_agregarCargo_Click(object sender, EventArgs e)
         {
+            
             PanelCargo.Visible = true;
-            PanelCargo.Dock = DockStyle.Fill;
-            PanelCargo.BringToFront();
-            btn_guardarCargo.Visible = true;
-            btn_guardarCambioCargo.Visible = false;
-            txt_agg_cargo.Clear();
+            btn_aggCargo.Visible = true;
+            btn_editarCampo.Visible = false;
         }
 
         private void btn_guardarCargo_Click(object sender, EventArgs e)
@@ -289,12 +273,12 @@ namespace SistemaAsistencia.VIEWS
             departamento_id = Convert.ToInt32(data_lista_departamentos.SelectedCells[1].Value);
             txt_departamento.Text = data_lista_departamentos.SelectedCells[2].Value.ToString();
             data_lista_departamentos.Visible = false;
-            Panel_btn_guardar_personal.Visible = false;
-            btn_guardarDepar.Visible = false;
-            btn_guardarCambiosDepart.Visible = true;
-            PanelDepartamento.Visible = true;
-            PanelDepartamento.Dock = DockStyle.Fill;
-            PanelDepartamento.BringToFront();
+            //Panel_btn_guardar_personal.Visible = false;
+            //btn_guardarDepar.Visible = false;
+        
+            //PanelDepartamento.Visible = true;
+            //PanelDepartamento.Dock = DockStyle.Fill;
+            //PanelDepartamento.BringToFront();
         }
 
 
@@ -302,11 +286,10 @@ namespace SistemaAsistencia.VIEWS
         {
             departamento_id= Convert.ToInt32(data_lista_departamentos.SelectedCells[1].Value);
             txt_agg_departamento.Text = data_lista_departamentos.SelectedCells[2].Value.ToString();
-            btn_guardarDepar.Visible = false;
-            btn_guardarCambiosDepart.Visible = true;
+            btn_aggDepartameno.Visible = false;
             PanelDepartamento.Visible = true;
-            PanelDepartamento.Dock = DockStyle.Fill;
-            PanelDepartamento.BringToFront();
+            //PanelDepartamento.Dock = DockStyle.Fill;
+           // PanelDepartamento.BringToFront();
 
         }
 
@@ -321,21 +304,35 @@ namespace SistemaAsistencia.VIEWS
             {
                 ObtenerCargosEditar();
             }
-           
-        }
+            if (e.ColumnIndex == data_lista_cargos.Columns["nombre_cargo"].Index)
+            {
+                ObtenerDatosCargo();
+            }
 
+        }
+        private void ObtenerDatosCargo()
+        {
+            cargo_id = Convert.ToInt32(data_lista_cargos.SelectedCells[1].Value);
+            txt_cargo.Text = data_lista_cargos.SelectedCells[2].Value.ToString();
+            data_lista_cargos.Visible = false;
+            //Panel_btn_guardar_personal.Visible = false;
+            //btn_guardarDepar.Visible = false;
+
+            //PanelDepartamento.Visible = true;
+            //PanelDepartamento.Dock = DockStyle.Fill;
+            //PanelDepartamento.BringToFront();
+          
+        }
 
         private void ObtenerCargosEditar()
         {
             cargo_id = Convert.ToInt32(data_lista_cargos.SelectedCells[1].Value);
             txt_agg_cargo.Text = data_lista_cargos.SelectedCells[2].Value.ToString();
-            btn_guardarCargo.Visible = false;
-            btn_guardarCambioCargo.Visible = true;
+            btn_aggCargo.Visible = false;
             PanelCargo.Visible = true;
-            PanelCargo.Dock = DockStyle.Fill;
-            PanelCargo.BringToFront();
-            btn_guardarCambioCargo.Visible = true;
-            btn_guardarCargo.Visible = false;
+            //PanelCargo.Dock = DockStyle.Fill;
+            // PanelCargo.BringToFront();
+            btn_editarCampo.Visible = true;
             //txt_agg_cargo.Focus();
          
         }
@@ -344,6 +341,7 @@ namespace SistemaAsistencia.VIEWS
         {
             PanelCargo.Visible = false;
         }
+
     }
 }
 
