@@ -65,12 +65,22 @@ namespace SistemaAsistencia.VIEWS
             personalModels.mostrarPersonal(ref dt, desde, hasta);
             // Asignar el DataTable al DataGridView
             dataGridView1.DataSource = dt;
+            DisenoDtvPersonal();
 
+
+        }
+
+        private void DisenoDtvPersonal() 
+        {
             // Opcional: Ajustar el diseño del DataGridView
             Bases.DisenoDtv(ref dataGridView1);
             dataGridView1.Visible = true;
             PanelPaginado.Visible = true;
+            
+
         }
+
+
         private void InsertarPersonal()
         {
             PersonalControlers personalControlers = new PersonalControlers();
@@ -343,10 +353,7 @@ namespace SistemaAsistencia.VIEWS
             CargarDepartamentos();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+     
 
         private void btn_regresar_Click(object sender, EventArgs e)
         {
@@ -468,6 +475,11 @@ namespace SistemaAsistencia.VIEWS
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Personal_Load(object sender, EventArgs e)
+        {
+            mostrarPersonal();
         }
     }
 }

@@ -73,6 +73,7 @@
             this.txt_Contrasenia.Location = new System.Drawing.Point(130, 134);
             this.txt_Contrasenia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Contrasenia.Name = "txt_Contrasenia";
+            this.txt_Contrasenia.PasswordChar = '*';
             this.txt_Contrasenia.Size = new System.Drawing.Size(286, 30);
             this.txt_Contrasenia.TabIndex = 3;
             // 
@@ -123,9 +124,8 @@
             this.lbl_mensaje.AutoSize = true;
             this.lbl_mensaje.Location = new System.Drawing.Point(104, 173);
             this.lbl_mensaje.Name = "lbl_mensaje";
-            this.lbl_mensaje.Size = new System.Drawing.Size(64, 25);
+            this.lbl_mensaje.Size = new System.Drawing.Size(0, 25);
             this.lbl_mensaje.TabIndex = 8;
-            this.lbl_mensaje.Text = "label1";
             // 
             // frm_Login
             // 
