@@ -115,7 +115,8 @@ namespace SistemaAsistencia.VIEWS
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            PanelCargos.Visible = false;
+            PanelDepartamento.Visible = false;
+            PanelCargo.Visible = false;
             PanelRegistros.Visible = true;
             PanelPaginado.Visible = false;
             PanelRegistros.Dock = DockStyle.Fill;
@@ -145,6 +146,11 @@ namespace SistemaAsistencia.VIEWS
         }
 
         private void data_lista_cargos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_agregaCargoDepartamento_Click(object sender, EventArgs e)
         {
 
         }

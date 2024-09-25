@@ -13,7 +13,20 @@ namespace SistemaAsistencia.Controllers
         public static void DisenoDtv(ref DataGridView Listado) 
         {
             Listado.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            Listado.BackgroundColor = Color.Gray;
+            Listado.BackgroundColor = Color.FromArgb(167, 167, 167);
+            Listado.RowHeadersVisible = false;
+            Listado.EnableHeadersVisualStyles = false;
+            Listado.BorderStyle = BorderStyle.None;
+            Listado.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            Listado.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            DataGridViewCellStyle cabecera = new DataGridViewCellStyle();
+            cabecera.BackColor = Color.FromArgb(167, 167, 167);
+            cabecera.ForeColor = Color.Black;
+            cabecera.Font = new Font("Arial", 12);
+            Listado.ColumnHeadersDefaultCellStyle = cabecera;
+            
         }
+
+       
     }
 }
