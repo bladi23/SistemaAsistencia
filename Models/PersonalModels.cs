@@ -31,6 +31,7 @@ namespace SistemaAsistencia.Models
                         command.Parameters.AddWithValue("@cargo_id", personal.cargo_id);
                         command.Parameters.AddWithValue("@fecha_contratacion", personal.fecha_contratacion);
                         command.Parameters.AddWithValue("@estado", personal.estado);
+                        
 
                         command.ExecuteNonQuery();
                         return true;
