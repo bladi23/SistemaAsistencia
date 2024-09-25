@@ -28,6 +28,7 @@ namespace SistemaAsistencia.VIEWS
            
           
         }
+        int departamento_id;
         private void btn_guardar_Click(object sender, EventArgs e)
         {
            
@@ -134,6 +135,7 @@ namespace SistemaAsistencia.VIEWS
 
             // Personalizar el diseño del DataGridView
             Bases.DisenoDtv(ref data_lista_cargos);
+            data_lista_cargos.Visible = true;
 
             // Opcional: Verificar si se encontraron datos
             if (dt.Rows.Count == 0)
@@ -146,6 +148,7 @@ namespace SistemaAsistencia.VIEWS
         private void btn_agregar_Click(object sender, EventArgs e)
         {
             LocalizarDtvDepartamento();
+            LocalizarDtvCargo();
             PanelDepartamento.Visible = false;
             PanelCargo.Visible = false;
             PanelRegistros.Visible = true;
@@ -164,6 +167,13 @@ namespace SistemaAsistencia.VIEWS
             data_lista_departamentos.Visible = true;
             Panel_btn_guardar_personal.Visible = false;
             
+        }
+        private void LocalizarDtvCargo()
+        {
+            data_lista_cargos.Location = new Point(panel6.Location.X, panel6.Location.Y);
+            data_lista_cargos.Size = new Size(469, 130);
+            data_lista_cargos.Visible = true;
+            Panel_btn_guardar_personal.Visible = false;
         }
 
         private void Limpiar ()
@@ -262,7 +272,56 @@ namespace SistemaAsistencia.VIEWS
 
         private void btn_regresar_Click(object sender, EventArgs e)
         {
+            PanelRegistros.Visible = false;
+        }
 
+        private void txt_cargo_TextChanged(object sender, EventArgs e)
+        {
+            buscarCargos();
+        }
+
+        private void data_lista_departamentos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == data_lista_departamentos.Columns["EditarD"].Index)
+            {
+                ObtenerDepartamentosEditar();
+            }
+            if (e.ColumnIndex == data_lista_departamentos.Columns["nombre_departamento"].Index)
+            {
+                ObtenerDatosDepartamento();
+            }
+            
+
+        }
+        private void ObtenerDatosDepartamento()
+        {
+            departamento_id = Convert.ToInt32(data_lista_departamentos.SelectedCells[1].Value);
+            txt_departamento.Text = data_lista_departamentos.SelectedCells[2].Value.ToString();
+            data_lista_departamentos.Visible = false;
+            Panel_btn_guardar_personal.Visible = false;
+            btn_guardarDepar.Visible = false;
+            btn_guardarCambiosDepart.Visible = true;
+            PanelDepartamento.Visible = true;
+            PanelDepartamento.Dock = DockStyle.Fill;
+            PanelDepartamento.BringToFront();
+        }
+
+
+        private void ObtenerDepartamentosEditar()
+        {
+            departamento_id= Convert.ToInt32(data_lista_departamentos.SelectedCells[1].Value);
+            txt_agg_departamento.Text = data_lista_departamentos.SelectedCells[2].Value.ToString();
+            btn_guardarDepar.Visible = false;
+            btn_guardarCambiosDepart.Visible = true;
+            PanelDepartamento.Visible = true;
+            PanelDepartamento.Dock = DockStyle.Fill;
+            PanelDepartamento.BringToFront();
+
+        }
+
+        private void btn_volver_departamentos_Click(object sender, EventArgs e)
+        {
+            PanelDepartamento.Visible = false;
         }
     }
 }

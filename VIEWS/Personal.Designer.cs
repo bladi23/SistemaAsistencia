@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_agregar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_guardar_personal = new System.Windows.Forms.Button();
@@ -55,7 +53,6 @@
             this.data_lista_departamentos = new System.Windows.Forms.DataGridView();
             this.txt_cargo = new System.Windows.Forms.TextBox();
             this.txt_departamento = new System.Windows.Forms.TextBox();
-            this.btn_regresar = new System.Windows.Forms.Button();
             this.PanelDepartamento = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_guardarCambiosDepart = new System.Windows.Forms.Button();
@@ -74,8 +71,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btn_regresar = new System.Windows.Forms.Button();
+            this.btn_agregar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.EditarD = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btn_volver_departamentos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.PanelPaginado.SuspendLayout();
             this.PanelRegistros.SuspendLayout();
@@ -86,6 +88,7 @@
             this.PanelDepartamento.SuspendLayout();
             this.panel2.SuspendLayout();
             this.Panel_btn_guardar_personal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -100,26 +103,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1586, 112);
             this.panel1.TabIndex = 0;
-            // 
-            // btn_agregar
-            // 
-            this.btn_agregar.Image = global::SistemaAsistencia.Properties.Resources.agregar_usuario__1_;
-            this.btn_agregar.Location = new System.Drawing.Point(1112, 18);
-            this.btn_agregar.Name = "btn_agregar";
-            this.btn_agregar.Size = new System.Drawing.Size(89, 84);
-            this.btn_agregar.TabIndex = 3;
-            this.btn_agregar.UseVisualStyleBackColor = true;
-            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SistemaAsistencia.Properties.Resources.buscar;
-            this.pictureBox1.Location = new System.Drawing.Point(350, 58);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 43);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             // 
             // panel3
             // 
@@ -373,6 +356,8 @@
             this.data_lista_departamentos.AllowUserToDeleteRows = false;
             this.data_lista_departamentos.AllowUserToResizeRows = false;
             this.data_lista_departamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data_lista_departamentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EditarD});
             this.data_lista_departamentos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.data_lista_departamentos.Location = new System.Drawing.Point(117, 210);
             this.data_lista_departamentos.Name = "data_lista_departamentos";
@@ -385,6 +370,7 @@
             this.data_lista_departamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.data_lista_departamentos.Size = new System.Drawing.Size(286, 113);
             this.data_lista_departamentos.TabIndex = 25;
+            this.data_lista_departamentos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_lista_departamentos_CellClick);
             this.data_lista_departamentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_lista_cargos_CellContentClick);
             // 
             // txt_cargo
@@ -396,6 +382,7 @@
             this.txt_cargo.Name = "txt_cargo";
             this.txt_cargo.Size = new System.Drawing.Size(248, 26);
             this.txt_cargo.TabIndex = 24;
+            this.txt_cargo.TextChanged += new System.EventHandler(this.txt_cargo_TextChanged);
             // 
             // txt_departamento
             // 
@@ -408,18 +395,6 @@
             this.txt_departamento.TabIndex = 23;
             this.txt_departamento.TextChanged += new System.EventHandler(this.txt_departamento_TextChanged);
             // 
-            // btn_regresar
-            // 
-            this.btn_regresar.BackColor = System.Drawing.Color.Transparent;
-            this.btn_regresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_regresar.Image = global::SistemaAsistencia.Properties.Resources.volver_flecha;
-            this.btn_regresar.Location = new System.Drawing.Point(697, 50);
-            this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(73, 61);
-            this.btn_regresar.TabIndex = 21;
-            this.btn_regresar.UseVisualStyleBackColor = false;
-            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
-            // 
             // PanelDepartamento
             // 
             this.PanelDepartamento.Controls.Add(this.panel2);
@@ -427,17 +402,18 @@
             this.PanelDepartamento.Controls.Add(this.label8);
             this.PanelDepartamento.Location = new System.Drawing.Point(662, 194);
             this.PanelDepartamento.Name = "PanelDepartamento";
-            this.PanelDepartamento.Size = new System.Drawing.Size(397, 150);
+            this.PanelDepartamento.Size = new System.Drawing.Size(432, 162);
             this.PanelDepartamento.TabIndex = 20;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btn_volver_departamentos);
             this.panel2.Controls.Add(this.btn_guardarCambiosDepart);
             this.panel2.Controls.Add(this.btn_guardarDepar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 66);
+            this.panel2.Location = new System.Drawing.Point(0, 78);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(397, 84);
+            this.panel2.Size = new System.Drawing.Size(432, 84);
             this.panel2.TabIndex = 23;
             // 
             // btn_guardarCambiosDepart
@@ -585,6 +561,65 @@
             this.panel6.Size = new System.Drawing.Size(245, 10);
             this.panel6.TabIndex = 30;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "EditarD";
+            this.dataGridViewImageColumn1.Image = global::SistemaAsistencia.Properties.Resources.editar;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // btn_regresar
+            // 
+            this.btn_regresar.BackColor = System.Drawing.Color.Transparent;
+            this.btn_regresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_regresar.Image = global::SistemaAsistencia.Properties.Resources.volver_flecha;
+            this.btn_regresar.Location = new System.Drawing.Point(697, 50);
+            this.btn_regresar.Name = "btn_regresar";
+            this.btn_regresar.Size = new System.Drawing.Size(73, 61);
+            this.btn_regresar.TabIndex = 21;
+            this.btn_regresar.UseVisualStyleBackColor = false;
+            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
+            // 
+            // btn_agregar
+            // 
+            this.btn_agregar.Image = global::SistemaAsistencia.Properties.Resources.agregar_usuario__1_;
+            this.btn_agregar.Location = new System.Drawing.Point(1112, 18);
+            this.btn_agregar.Name = "btn_agregar";
+            this.btn_agregar.Size = new System.Drawing.Size(89, 84);
+            this.btn_agregar.TabIndex = 3;
+            this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SistemaAsistencia.Properties.Resources.buscar;
+            this.pictureBox1.Location = new System.Drawing.Point(350, 58);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(48, 43);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // EditarD
+            // 
+            this.EditarD.HeaderText = "EditarD";
+            this.EditarD.Image = global::SistemaAsistencia.Properties.Resources.editar;
+            this.EditarD.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.EditarD.Name = "EditarD";
+            this.EditarD.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // btn_volver_departamentos
+            // 
+            this.btn_volver_departamentos.BackColor = System.Drawing.Color.Transparent;
+            this.btn_volver_departamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_volver_departamentos.Image = global::SistemaAsistencia.Properties.Resources.volver_flecha;
+            this.btn_volver_departamentos.Location = new System.Drawing.Point(306, 20);
+            this.btn_volver_departamentos.Name = "btn_volver_departamentos";
+            this.btn_volver_departamentos.Size = new System.Drawing.Size(69, 61);
+            this.btn_volver_departamentos.TabIndex = 22;
+            this.btn_volver_departamentos.UseVisualStyleBackColor = false;
+            this.btn_volver_departamentos.Click += new System.EventHandler(this.btn_volver_departamentos_Click);
+            // 
             // Personal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -597,7 +632,6 @@
             this.Size = new System.Drawing.Size(1586, 988);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.PanelPaginado.ResumeLayout(false);
             this.PanelRegistros.ResumeLayout(false);
@@ -611,6 +645,7 @@
             this.PanelDepartamento.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.Panel_btn_guardar_personal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -663,5 +698,8 @@
         private System.Windows.Forms.ComboBox lista_departamentos;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn EditarD;
+        private System.Windows.Forms.Button btn_volver_departamentos;
     }
 }
