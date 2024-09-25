@@ -70,6 +70,8 @@
             this.btn_guardarCambioCargo = new System.Windows.Forms.Button();
             this.btn_guardarCargo = new System.Windows.Forms.Button();
             this.btn_agregarDepartamento = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lista_departamentos = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -246,12 +248,14 @@
             // 
             // PanelCargo
             // 
+            this.PanelCargo.Controls.Add(this.lista_departamentos);
+            this.PanelCargo.Controls.Add(this.label6);
             this.PanelCargo.Controls.Add(this.panel4);
             this.PanelCargo.Controls.Add(this.txt_agg_cargo);
             this.PanelCargo.Controls.Add(this.label9);
-            this.PanelCargo.Location = new System.Drawing.Point(676, 362);
+            this.PanelCargo.Location = new System.Drawing.Point(662, 362);
             this.PanelCargo.Name = "PanelCargo";
-            this.PanelCargo.Size = new System.Drawing.Size(310, 95);
+            this.PanelCargo.Size = new System.Drawing.Size(397, 166);
             this.PanelCargo.TabIndex = 26;
             // 
             // txt_agg_cargo
@@ -281,6 +285,7 @@
             this.btn_agregarCargo.TabIndex = 27;
             this.btn_agregarCargo.Text = "+ Agregar Cargo ";
             this.btn_agregarCargo.UseVisualStyleBackColor = true;
+            this.btn_agregarCargo.Click += new System.EventHandler(this.btn_agregarCargo_Click);
             // 
             // data_lista_cargos
             // 
@@ -357,9 +362,9 @@
             this.PanelDepartamento.Controls.Add(this.panel2);
             this.PanelDepartamento.Controls.Add(this.txt_agg_departamento);
             this.PanelDepartamento.Controls.Add(this.label8);
-            this.PanelDepartamento.Location = new System.Drawing.Point(676, 194);
+            this.PanelDepartamento.Location = new System.Drawing.Point(662, 194);
             this.PanelDepartamento.Name = "PanelDepartamento";
-            this.PanelDepartamento.Size = new System.Drawing.Size(310, 111);
+            this.PanelDepartamento.Size = new System.Drawing.Size(397, 150);
             this.PanelDepartamento.TabIndex = 20;
             // 
             // txt_agg_departamento
@@ -479,9 +484,9 @@
             this.panel2.Controls.Add(this.btn_guardarCambiosDepart);
             this.panel2.Controls.Add(this.btn_guardarDepar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 60);
+            this.panel2.Location = new System.Drawing.Point(0, 66);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(310, 51);
+            this.panel2.Size = new System.Drawing.Size(397, 84);
             this.panel2.TabIndex = 23;
             // 
             // btn_guardarCambiosDepart
@@ -501,15 +506,16 @@
             this.btn_guardarDepar.TabIndex = 3;
             this.btn_guardarDepar.Text = "Guardar";
             this.btn_guardarDepar.UseVisualStyleBackColor = true;
+            this.btn_guardarDepar.Click += new System.EventHandler(this.btn_guardarDepar_Click);
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.btn_guardarCambioCargo);
             this.panel4.Controls.Add(this.btn_guardarCargo);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 44);
+            this.panel4.Location = new System.Drawing.Point(0, 115);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(310, 51);
+            this.panel4.Size = new System.Drawing.Size(397, 51);
             this.panel4.TabIndex = 24;
             // 
             // btn_guardarCambioCargo
@@ -529,6 +535,7 @@
             this.btn_guardarCargo.TabIndex = 3;
             this.btn_guardarCargo.Text = "Guardar";
             this.btn_guardarCargo.UseVisualStyleBackColor = true;
+            this.btn_guardarCargo.Click += new System.EventHandler(this.btn_guardarCargo_Click);
             // 
             // btn_agregarDepartamento
             // 
@@ -539,6 +546,23 @@
             this.btn_agregarDepartamento.Text = "+ Agregar Departamento ";
             this.btn_agregarDepartamento.UseVisualStyleBackColor = true;
             this.btn_agregarDepartamento.Click += new System.EventHandler(this.btn_agregarDepartamento_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(-1, 58);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(116, 20);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "Departamento:";
+            // 
+            // lista_departamentos
+            // 
+            this.lista_departamentos.FormattingEnabled = true;
+            this.lista_departamentos.Location = new System.Drawing.Point(118, 50);
+            this.lista_departamentos.Name = "lista_departamentos";
+            this.lista_departamentos.Size = new System.Drawing.Size(153, 28);
+            this.lista_departamentos.TabIndex = 26;
             // 
             // Personal
             // 
@@ -614,5 +638,7 @@
         private System.Windows.Forms.Button btn_guardarCambiosDepart;
         private System.Windows.Forms.Button btn_guardarDepar;
         private System.Windows.Forms.Button btn_agregarDepartamento;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox lista_departamentos;
     }
 }

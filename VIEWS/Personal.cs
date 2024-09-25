@@ -46,30 +46,62 @@ namespace SistemaAsistencia.VIEWS
         }
         private void InsertarDepartamento()
         {
-
-            DepartamentoController departamentoControlers = new DepartamentoController();
-            DepartamentoModel departamentoModels = new DepartamentoModel();
-            departamentoControlers.nombre_departamento = txt_agg_cargo.Text;
-            if(departamentoModels.InsertarDepartamento(departamentoControlers))
+            if (!string.IsNullOrEmpty(txt_agg_departamento.Text))
             {
-               buscarDepartamentos();
-               
+                DepartamentoController departamentoControlers = new DepartamentoController();
+                DepartamentoModel departamentoModels = new DepartamentoModel();
+                departamentoControlers.nombre_departamento = txt_agg_departamento.Text;
+                if (departamentoModels.InsertarDepartamento(departamentoControlers))
+                {
+                    txt_departamento.Clear();
+                    buscarDepartamentos();
+                    PanelDepartamento.Visible = false;
+
+                }
+
             }
+            else { 
+                MessageBox.Show("Agregar el Departamento");
+            }
+            
             
         }
         private void InsertarCargo()
         {
-
-            CargoController cargoControlers = new CargoController();
-            CargoModels cargoModels = new CargoModels();
-            cargoControlers.nombre_cargo = txt_agg_cargo.Text;
-            if (cargoModels.InsertarCargo(cargoControlers))
+            if (!string.IsNullOrEmpty(txt_agg_cargo.Text) && lista_departamentos.SelectedValue != null)
             {
-                buscarCargos();
+                CargoController cargoController = new CargoController();
+                CargoModels cargoModel = new CargoModels();
 
+                cargoController.nombre_cargo = txt_agg_cargo.Text;
+                cargoController.departamento_id = Convert.ToInt32(lista_departamentos.SelectedValue);  // Obtiene el ID del departamento seleccionado
+
+                if (cargoModel.InsertarCargo(cargoController))
+                {
+                    txt_agg_cargo.Clear();
+                    buscarCargos();
+                    PanelCargo.Visible = false;
+                }
             }
-
+            else
+            {
+                MessageBox.Show("Agregar el Cargo y seleccionar un Departamento");
+            }
         }
+
+        //private void InsertarCargo()
+        //{
+
+        //    CargoController cargoControlers = new CargoController();
+        //    CargoModels cargoModels = new CargoModels();
+        //    cargoControlers.nombre_cargo = txt_agg_cargo.Text;
+        //    if (cargoModels.InsertarCargo(cargoControlers))
+        //    {
+        //        buscarCargos();
+
+        //    }
+
+        //}
         private void buscarDepartamentos()
         {
             DataTable dt = new DataTable();
@@ -163,6 +195,26 @@ namespace SistemaAsistencia.VIEWS
             btn_guardarDepar.Visible = true;
             btn_guardarCambiosDepart.Visible = false;
             txt_agg_departamento.Clear();
+        }
+
+        private void btn_guardarDepar_Click(object sender, EventArgs e)
+        {
+            InsertarDepartamento();
+        }
+
+        private void btn_agregarCargo_Click(object sender, EventArgs e)
+        {
+            PanelCargo.Visible = true;
+            PanelCargo.Dock = DockStyle.Fill;
+            PanelCargo.BringToFront();
+            btn_guardarCargo.Visible = true;
+            btn_guardarCambioCargo.Visible = false;
+            txt_agg_cargo.Clear();
+        }
+
+        private void btn_guardarCargo_Click(object sender, EventArgs e)
+        {
+            InsertarCargo();
         }
     }
 }
