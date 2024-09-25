@@ -30,8 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_agregar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBxLupaBuscar = new System.Windows.Forms.PictureBox();
+            this.txt_simulaLinea = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_guardar_personal = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -50,12 +50,14 @@
             this.lista_departamentos = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_volver_Cargos = new System.Windows.Forms.Button();
             this.btn_guardarCambioCargo = new System.Windows.Forms.Button();
             this.btn_guardarCargo = new System.Windows.Forms.Button();
             this.txt_agg_cargo = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btn_agregarCargo = new System.Windows.Forms.Button();
             this.data_lista_cargos = new System.Windows.Forms.DataGridView();
+            this.EditarC = new System.Windows.Forms.DataGridViewImageColumn();
             this.txt_cargo = new System.Windows.Forms.TextBox();
             this.txt_departamento = new System.Windows.Forms.TextBox();
             this.btn_regresar = new System.Windows.Forms.Button();
@@ -77,9 +79,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.EditarC = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBxLupaBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.PanelPaginado.SuspendLayout();
             this.PanelRegistros.SuspendLayout();
@@ -96,8 +104,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkGray;
             this.panel1.Controls.Add(this.btn_agregar);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.pictureBxLupaBuscar);
+            this.panel1.Controls.Add(this.txt_simulaLinea);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -117,25 +125,25 @@
             this.btn_agregar.UseVisualStyleBackColor = true;
             this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
-            // pictureBox1
+            // pictureBxLupaBuscar
             // 
-            this.pictureBox1.Image = global::SistemaAsistencia.Properties.Resources.buscar;
-            this.pictureBox1.Location = new System.Drawing.Point(467, 71);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 53);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pictureBxLupaBuscar.Image = global::SistemaAsistencia.Properties.Resources.buscar;
+            this.pictureBxLupaBuscar.Location = new System.Drawing.Point(467, 71);
+            this.pictureBxLupaBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBxLupaBuscar.Name = "pictureBxLupaBuscar";
+            this.pictureBxLupaBuscar.Size = new System.Drawing.Size(64, 53);
+            this.pictureBxLupaBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBxLupaBuscar.TabIndex = 2;
+            this.pictureBxLupaBuscar.TabStop = false;
             // 
-            // panel3
+            // txt_simulaLinea
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel3.Location = new System.Drawing.Point(80, 123);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(372, 2);
-            this.panel3.TabIndex = 1;
+            this.txt_simulaLinea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.txt_simulaLinea.Location = new System.Drawing.Point(80, 123);
+            this.txt_simulaLinea.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_simulaLinea.Name = "txt_simulaLinea";
+            this.txt_simulaLinea.Size = new System.Drawing.Size(372, 1);
+            this.txt_simulaLinea.TabIndex = 1;
             // 
             // textBox1
             // 
@@ -240,6 +248,11 @@
             // PanelRegistros
             // 
             this.PanelRegistros.BackColor = System.Drawing.Color.DarkGray;
+            this.PanelRegistros.Controls.Add(this.panel12);
+            this.PanelRegistros.Controls.Add(this.panel11);
+            this.PanelRegistros.Controls.Add(this.panel10);
+            this.PanelRegistros.Controls.Add(this.panel9);
+            this.PanelRegistros.Controls.Add(this.panel8);
             this.PanelRegistros.Controls.Add(this.data_lista_departamentos);
             this.PanelRegistros.Controls.Add(this.panel6);
             this.PanelRegistros.Controls.Add(this.panel5);
@@ -304,7 +317,7 @@
             // 
             // panel6
             // 
-            this.panel6.Location = new System.Drawing.Point(160, 555);
+            this.panel6.Location = new System.Drawing.Point(160, 480);
             this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(327, 12);
@@ -320,17 +333,19 @@
             // 
             // btn_agregarDepartamento
             // 
+            this.btn_agregarDepartamento.BackColor = System.Drawing.Color.Silver;
             this.btn_agregarDepartamento.Location = new System.Drawing.Point(516, 190);
             this.btn_agregarDepartamento.Margin = new System.Windows.Forms.Padding(4);
             this.btn_agregarDepartamento.Name = "btn_agregarDepartamento";
             this.btn_agregarDepartamento.Size = new System.Drawing.Size(280, 36);
             this.btn_agregarDepartamento.TabIndex = 28;
             this.btn_agregarDepartamento.Text = "+ Agregar Departamento ";
-            this.btn_agregarDepartamento.UseVisualStyleBackColor = true;
+            this.btn_agregarDepartamento.UseVisualStyleBackColor = false;
             this.btn_agregarDepartamento.Click += new System.EventHandler(this.btn_agregarDepartamento_Click);
             // 
             // PanelCargo
             // 
+            this.PanelCargo.Controls.Add(this.panel3);
             this.PanelCargo.Controls.Add(this.lista_departamentos);
             this.PanelCargo.Controls.Add(this.label6);
             this.PanelCargo.Controls.Add(this.panel4);
@@ -339,13 +354,13 @@
             this.PanelCargo.Location = new System.Drawing.Point(883, 446);
             this.PanelCargo.Margin = new System.Windows.Forms.Padding(4);
             this.PanelCargo.Name = "PanelCargo";
-            this.PanelCargo.Size = new System.Drawing.Size(529, 204);
+            this.PanelCargo.Size = new System.Drawing.Size(546, 223);
             this.PanelCargo.TabIndex = 26;
             // 
             // lista_departamentos
             // 
             this.lista_departamentos.FormattingEnabled = true;
-            this.lista_departamentos.Location = new System.Drawing.Point(157, 62);
+            this.lista_departamentos.Location = new System.Drawing.Point(169, 65);
             this.lista_departamentos.Margin = new System.Windows.Forms.Padding(4);
             this.lista_departamentos.Name = "lista_departamentos";
             this.lista_departamentos.Size = new System.Drawing.Size(203, 33);
@@ -355,7 +370,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(-1, 71);
+            this.label6.Location = new System.Drawing.Point(11, 74);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(141, 25);
@@ -364,51 +379,67 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btn_volver_Cargos);
             this.panel4.Controls.Add(this.btn_guardarCambioCargo);
             this.panel4.Controls.Add(this.btn_guardarCargo);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 141);
+            this.panel4.Location = new System.Drawing.Point(0, 147);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(529, 63);
+            this.panel4.Size = new System.Drawing.Size(546, 76);
             this.panel4.TabIndex = 24;
+            // 
+            // btn_volver_Cargos
+            // 
+            this.btn_volver_Cargos.BackColor = System.Drawing.Color.Transparent;
+            this.btn_volver_Cargos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_volver_Cargos.Image = global::SistemaAsistencia.Properties.Resources.volver_flecha;
+            this.btn_volver_Cargos.Location = new System.Drawing.Point(397, 4);
+            this.btn_volver_Cargos.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_volver_Cargos.Name = "btn_volver_Cargos";
+            this.btn_volver_Cargos.Size = new System.Drawing.Size(103, 62);
+            this.btn_volver_Cargos.TabIndex = 23;
+            this.btn_volver_Cargos.UseVisualStyleBackColor = false;
+            this.btn_volver_Cargos.Click += new System.EventHandler(this.btn_volver_Cargos_Click);
             // 
             // btn_guardarCambioCargo
             // 
+            this.btn_guardarCambioCargo.BackColor = System.Drawing.Color.Silver;
             this.btn_guardarCambioCargo.Location = new System.Drawing.Point(204, 4);
             this.btn_guardarCambioCargo.Margin = new System.Windows.Forms.Padding(4);
             this.btn_guardarCambioCargo.Name = "btn_guardarCambioCargo";
             this.btn_guardarCambioCargo.Size = new System.Drawing.Size(168, 62);
             this.btn_guardarCambioCargo.TabIndex = 4;
             this.btn_guardarCambioCargo.Text = "Guardar *";
-            this.btn_guardarCambioCargo.UseVisualStyleBackColor = true;
+            this.btn_guardarCambioCargo.UseVisualStyleBackColor = false;
             // 
             // btn_guardarCargo
             // 
+            this.btn_guardarCargo.BackColor = System.Drawing.Color.Silver;
             this.btn_guardarCargo.Location = new System.Drawing.Point(20, 4);
             this.btn_guardarCargo.Margin = new System.Windows.Forms.Padding(4);
             this.btn_guardarCargo.Name = "btn_guardarCargo";
             this.btn_guardarCargo.Size = new System.Drawing.Size(171, 62);
             this.btn_guardarCargo.TabIndex = 3;
             this.btn_guardarCargo.Text = "Guardar";
-            this.btn_guardarCargo.UseVisualStyleBackColor = true;
+            this.btn_guardarCargo.UseVisualStyleBackColor = false;
             this.btn_guardarCargo.Click += new System.EventHandler(this.btn_guardarCargo_Click);
             // 
             // txt_agg_cargo
             // 
             this.txt_agg_cargo.BackColor = System.Drawing.Color.DarkGray;
-            this.txt_agg_cargo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_agg_cargo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_agg_cargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_agg_cargo.Location = new System.Drawing.Point(156, 14);
+            this.txt_agg_cargo.Location = new System.Drawing.Point(168, 17);
             this.txt_agg_cargo.Margin = new System.Windows.Forms.Padding(4);
             this.txt_agg_cargo.Name = "txt_agg_cargo";
-            this.txt_agg_cargo.Size = new System.Drawing.Size(238, 30);
+            this.txt_agg_cargo.Size = new System.Drawing.Size(238, 23);
             this.txt_agg_cargo.TabIndex = 16;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(73, 15);
+            this.label9.Location = new System.Drawing.Point(85, 18);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(77, 25);
@@ -417,13 +448,14 @@
             // 
             // btn_agregarCargo
             // 
-            this.btn_agregarCargo.Location = new System.Drawing.Point(520, 511);
+            this.btn_agregarCargo.BackColor = System.Drawing.Color.Silver;
+            this.btn_agregarCargo.Location = new System.Drawing.Point(520, 436);
             this.btn_agregarCargo.Margin = new System.Windows.Forms.Padding(4);
             this.btn_agregarCargo.Name = "btn_agregarCargo";
             this.btn_agregarCargo.Size = new System.Drawing.Size(280, 36);
             this.btn_agregarCargo.TabIndex = 27;
             this.btn_agregarCargo.Text = "+ Agregar Cargo ";
-            this.btn_agregarCargo.UseVisualStyleBackColor = true;
+            this.btn_agregarCargo.UseVisualStyleBackColor = false;
             this.btn_agregarCargo.Click += new System.EventHandler(this.btn_agregarCargo_Click);
             // 
             // data_lista_cargos
@@ -434,7 +466,7 @@
             this.data_lista_cargos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.data_lista_cargos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EditarC});
-            this.data_lista_cargos.Location = new System.Drawing.Point(156, 575);
+            this.data_lista_cargos.Location = new System.Drawing.Point(156, 500);
             this.data_lista_cargos.Margin = new System.Windows.Forms.Padding(4);
             this.data_lista_cargos.Name = "data_lista_cargos";
             this.data_lista_cargos.RowHeadersWidth = 51;
@@ -444,31 +476,40 @@
             this.data_lista_cargos.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.Gray;
             this.data_lista_cargos.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.data_lista_cargos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.data_lista_cargos.Size = new System.Drawing.Size(381, 126);
+            this.data_lista_cargos.Size = new System.Drawing.Size(437, 126);
             this.data_lista_cargos.TabIndex = 26;
             this.data_lista_cargos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_lista_cargos_CellContentClick_1);
+            // 
+            // EditarC
+            // 
+            this.EditarC.HeaderText = "Editar";
+            this.EditarC.Image = global::SistemaAsistencia.Properties.Resources.editar;
+            this.EditarC.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.EditarC.MinimumWidth = 6;
+            this.EditarC.Name = "EditarC";
+            this.EditarC.Width = 125;
             // 
             // txt_cargo
             // 
             this.txt_cargo.BackColor = System.Drawing.Color.DarkGray;
-            this.txt_cargo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_cargo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_cargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cargo.Location = new System.Drawing.Point(160, 517);
+            this.txt_cargo.Location = new System.Drawing.Point(160, 442);
             this.txt_cargo.Margin = new System.Windows.Forms.Padding(4);
             this.txt_cargo.Name = "txt_cargo";
-            this.txt_cargo.Size = new System.Drawing.Size(330, 30);
+            this.txt_cargo.Size = new System.Drawing.Size(330, 23);
             this.txt_cargo.TabIndex = 24;
             this.txt_cargo.TextChanged += new System.EventHandler(this.txt_cargo_TextChanged);
             // 
             // txt_departamento
             // 
             this.txt_departamento.BackColor = System.Drawing.Color.DarkGray;
-            this.txt_departamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_departamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_departamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_departamento.Location = new System.Drawing.Point(156, 198);
             this.txt_departamento.Margin = new System.Windows.Forms.Padding(4);
             this.txt_departamento.Name = "txt_departamento";
-            this.txt_departamento.Size = new System.Drawing.Size(330, 30);
+            this.txt_departamento.Size = new System.Drawing.Size(330, 23);
             this.txt_departamento.TabIndex = 23;
             this.txt_departamento.TextChanged += new System.EventHandler(this.txt_departamento_TextChanged);
             // 
@@ -487,6 +528,7 @@
             // 
             // PanelDepartamento
             // 
+            this.PanelDepartamento.Controls.Add(this.panel7);
             this.PanelDepartamento.Controls.Add(this.panel2);
             this.PanelDepartamento.Controls.Add(this.txt_agg_departamento);
             this.PanelDepartamento.Controls.Add(this.label8);
@@ -513,44 +555,46 @@
             this.btn_volver_departamentos.BackColor = System.Drawing.Color.Transparent;
             this.btn_volver_departamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_volver_departamentos.Image = global::SistemaAsistencia.Properties.Resources.volver_flecha;
-            this.btn_volver_departamentos.Location = new System.Drawing.Point(408, 25);
+            this.btn_volver_departamentos.Location = new System.Drawing.Point(397, 4);
             this.btn_volver_departamentos.Margin = new System.Windows.Forms.Padding(4);
             this.btn_volver_departamentos.Name = "btn_volver_departamentos";
-            this.btn_volver_departamentos.Size = new System.Drawing.Size(92, 75);
+            this.btn_volver_departamentos.Size = new System.Drawing.Size(103, 62);
             this.btn_volver_departamentos.TabIndex = 22;
             this.btn_volver_departamentos.UseVisualStyleBackColor = false;
             this.btn_volver_departamentos.Click += new System.EventHandler(this.btn_volver_departamentos_Click);
             // 
             // btn_guardarCambiosDepart
             // 
+            this.btn_guardarCambiosDepart.BackColor = System.Drawing.Color.Silver;
             this.btn_guardarCambiosDepart.Location = new System.Drawing.Point(204, 4);
             this.btn_guardarCambiosDepart.Margin = new System.Windows.Forms.Padding(4);
             this.btn_guardarCambiosDepart.Name = "btn_guardarCambiosDepart";
             this.btn_guardarCambiosDepart.Size = new System.Drawing.Size(168, 62);
             this.btn_guardarCambiosDepart.TabIndex = 4;
             this.btn_guardarCambiosDepart.Text = "Guardar *";
-            this.btn_guardarCambiosDepart.UseVisualStyleBackColor = true;
+            this.btn_guardarCambiosDepart.UseVisualStyleBackColor = false;
             // 
             // btn_guardarDepar
             // 
+            this.btn_guardarDepar.BackColor = System.Drawing.Color.Silver;
             this.btn_guardarDepar.Location = new System.Drawing.Point(20, 4);
             this.btn_guardarDepar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_guardarDepar.Name = "btn_guardarDepar";
             this.btn_guardarDepar.Size = new System.Drawing.Size(171, 62);
             this.btn_guardarDepar.TabIndex = 3;
             this.btn_guardarDepar.Text = "Guardar";
-            this.btn_guardarDepar.UseVisualStyleBackColor = true;
+            this.btn_guardarDepar.UseVisualStyleBackColor = false;
             this.btn_guardarDepar.Click += new System.EventHandler(this.btn_guardarDepar_Click);
             // 
             // txt_agg_departamento
             // 
             this.txt_agg_departamento.BackColor = System.Drawing.Color.DarkGray;
-            this.txt_agg_departamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_agg_departamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_agg_departamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_agg_departamento.Location = new System.Drawing.Point(157, 15);
+            this.txt_agg_departamento.Location = new System.Drawing.Point(158, 18);
             this.txt_agg_departamento.Margin = new System.Windows.Forms.Padding(4);
             this.txt_agg_departamento.Name = "txt_agg_departamento";
-            this.txt_agg_departamento.Size = new System.Drawing.Size(238, 30);
+            this.txt_agg_departamento.Size = new System.Drawing.Size(238, 23);
             this.txt_agg_departamento.TabIndex = 22;
             // 
             // label8
@@ -567,7 +611,7 @@
             // 
             this.Panel_btn_guardar_personal.Controls.Add(this.btn_guardar_cambios_personal);
             this.Panel_btn_guardar_personal.Controls.Add(this.btn_guardar_personal);
-            this.Panel_btn_guardar_personal.Location = new System.Drawing.Point(316, 748);
+            this.Panel_btn_guardar_personal.Location = new System.Drawing.Point(316, 673);
             this.Panel_btn_guardar_personal.Margin = new System.Windows.Forms.Padding(4);
             this.Panel_btn_guardar_personal.Name = "Panel_btn_guardar_personal";
             this.Panel_btn_guardar_personal.Size = new System.Drawing.Size(387, 80);
@@ -596,34 +640,34 @@
             // txt_cedula
             // 
             this.txt_cedula.BackColor = System.Drawing.Color.DarkGray;
-            this.txt_cedula.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_cedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_cedula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_cedula.Location = new System.Drawing.Point(156, 140);
             this.txt_cedula.Margin = new System.Windows.Forms.Padding(4);
             this.txt_cedula.Name = "txt_cedula";
-            this.txt_cedula.Size = new System.Drawing.Size(721, 30);
+            this.txt_cedula.Size = new System.Drawing.Size(721, 23);
             this.txt_cedula.TabIndex = 11;
             // 
             // txt_apellido
             // 
             this.txt_apellido.BackColor = System.Drawing.Color.DarkGray;
-            this.txt_apellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_apellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_apellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_apellido.Location = new System.Drawing.Point(156, 82);
             this.txt_apellido.Margin = new System.Windows.Forms.Padding(4);
             this.txt_apellido.Name = "txt_apellido";
-            this.txt_apellido.Size = new System.Drawing.Size(721, 30);
+            this.txt_apellido.Size = new System.Drawing.Size(721, 23);
             this.txt_apellido.TabIndex = 7;
             // 
             // txt_nombre
             // 
             this.txt_nombre.BackColor = System.Drawing.Color.DarkGray;
-            this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nombre.Location = new System.Drawing.Point(156, 26);
             this.txt_nombre.Margin = new System.Windows.Forms.Padding(4);
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(721, 30);
+            this.txt_nombre.Size = new System.Drawing.Size(721, 23);
             this.txt_nombre.TabIndex = 5;
             // 
             // label5
@@ -649,7 +693,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(76, 522);
+            this.label2.Location = new System.Drawing.Point(69, 447);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 25);
@@ -675,14 +719,68 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 125;
             // 
-            // EditarC
+            // panel7
             // 
-            this.EditarC.HeaderText = "Editar";
-            this.EditarC.Image = global::SistemaAsistencia.Properties.Resources.editar;
-            this.EditarC.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.EditarC.MinimumWidth = 6;
-            this.EditarC.Name = "EditarC";
-            this.EditarC.Width = 125;
+            this.panel7.BackColor = System.Drawing.Color.DimGray;
+            this.panel7.Location = new System.Drawing.Point(158, 46);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(250, 1);
+            this.panel7.TabIndex = 31;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DimGray;
+            this.panel3.Location = new System.Drawing.Point(168, 45);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(250, 1);
+            this.panel3.TabIndex = 32;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.DimGray;
+            this.panel8.Location = new System.Drawing.Point(156, 54);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(721, 1);
+            this.panel8.TabIndex = 31;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.DimGray;
+            this.panel9.Location = new System.Drawing.Point(156, 111);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(721, 1);
+            this.panel9.TabIndex = 32;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.DimGray;
+            this.panel10.Location = new System.Drawing.Point(156, 169);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(721, 1);
+            this.panel10.TabIndex = 33;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.DimGray;
+            this.panel11.Location = new System.Drawing.Point(156, 227);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(330, 1);
+            this.panel11.TabIndex = 34;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.DimGray;
+            this.panel12.Location = new System.Drawing.Point(160, 471);
+            this.panel12.Margin = new System.Windows.Forms.Padding(4);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(330, 1);
+            this.panel12.TabIndex = 35;
             // 
             // Personal
             // 
@@ -697,7 +795,7 @@
             this.Size = new System.Drawing.Size(2115, 1216);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBxLupaBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.PanelPaginado.ResumeLayout(false);
             this.PanelRegistros.ResumeLayout(false);
@@ -720,9 +818,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel PanelPaginado;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel txt_simulaLinea;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBxLupaBuscar;
         private System.Windows.Forms.Panel PanelRegistros;
         private System.Windows.Forms.TextBox txt_cedula;
         private System.Windows.Forms.TextBox txt_apellido;
@@ -767,5 +865,13 @@
         private System.Windows.Forms.DataGridViewImageColumn EditarD;
         private System.Windows.Forms.Button btn_volver_departamentos;
         private System.Windows.Forms.DataGridViewImageColumn EditarC;
+        private System.Windows.Forms.Button btn_volver_Cargos;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel9;
     }
 }

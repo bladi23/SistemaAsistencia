@@ -162,8 +162,8 @@ namespace SistemaAsistencia.VIEWS
         private void LocalizarDtvCargo()
         {
             //data_lista_cargos.Location = new Point(panel6.Location.X, panel6.Location.Y);
-            data_lista_cargos.Size = new Size(469, 130);
-            data_lista_cargos.Visible = true;
+            data_lista_cargos.Size = new Size(532, 130);
+            data_lista_cargos.Visible = true; 
             Panel_btn_guardar_personal.Visible = false;
         }
 
@@ -321,6 +321,7 @@ namespace SistemaAsistencia.VIEWS
             {
                 ObtenerCargosEditar();
             }
+           
         }
 
 
@@ -333,6 +334,15 @@ namespace SistemaAsistencia.VIEWS
             PanelCargo.Visible = true;
             PanelCargo.Dock = DockStyle.Fill;
             PanelCargo.BringToFront();
+            btn_guardarCambioCargo.Visible = true;
+            btn_guardarCargo.Visible = false;
+            //txt_agg_cargo.Focus();
+         
+        }
+
+        private void btn_volver_Cargos_Click(object sender, EventArgs e)
+        {
+            PanelCargo.Visible = false;
         }
     }
 }
