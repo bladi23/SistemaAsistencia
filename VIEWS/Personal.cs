@@ -28,11 +28,39 @@ namespace SistemaAsistencia.VIEWS
            
           
         }
-        int departamento_id;
-        int cargo_id;
+        int departamento_id=0;
+        int cargo_id=0;
+        int desde = 1;
+        int hasta = 10;
+        int contador;
+        int empleado_id;
+        private int items_por_pagina = 10;
+        int totalPaginas;
+
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-           
+            if (!string.IsNullOrEmpty(txt_nombre.Text)) 
+            {
+                if (!string.IsNullOrEmpty(txt_apellido.Text)) 
+                {
+                    if(!string.IsNullOrEmpty(txt_cedula.Text))
+                    {
+                        if (departamento_id>0)
+                        {
+                            if (cargo_id>0)
+                            {
+                                InsertarPersonal();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        private void mostrarPersonal()
+        {
+            DataTable dt = new DataTable(); 
+            PersonalControlers personalControlers = new PersonalControlers();
+            personalControlers.personalControlers(ref dt, );
         }
         private void InsertarPersonal()
         {
@@ -41,6 +69,12 @@ namespace SistemaAsistencia.VIEWS
             personalControlers.nombre= txt_nombre.Text;
             personalControlers.apellido = txt_apellido.Text;
             personalControlers.cedula = txt_cedula.Text;
+            personalControlers.departamento_id = departamento_id;
+            personalControlers.cargo_id = cargo_id;
+            if (personalModel.InsertarPersonal(personalControlers)== true)
+            {   
+                PanelRegistros.Visible= false;
+            }
             
         }
         private void InsertarDepartamento()
