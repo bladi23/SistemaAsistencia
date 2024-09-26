@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaAsistencia.VIEWS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace SistemaAsistencia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new  VIEWS.frm_pPrincipal());
+            Application.Run(new frm_pPrincipal());
         }
     }
 

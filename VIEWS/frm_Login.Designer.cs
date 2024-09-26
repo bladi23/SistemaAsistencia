@@ -35,7 +35,6 @@
             this.btn_Ingresar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.lbl_Contrasenia = new System.Windows.Forms.Label();
-            this.btn_Salir = new System.Windows.Forms.Button();
             this.lbl_mensaje = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -109,16 +108,6 @@
             this.lbl_Contrasenia.TabIndex = 6;
             this.lbl_Contrasenia.Text = "Contraseña";
             // 
-            // btn_Salir
-            // 
-            this.btn_Salir.Location = new System.Drawing.Point(205, 264);
-            this.btn_Salir.Name = "btn_Salir";
-            this.btn_Salir.Size = new System.Drawing.Size(75, 33);
-            this.btn_Salir.TabIndex = 7;
-            this.btn_Salir.Text = "Salir";
-            this.btn_Salir.UseVisualStyleBackColor = true;
-            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
-            // 
             // lbl_mensaje
             // 
             this.lbl_mensaje.AutoSize = true;
@@ -131,9 +120,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 323);
+            this.ClientSize = new System.Drawing.Size(486, 271);
             this.Controls.Add(this.lbl_mensaje);
-            this.Controls.Add(this.btn_Salir);
             this.Controls.Add(this.lbl_Contrasenia);
             this.Controls.Add(this.btn_Cancelar);
             this.Controls.Add(this.btn_Ingresar);
@@ -160,7 +148,6 @@
         private System.Windows.Forms.Button btn_Ingresar;
         private System.Windows.Forms.Button btn_Cancelar;
         private System.Windows.Forms.Label lbl_Contrasenia;
-        private System.Windows.Forms.Button btn_Salir;
         private System.Windows.Forms.Label lbl_mensaje;
     }
 }

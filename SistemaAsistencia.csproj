@@ -71,10 +71,10 @@
     <Compile Include="VIEWS\frm_MenuPrincipal.Designer.cs">
       <DependentUpon>frm_MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="VIEWS\frm_pPrincipal.cs">
+    <Compile Include="frm_pPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VIEWS\frm_pPrincipal.Designer.cs">
+    <Compile Include="frm_pPrincipal.Designer.cs">
       <DependentUpon>frm_pPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="VIEWS\Personal.cs">
@@ -99,7 +99,7 @@
     <EmbeddedResource Include="VIEWS\frm_MenuPrincipal.resx">
       <DependentUpon>frm_MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VIEWS\frm_pPrincipal.resx">
+    <EmbeddedResource Include="frm_pPrincipal.resx">
       <DependentUpon>frm_pPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VIEWS\Personal.resx">
@@ -153,6 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Huella.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngwing.com.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

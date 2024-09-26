@@ -29,14 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_agregar = new System.Windows.Forms.Button();
-            this.pictureBxLupaBuscar = new System.Windows.Forms.PictureBox();
             this.txt_simulaLinea = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_guardar_personal = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             this.PanelPaginado = new System.Windows.Forms.Panel();
             this.btn_paginaSiguiente = new System.Windows.Forms.Button();
             this.btn_paginaAnterior = new System.Windows.Forms.Button();
@@ -51,7 +48,6 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.data_lista_departamentos = new System.Windows.Forms.DataGridView();
-            this.EditarD = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_agregarDepartamento = new System.Windows.Forms.Button();
             this.PanelCargo = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -59,21 +55,17 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btn_editarCampo = new System.Windows.Forms.Button();
-            this.btn_volver_Cargos = new System.Windows.Forms.Button();
             this.btn_aggCargo = new System.Windows.Forms.Button();
             this.txt_agg_cargo = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btn_agregarCargo = new System.Windows.Forms.Button();
             this.data_lista_cargos = new System.Windows.Forms.DataGridView();
-            this.EditarC = new System.Windows.Forms.DataGridViewImageColumn();
             this.txt_cargo = new System.Windows.Forms.TextBox();
             this.txt_departamento = new System.Windows.Forms.TextBox();
-            this.btn_regresar = new System.Windows.Forms.Button();
             this.PanelDepartamento = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_editarDepartamento = new System.Windows.Forms.Button();
-            this.btn_volver_departamentos = new System.Windows.Forms.Button();
             this.btn_aggDepartameno = new System.Windows.Forms.Button();
             this.txt_agg_departamento = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -88,8 +80,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.EditarD = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btn_volver_Cargos = new System.Windows.Forms.Button();
+            this.EditarC = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btn_regresar = new System.Windows.Forms.Button();
+            this.btn_volver_departamentos = new System.Windows.Forms.Button();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btn_agregar = new System.Windows.Forms.Button();
+            this.pictureBxLupaBuscar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBxLupaBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.PanelPaginado.SuspendLayout();
             this.PanelRegistros.SuspendLayout();
@@ -100,11 +102,13 @@
             this.PanelDepartamento.SuspendLayout();
             this.panel2.SuspendLayout();
             this.Panel_btn_guardar_personal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBxLupaBuscar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkGray;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btn_agregar);
             this.panel1.Controls.Add(this.pictureBxLupaBuscar);
             this.panel1.Controls.Add(this.txt_simulaLinea);
@@ -115,28 +119,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2115, 138);
             this.panel1.TabIndex = 0;
-            // 
-            // btn_agregar
-            // 
-            this.btn_agregar.Image = global::SistemaAsistencia.Properties.Resources.agregar_usuario__1_;
-            this.btn_agregar.Location = new System.Drawing.Point(1483, 22);
-            this.btn_agregar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_agregar.Name = "btn_agregar";
-            this.btn_agregar.Size = new System.Drawing.Size(119, 103);
-            this.btn_agregar.TabIndex = 3;
-            this.btn_agregar.UseVisualStyleBackColor = true;
-            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
-            // 
-            // pictureBxLupaBuscar
-            // 
-            this.pictureBxLupaBuscar.Image = global::SistemaAsistencia.Properties.Resources.buscar;
-            this.pictureBxLupaBuscar.Location = new System.Drawing.Point(467, 71);
-            this.pictureBxLupaBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBxLupaBuscar.Name = "pictureBxLupaBuscar";
-            this.pictureBxLupaBuscar.Size = new System.Drawing.Size(64, 53);
-            this.pictureBxLupaBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBxLupaBuscar.TabIndex = 2;
-            this.pictureBxLupaBuscar.TabStop = false;
             // 
             // txt_simulaLinea
             // 
@@ -197,15 +179,6 @@
             this.Eliminar.MinimumWidth = 6;
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.Width = 125;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::SistemaAsistencia.Properties.Resources.editar;
-            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Editar.MinimumWidth = 6;
-            this.Editar.Name = "Editar";
-            this.Editar.Width = 125;
             // 
             // PanelPaginado
             // 
@@ -389,16 +362,6 @@
             this.data_lista_departamentos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_lista_departamentos_CellClick);
             this.data_lista_departamentos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_lista_cargos_CellContentClick);
             // 
-            // EditarD
-            // 
-            this.EditarD.HeaderText = "EditarD";
-            this.EditarD.Image = global::SistemaAsistencia.Properties.Resources.editar;
-            this.EditarD.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.EditarD.MinimumWidth = 6;
-            this.EditarD.Name = "EditarD";
-            this.EditarD.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.EditarD.Width = 125;
-            // 
             // btn_agregarDepartamento
             // 
             this.btn_agregarDepartamento.BackColor = System.Drawing.Color.Silver;
@@ -478,19 +441,6 @@
             this.btn_editarCampo.UseVisualStyleBackColor = false;
             this.btn_editarCampo.Click += new System.EventHandler(this.btn_editarCampo_Click);
             // 
-            // btn_volver_Cargos
-            // 
-            this.btn_volver_Cargos.BackColor = System.Drawing.Color.Transparent;
-            this.btn_volver_Cargos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_volver_Cargos.Image = global::SistemaAsistencia.Properties.Resources.volver_flecha;
-            this.btn_volver_Cargos.Location = new System.Drawing.Point(359, 16);
-            this.btn_volver_Cargos.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_volver_Cargos.Name = "btn_volver_Cargos";
-            this.btn_volver_Cargos.Size = new System.Drawing.Size(103, 56);
-            this.btn_volver_Cargos.TabIndex = 23;
-            this.btn_volver_Cargos.UseVisualStyleBackColor = false;
-            this.btn_volver_Cargos.Click += new System.EventHandler(this.btn_volver_Cargos_Click);
-            // 
             // btn_aggCargo
             // 
             this.btn_aggCargo.BackColor = System.Drawing.Color.Silver;
@@ -559,15 +509,6 @@
             this.data_lista_cargos.TabIndex = 26;
             this.data_lista_cargos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.data_lista_cargos_CellContentClick_1);
             // 
-            // EditarC
-            // 
-            this.EditarC.HeaderText = "Editar";
-            this.EditarC.Image = global::SistemaAsistencia.Properties.Resources.editar;
-            this.EditarC.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.EditarC.MinimumWidth = 6;
-            this.EditarC.Name = "EditarC";
-            this.EditarC.Width = 125;
-            // 
             // txt_cargo
             // 
             this.txt_cargo.BackColor = System.Drawing.Color.DarkGray;
@@ -591,19 +532,6 @@
             this.txt_departamento.Size = new System.Drawing.Size(330, 23);
             this.txt_departamento.TabIndex = 23;
             this.txt_departamento.TextChanged += new System.EventHandler(this.txt_departamento_TextChanged);
-            // 
-            // btn_regresar
-            // 
-            this.btn_regresar.BackColor = System.Drawing.Color.Transparent;
-            this.btn_regresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_regresar.Image = global::SistemaAsistencia.Properties.Resources.volver_flecha;
-            this.btn_regresar.Location = new System.Drawing.Point(929, 62);
-            this.btn_regresar.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_regresar.Name = "btn_regresar";
-            this.btn_regresar.Size = new System.Drawing.Size(97, 75);
-            this.btn_regresar.TabIndex = 21;
-            this.btn_regresar.UseVisualStyleBackColor = false;
-            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
             // 
             // PanelDepartamento
             // 
@@ -649,19 +577,6 @@
             this.btn_editarDepartamento.Text = "Editar";
             this.btn_editarDepartamento.UseVisualStyleBackColor = false;
             this.btn_editarDepartamento.Click += new System.EventHandler(this.btn_editarDepartamento_Click);
-            // 
-            // btn_volver_departamentos
-            // 
-            this.btn_volver_departamentos.BackColor = System.Drawing.Color.Transparent;
-            this.btn_volver_departamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_volver_departamentos.Image = global::SistemaAsistencia.Properties.Resources.volver_flecha;
-            this.btn_volver_departamentos.Location = new System.Drawing.Point(377, 23);
-            this.btn_volver_departamentos.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_volver_departamentos.Name = "btn_volver_departamentos";
-            this.btn_volver_departamentos.Size = new System.Drawing.Size(103, 56);
-            this.btn_volver_departamentos.TabIndex = 22;
-            this.btn_volver_departamentos.UseVisualStyleBackColor = false;
-            this.btn_volver_departamentos.Click += new System.EventHandler(this.btn_volver_departamentos_Click);
             // 
             // btn_aggDepartameno
             // 
@@ -810,6 +725,127 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 125;
             // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "EditarD";
+            this.dataGridViewImageColumn2.Image = global::SistemaAsistencia.Properties.Resources.editar;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn2.Width = 125;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.HeaderText = "Editar";
+            this.dataGridViewImageColumn3.Image = global::SistemaAsistencia.Properties.Resources.editar;
+            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn3.MinimumWidth = 6;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.Width = 125;
+            // 
+            // EditarD
+            // 
+            this.EditarD.HeaderText = "EditarD";
+            this.EditarD.Image = global::SistemaAsistencia.Properties.Resources.editar;
+            this.EditarD.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.EditarD.MinimumWidth = 6;
+            this.EditarD.Name = "EditarD";
+            this.EditarD.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.EditarD.Width = 125;
+            // 
+            // btn_volver_Cargos
+            // 
+            this.btn_volver_Cargos.BackColor = System.Drawing.Color.Transparent;
+            this.btn_volver_Cargos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_volver_Cargos.Image = global::SistemaAsistencia.Properties.Resources.volver_flecha;
+            this.btn_volver_Cargos.Location = new System.Drawing.Point(359, 16);
+            this.btn_volver_Cargos.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_volver_Cargos.Name = "btn_volver_Cargos";
+            this.btn_volver_Cargos.Size = new System.Drawing.Size(103, 56);
+            this.btn_volver_Cargos.TabIndex = 23;
+            this.btn_volver_Cargos.UseVisualStyleBackColor = false;
+            this.btn_volver_Cargos.Click += new System.EventHandler(this.btn_volver_Cargos_Click);
+            // 
+            // EditarC
+            // 
+            this.EditarC.HeaderText = "Editar";
+            this.EditarC.Image = global::SistemaAsistencia.Properties.Resources.editar;
+            this.EditarC.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.EditarC.MinimumWidth = 6;
+            this.EditarC.Name = "EditarC";
+            this.EditarC.Width = 125;
+            // 
+            // btn_regresar
+            // 
+            this.btn_regresar.BackColor = System.Drawing.Color.Transparent;
+            this.btn_regresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_regresar.Image = global::SistemaAsistencia.Properties.Resources.volver_flecha;
+            this.btn_regresar.Location = new System.Drawing.Point(929, 62);
+            this.btn_regresar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_regresar.Name = "btn_regresar";
+            this.btn_regresar.Size = new System.Drawing.Size(97, 75);
+            this.btn_regresar.TabIndex = 21;
+            this.btn_regresar.UseVisualStyleBackColor = false;
+            this.btn_regresar.Click += new System.EventHandler(this.btn_regresar_Click);
+            // 
+            // btn_volver_departamentos
+            // 
+            this.btn_volver_departamentos.BackColor = System.Drawing.Color.Transparent;
+            this.btn_volver_departamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_volver_departamentos.Image = global::SistemaAsistencia.Properties.Resources.volver_flecha;
+            this.btn_volver_departamentos.Location = new System.Drawing.Point(377, 23);
+            this.btn_volver_departamentos.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_volver_departamentos.Name = "btn_volver_departamentos";
+            this.btn_volver_departamentos.Size = new System.Drawing.Size(103, 56);
+            this.btn_volver_departamentos.TabIndex = 22;
+            this.btn_volver_departamentos.UseVisualStyleBackColor = false;
+            this.btn_volver_departamentos.Click += new System.EventHandler(this.btn_volver_departamentos_Click);
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::SistemaAsistencia.Properties.Resources.editar;
+            this.Editar.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.Editar.MinimumWidth = 6;
+            this.Editar.Name = "Editar";
+            this.Editar.Width = 125;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::SistemaAsistencia.Properties.Resources.volver_flecha;
+            this.button1.Location = new System.Drawing.Point(1636, 32);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(97, 75);
+            this.button1.TabIndex = 38;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btn_agregar
+            // 
+            this.btn_agregar.Image = global::SistemaAsistencia.Properties.Resources.agregar_usuario__1_;
+            this.btn_agregar.Location = new System.Drawing.Point(1483, 22);
+            this.btn_agregar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_agregar.Name = "btn_agregar";
+            this.btn_agregar.Size = new System.Drawing.Size(119, 103);
+            this.btn_agregar.TabIndex = 3;
+            this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
+            // 
+            // pictureBxLupaBuscar
+            // 
+            this.pictureBxLupaBuscar.Image = global::SistemaAsistencia.Properties.Resources.buscar;
+            this.pictureBxLupaBuscar.Location = new System.Drawing.Point(467, 71);
+            this.pictureBxLupaBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBxLupaBuscar.Name = "pictureBxLupaBuscar";
+            this.pictureBxLupaBuscar.Size = new System.Drawing.Size(64, 53);
+            this.pictureBxLupaBuscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBxLupaBuscar.TabIndex = 2;
+            this.pictureBxLupaBuscar.TabStop = false;
+            // 
             // Personal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -824,7 +860,6 @@
             this.Load += new System.EventHandler(this.Personal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBxLupaBuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.PanelPaginado.ResumeLayout(false);
             this.PanelRegistros.ResumeLayout(false);
@@ -838,6 +873,7 @@
             this.PanelDepartamento.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.Panel_btn_guardar_personal.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBxLupaBuscar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -904,5 +940,8 @@
         private System.Windows.Forms.DateTimePicker dtp_fechaContratacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Eliminar;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
     }
 }

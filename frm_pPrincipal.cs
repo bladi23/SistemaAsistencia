@@ -18,6 +18,7 @@ namespace SistemaAsistencia.VIEWS
         {
             InitializeComponent();
             InicializarConexionSerial();
+            
 
         }
 
@@ -73,11 +74,13 @@ namespace SistemaAsistencia.VIEWS
 
         private void btn_menuPrincipal_Click(object sender, EventArgs e)
         {
-            frm_Login frm = new frm_Login();
+            frm_Login  _frm_Login = new frm_Login();
+            _frm_Login.Show();
+            serialPort.Close();
+            this.Hide();
 
-            frm.ShowDialog();
-            frm_pPrincipal _frm_pPrincipal = new frm_pPrincipal();
-            _frm_pPrincipal.Close();
         }
+
+    
     }
 }

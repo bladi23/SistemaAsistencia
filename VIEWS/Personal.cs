@@ -481,6 +481,25 @@ namespace SistemaAsistencia.VIEWS
         {
             mostrarPersonal();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+            CerrarControl();
+        }
+
+
+        private void CerrarControl()
+        {
+            // Verificar si el UserControl tiene un contenedor
+            if (this.Parent != null)
+            {
+                // Remover el UserControl del contenedor
+                this.Parent.Controls.Remove(this);
+            }
+
+
+
+        }
     }
 }
-
