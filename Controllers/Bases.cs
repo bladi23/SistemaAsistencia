@@ -25,8 +25,11 @@ namespace SistemaAsistencia.Controllers
             cabecera.Font = new Font("Arial", 12);
             Listado.ColumnHeadersDefaultCellStyle = cabecera;
             
-        }
 
-       
+
+
+        }
+      
+
     }
 }

@@ -72,11 +72,11 @@ namespace SistemaAsistencia.VIEWS
 
         private void DisenoDtvPersonal() 
         {
-            // Opcional: Ajustar el diseño del DataGridView
+            
             Bases.DisenoDtv(ref dataGridView1);
+  
             dataGridView1.Visible = true;
             PanelPaginado.Visible = true;
-            
 
         }
 
@@ -501,5 +501,57 @@ namespace SistemaAsistencia.VIEWS
 
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == dataGridView1.Columns["Eliminar"].Index)
+            {
+                EliminarPersonal();
+            }
+            if (e.ColumnIndex == dataGridView1.Columns["Editar"].Index)
+            {
+                EditarPersonal();
+            }
+        }
+
+
+        private void EditarPersonal()
+        {
+            empleado_id = Convert.ToInt32(dataGridView1.SelectedCells[2].Value);
+            PersonalControlers personalControlers = new PersonalControlers();
+            PersonalModels personalModels = new PersonalModels();
+            personalControlers.empleado_id = empleado_id;
+            personalModels.editarPersonal( personalControlers);
+            txt_nombre.Text = personalControlers.nombre;
+            txt_apellido.Text = personalControlers.apellido;
+            txt_cedula.Text = personalControlers.cedula;
+            departamento_id = personalControlers.departamento_id;
+            cargo_id = personalControlers.cargo_id;
+            dtp_fechaContratacion.Value = personalControlers.fecha_contratacion;
+            PanelRegistros.Visible = true;
+            PanelRegistros.Dock = DockStyle.Fill;
+            Panel_btn_guardar_personal.Visible = false;
+            btn_guardar_personal.Visible = false;
+            btn_guardar_cambios_personal.Visible = true;
+        }
+
+        private void EliminarPersonal()
+        {
+
+            empleado_id = Convert.ToInt32(dataGridView1.SelectedCells[2].Value);
+            PersonalControlers personalControlers = new PersonalControlers();
+            PersonalModels personalModels = new PersonalModels();
+            personalControlers.empleado_id = empleado_id;
+            if (personalModels.eliminarPersonal(personalControlers)==true)
+            {
+                mostrarPersonal();
+            }
+        }
+
+
+
+
+
+
     }
 }
