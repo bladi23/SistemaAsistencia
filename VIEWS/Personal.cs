@@ -515,25 +515,42 @@ namespace SistemaAsistencia.VIEWS
         }
 
 
+
+
         private void EditarPersonal()
-        {
-            empleado_id = Convert.ToInt32(dataGridView1.SelectedCells[2].Value);
-            PersonalControlers personalControlers = new PersonalControlers();
-            PersonalModels personalModels = new PersonalModels();
-            personalControlers.empleado_id = empleado_id;
-            personalModels.editarPersonal( personalControlers);
-            txt_nombre.Text = personalControlers.nombre;
-            txt_apellido.Text = personalControlers.apellido;
-            txt_cedula.Text = personalControlers.cedula;
-            departamento_id = personalControlers.departamento_id;
-            cargo_id = personalControlers.cargo_id;
-            dtp_fechaContratacion.Value = personalControlers.fecha_contratacion;
-            PanelRegistros.Visible = true;
-            PanelRegistros.Dock = DockStyle.Fill;
-            Panel_btn_guardar_personal.Visible = false;
-            btn_guardar_personal.Visible = false;
-            btn_guardar_cambios_personal.Visible = true;
-        }
+{
+    empleado_id = Convert.ToInt32(dataGridView1.SelectedCells[2].Value);
+    PersonalControlers personalControlers = new PersonalControlers();
+    PersonalModels personalModels = new PersonalModels();
+    
+    // Obtener los datos del empleado
+    personalControlers = personalModels.BuscarPersonalId(empleado_id);
+    
+    // Asignar los datos a los controles
+    txt_nombre.Text = personalControlers.nombre;
+    txt_apellido.Text = personalControlers.apellido;
+    txt_cedula.Text = personalControlers.cedula;
+    txt_departamento.Text =  personalControlers.nombre_departamento;
+    txt_cargo.Text = personalControlers.nombre_cargo; 
+
+  
+    DateTime fechaContratacion = personalControlers.fecha_contratacion;
+    if (fechaContratacion < (DateTime)System.Data.SqlTypes.SqlDateTime.MinValue ||
+        fechaContratacion > (DateTime)System.Data.SqlTypes.SqlDateTime.MaxValue)
+    {
+        fechaContratacion = DateTime.Now; 
+    }
+    dtp_fechaContratacion.Value = fechaContratacion;
+
+    // Mostrar el panel de edición
+    PanelRegistros.Visible = true;
+    PanelRegistros.Dock = DockStyle.Fill;
+    Panel_btn_guardar_personal.Visible = false;
+    btn_guardar_personal.Visible = false;
+    btn_guardar_cambios_personal.Visible = true;
+}
+
+
 
         private void EliminarPersonal()
         {

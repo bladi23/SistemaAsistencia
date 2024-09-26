@@ -17,7 +17,7 @@ namespace SistemaAsistencia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_MenuPrincipal());
+            Application.Run(new frm_pPrincipal());
         }
     }
 
