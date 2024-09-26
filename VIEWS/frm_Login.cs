@@ -56,10 +56,11 @@ namespace SistemaAsistencia.VIEWS
                     ConfiguracionProyecto.IDusuario = usuariomodel.usuario_id;
                     ConfiguracionProyecto.usuario = usuariomodel.nombre_usuario;
                     ConfiguracionProyecto.rol = usuariomodel.Rol;
-
-                    frm_MenuPrincipal _frm_usuarios = new frm_MenuPrincipal();
+                 
+                    frm_MenuPrincipal _frm_MenuPrincipal = new frm_MenuPrincipal();
                     // _frm_usuarios.AjustarMenuSegunRol(usuariomodel.Roles);
-                    _frm_usuarios.Show();
+                    _frm_MenuPrincipal.Show();
+                   
                 }
                 else
                 {
