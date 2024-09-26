@@ -42,6 +42,12 @@
             this.lbl_titulo2 = new System.Windows.Forms.Label();
             this.lbl_Leyenda = new System.Windows.Forms.Label();
             this.lbl_Leyenda2 = new System.Windows.Forms.Label();
+            this.lbl_ID_Huella = new System.Windows.Forms.Label();
+            this.lbl_MensajeHuella = new System.Windows.Forms.Label();
+            this.txt_IdHuella = new System.Windows.Forms.TextBox();
+            this.txt_Mensaje = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lbl_fecha
@@ -51,9 +57,8 @@
             this.lbl_fecha.Location = new System.Drawing.Point(29, 606);
             this.lbl_fecha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_fecha.Name = "lbl_fecha";
-            this.lbl_fecha.Size = new System.Drawing.Size(190, 69);
+            this.lbl_fecha.Size = new System.Drawing.Size(0, 69);
             this.lbl_fecha.TabIndex = 0;
-            this.lbl_fecha.Text = "label1";
             // 
             // lbl_hora
             // 
@@ -61,9 +66,8 @@
             this.lbl_hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_hora.Location = new System.Drawing.Point(29, 537);
             this.lbl_hora.Name = "lbl_hora";
-            this.lbl_hora.Size = new System.Drawing.Size(190, 69);
+            this.lbl_hora.Size = new System.Drawing.Size(0, 69);
             this.lbl_hora.TabIndex = 1;
-            this.lbl_hora.Text = "label1";
             // 
             // btn_imagen
             // 
@@ -148,7 +152,7 @@
             // 
             this.lbl_titulo1.AutoSize = true;
             this.lbl_titulo1.Font = new System.Drawing.Font("Monospac821 BT", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_titulo1.Location = new System.Drawing.Point(659, 29);
+            this.lbl_titulo1.Location = new System.Drawing.Point(633, 29);
             this.lbl_titulo1.Name = "lbl_titulo1";
             this.lbl_titulo1.Size = new System.Drawing.Size(318, 72);
             this.lbl_titulo1.TabIndex = 10;
@@ -184,11 +188,77 @@
             this.lbl_Leyenda2.TabIndex = 13;
             this.lbl_Leyenda2.Text = "Para realizar su registro.";
             // 
+            // lbl_ID_Huella
+            // 
+            this.lbl_ID_Huella.AutoSize = true;
+            this.lbl_ID_Huella.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ID_Huella.Location = new System.Drawing.Point(35, 326);
+            this.lbl_ID_Huella.Name = "lbl_ID_Huella";
+            this.lbl_ID_Huella.Size = new System.Drawing.Size(145, 36);
+            this.lbl_ID_Huella.TabIndex = 15;
+            this.lbl_ID_Huella.Text = "ID Huella";
+            // 
+            // lbl_MensajeHuella
+            // 
+            this.lbl_MensajeHuella.AutoSize = true;
+            this.lbl_MensajeHuella.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_MensajeHuella.Location = new System.Drawing.Point(35, 400);
+            this.lbl_MensajeHuella.Name = "lbl_MensajeHuella";
+            this.lbl_MensajeHuella.Size = new System.Drawing.Size(159, 36);
+            this.lbl_MensajeHuella.TabIndex = 17;
+            this.lbl_MensajeHuella.Text = "Mensajes:";
+            // 
+            // txt_IdHuella
+            // 
+            this.txt_IdHuella.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_IdHuella.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_IdHuella.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_IdHuella.Location = new System.Drawing.Point(198, 326);
+            this.txt_IdHuella.Name = "txt_IdHuella";
+            this.txt_IdHuella.Size = new System.Drawing.Size(100, 34);
+            this.txt_IdHuella.TabIndex = 18;
+            // 
+            // txt_Mensaje
+            // 
+            this.txt_Mensaje.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_Mensaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Mensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_Mensaje.Location = new System.Drawing.Point(196, 400);
+            this.txt_Mensaje.Name = "txt_Mensaje";
+            this.txt_Mensaje.Size = new System.Drawing.Size(442, 34);
+            this.txt_Mensaje.TabIndex = 19;
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.SystemColors.MenuText;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(196, 365);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 1);
+            this.textBox3.TabIndex = 20;
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.SystemColors.MenuText;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(196, 438);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(444, 1);
+            this.textBox4.TabIndex = 21;
+            // 
             // frm_pPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1806, 774);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txt_Mensaje);
+            this.Controls.Add(this.txt_IdHuella);
+            this.Controls.Add(this.lbl_MensajeHuella);
+            this.Controls.Add(this.lbl_ID_Huella);
             this.Controls.Add(this.lbl_Leyenda2);
             this.Controls.Add(this.lbl_Leyenda);
             this.Controls.Add(this.lbl_titulo2);
@@ -208,6 +278,7 @@
             this.Name = "frm_pPrincipal";
             this.Text = "frm_pPrincipal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frm_pPrincipal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -229,5 +300,11 @@
         private System.Windows.Forms.Label lbl_titulo2;
         private System.Windows.Forms.Label lbl_Leyenda;
         private System.Windows.Forms.Label lbl_Leyenda2;
+        private System.Windows.Forms.Label lbl_ID_Huella;
+        private System.Windows.Forms.Label lbl_MensajeHuella;
+        private System.Windows.Forms.TextBox txt_IdHuella;
+        private System.Windows.Forms.TextBox txt_Mensaje;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
     }
 }
