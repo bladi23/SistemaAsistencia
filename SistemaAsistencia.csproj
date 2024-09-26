@@ -51,11 +51,13 @@
     <Compile Include="Controllers\Bases.cs" />
     <Compile Include="Controllers\CargoController.cs" />
     <Compile Include="Controllers\DepartamentoController.cs" />
+    <Compile Include="Controllers\RegistrosController.cs" />
     <Compile Include="Models\CargoModels.cs" />
     <Compile Include="Models\DepartamentoModel.cs" />
     <Compile Include="Models\PersonalModels.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Controllers\PersonalControlers.cs" />
+    <Compile Include="Models\RegistrosModels.cs" />
     <Compile Include="Models\UsuariosModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,6 +85,12 @@
     <Compile Include="VIEWS\Personal.Designer.cs">
       <DependentUpon>Personal.cs</DependentUpon>
     </Compile>
+    <Compile Include="VIEWS\RegistrosControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VIEWS\RegistrosControl.Designer.cs">
+      <DependentUpon>RegistrosControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -104,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VIEWS\Personal.resx">
       <DependentUpon>Personal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VIEWS\RegistrosControl.resx">
+      <DependentUpon>RegistrosControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

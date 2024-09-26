@@ -312,7 +312,7 @@ namespace SistemaAsistencia.VIEWS
 
         private void btn_agregarCargo_Click(object sender, EventArgs e)
         {
-            
+            CargarDepartamentos();  
             PanelCargo.Visible = true;
             btn_aggCargo.Visible = true;
             btn_editarCampo.Visible = false;
@@ -381,12 +381,7 @@ namespace SistemaAsistencia.VIEWS
             departamento_id = Convert.ToInt32(data_lista_departamentos.SelectedCells[1].Value);
             txt_departamento.Text = data_lista_departamentos.SelectedCells[2].Value.ToString();
             data_lista_departamentos.Visible = false;
-            //Panel_btn_guardar_personal.Visible = false;
-            //btn_guardarDepar.Visible = false;
-        
-            //PanelDepartamento.Visible = true;
-            //PanelDepartamento.Dock = DockStyle.Fill;
-            //PanelDepartamento.BringToFront();
+           
         }
 
 
@@ -396,8 +391,7 @@ namespace SistemaAsistencia.VIEWS
             txt_agg_departamento.Text = data_lista_departamentos.SelectedCells[2].Value.ToString();
             btn_aggDepartameno.Visible = false;
             PanelDepartamento.Visible = true;
-            //PanelDepartamento.Dock = DockStyle.Fill;
-           // PanelDepartamento.BringToFront();
+          
 
         }
 
@@ -423,12 +417,7 @@ namespace SistemaAsistencia.VIEWS
             cargo_id = Convert.ToInt32(data_lista_cargos.SelectedCells[1].Value);
             txt_cargo.Text = data_lista_cargos.SelectedCells[2].Value.ToString();
             data_lista_cargos.Visible = false;
-            //Panel_btn_guardar_personal.Visible = false;
-            //btn_guardarDepar.Visible = false;
-
-            //PanelDepartamento.Visible = true;
-            //PanelDepartamento.Dock = DockStyle.Fill;
-            //PanelDepartamento.BringToFront();
+          
           
         }
 
@@ -438,10 +427,8 @@ namespace SistemaAsistencia.VIEWS
             txt_agg_cargo.Text = data_lista_cargos.SelectedCells[2].Value.ToString();
             btn_aggCargo.Visible = false;
             PanelCargo.Visible = true;
-            //PanelCargo.Dock = DockStyle.Fill;
-            // PanelCargo.BringToFront();
             btn_editarCampo.Visible = true;
-            //txt_agg_cargo.Focus();
+          
          
         }
 
@@ -467,15 +454,9 @@ namespace SistemaAsistencia.VIEWS
 
       
 
-        private void txt_cedula_TextChanged(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void Personal_Load(object sender, EventArgs e)
         {
@@ -510,14 +491,14 @@ namespace SistemaAsistencia.VIEWS
             }
             if (e.ColumnIndex == dataGridView1.Columns["Editar"].Index)
             {
-                EditarPersonal();
+                obtenerDatos();
             }
         }
 
 
 
 
-        private void EditarPersonal()
+        private void obtenerDatos()
 {
     empleado_id = Convert.ToInt32(dataGridView1.SelectedCells[2].Value);
     PersonalControlers personalControlers = new PersonalControlers();
@@ -545,11 +526,14 @@ namespace SistemaAsistencia.VIEWS
     // Mostrar el panel de edición
     PanelRegistros.Visible = true;
     PanelRegistros.Dock = DockStyle.Fill;
-    Panel_btn_guardar_personal.Visible = false;
+    Panel_btn_guardar_personal.Visible = true;
     btn_guardar_personal.Visible = false;
     btn_guardar_cambios_personal.Visible = true;
-}
+            PanelPaginado.Visible = false;
 
+        }
+
+      
 
 
         private void EliminarPersonal()
@@ -565,9 +549,22 @@ namespace SistemaAsistencia.VIEWS
             }
         }
 
+        private void txt_buscarEmpleado_TextChanged(object sender, EventArgs e)
+        {
+            BuscarPersonal();
+        }
 
 
+        private void BuscarPersonal()
+        {
+            PersonalModels personalModels = new PersonalModels();
+            DataTable dt = new DataTable();
+            personalModels.BuscarPersonal(ref dt, desde, hasta, txt_buscarEmpleado.Text);
+            dataGridView1.DataSource = dt;
+            DisenoDtvPersonal();
+        }
 
+        
 
 
     }

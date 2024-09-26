@@ -46,7 +46,9 @@ namespace SistemaAsistencia.Models
             }
         }
 
-        //public bool editarPersonal(Controllers.PersonalControlers personal)
+
+
+        //public bool editarPersonal(PersonalControlers personal)
         //{
         //    try
         //    {
@@ -61,7 +63,15 @@ namespace SistemaAsistencia.Models
         //                command.Parameters.AddWithValue("@cedula", personal.cedula);
         //                command.Parameters.AddWithValue("@departamento_id", personal.departamento_id);
         //                command.Parameters.AddWithValue("@cargo_id", personal.cargo_id);
-        //                command.Parameters.AddWithValue("@fecha_contratacion", personal.fecha_contratacion.Date);
+
+        //                // Verificar y ajustar la fecha de contratación
+        //                DateTime fechaContratacion = personal.fecha_contratacion;
+        //                if (fechaContratacion < (DateTime)System.Data.SqlTypes.SqlDateTime.MinValue ||
+        //                    fechaContratacion > (DateTime)System.Data.SqlTypes.SqlDateTime.MaxValue)
+        //                {
+        //                    fechaContratacion = DateTime.Now; // Asignar una fecha válida predeterminada
+        //                }
+        //                command.Parameters.AddWithValue("@fecha_contratacion", fechaContratacion);
 
 
         //                command.ExecuteNonQuery();
@@ -71,17 +81,37 @@ namespace SistemaAsistencia.Models
         //    }
         //    catch (SqlException ex)
         //    {
-        //        Console.WriteLine($"Error al editar el personal: {ex.Message}");
+        //        if (ex.Number == 50000) // Número de error para RAISERROR en SQL Server
+        //        {
+        //            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine($"Error al editar el personal: {ex.Message}");
+        //        }
         //        return false;
         //    }
         //}
 
-        public bool editarPersonal(Controllers.PersonalControlers personal)
+        public bool editarPersonal(PersonalControlers personal)
         {
             try
             {
                 using (var connection = Config.Conexion.GetConnection())
                 {
+                    
+
+                    // Validar que el cargo_id existe en la tabla Cargos
+                    using (var validateCommand = new SqlCommand("SELECT COUNT(1) FROM Cargos WHERE cargo_id = @cargo_id", connection))
+                    {
+                        validateCommand.Parameters.AddWithValue("@cargo_id", personal.cargo_id);
+                        int count = (int)validateCommand.ExecuteScalar();
+                        if (count == 0)
+                        {
+                            throw new Exception("El cargo_id no es válido.");
+                        }
+                    }
+
                     using (var command = new SqlCommand("editarPersonal", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
@@ -89,8 +119,7 @@ namespace SistemaAsistencia.Models
                         command.Parameters.AddWithValue("@nombre", personal.nombre);
                         command.Parameters.AddWithValue("@apellido", personal.apellido);
                         command.Parameters.AddWithValue("@cedula", personal.cedula);
-                        command.Parameters.AddWithValue("@departamento_id", personal.departamento_id);
-                        command.Parameters.AddWithValue("@cargo_id", personal.cargo_id);
+                       
 
                         // Verificar y ajustar la fecha de contratación
                         DateTime fechaContratacion = personal.fecha_contratacion;
@@ -111,7 +140,52 @@ namespace SistemaAsistencia.Models
                 Console.WriteLine($"Error al editar el personal: {ex.Message}");
                 return false;
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+                return false;
+            }
         }
+
+
+
+
+        //public bool editarPersonal(Controllers.PersonalControlers personal)
+        //{
+        //    try
+        //    {
+        //        using (var connection = Config.Conexion.GetConnection())
+        //        {
+        //            using (var command = new SqlCommand("editarPersonal", connection))
+        //            {
+        //                command.CommandType = CommandType.StoredProcedure;
+        //                command.Parameters.AddWithValue("@empleado_id", personal.empleado_id);
+        //                command.Parameters.AddWithValue("@nombre", personal.nombre);
+        //                command.Parameters.AddWithValue("@apellido", personal.apellido);
+        //                command.Parameters.AddWithValue("@cedula", personal.cedula);
+        //                command.Parameters.AddWithValue("@departamento_id", personal.departamento_id);
+        //                command.Parameters.AddWithValue("@cargo_id", personal.cargo_id);
+
+        //                // Verificar y ajustar la fecha de contratación
+        //                DateTime fechaContratacion = personal.fecha_contratacion;
+        //                if (fechaContratacion < (DateTime)System.Data.SqlTypes.SqlDateTime.MinValue ||
+        //                    fechaContratacion > (DateTime)System.Data.SqlTypes.SqlDateTime.MaxValue)
+        //                {
+        //                    fechaContratacion = DateTime.Now; // Asignar una fecha válida predeterminada
+        //                }
+        //                command.Parameters.AddWithValue("@fecha_contratacion", fechaContratacion);
+
+        //                command.ExecuteNonQuery();
+        //                return true;
+        //            }
+        //        }
+        //    }
+        //    catch (SqlException ex)
+        //    {
+        //        Console.WriteLine($"Error al editar el personal: {ex.Message}");
+        //        return false;
+        //    }
+        //}
 
 
 
@@ -167,38 +241,7 @@ namespace SistemaAsistencia.Models
 
 
       
-        public void BuscarPersonal(DataGridView dgv, int desde, int hasta, string buscador)
-        {
-            try
-            {
-                using (var connection = Config.Conexion.GetConnection())
-                {
-                    using (var command = new SqlCommand("BuscarPersonal", connection))
-                    {
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@Desde", desde);
-                        command.Parameters.AddWithValue("@Hasta", hasta);
-                        command.Parameters.AddWithValue("@Buscador", buscador);
-
-
-
-                        using (var adapter = new SqlDataAdapter(command))
-                        {
-                            using (var table = new DataTable())
-                            {
-                                adapter.Fill(table);
-                                dgv.DataSource = table;
-                            }
-                        }
-                    }
-                }
-            }
-            catch (SqlException ex)
-            {
-                Console.WriteLine($"Error al mostrar el personal: {ex.Message}");
-            }
-        }
-
+        
 
 
 
@@ -245,6 +288,32 @@ namespace SistemaAsistencia.Models
 
 
 
+        public void BuscarPersonal(ref DataTable dt, int desde, int hasta, string buscador)
+        {
+            try
+            {
+                using (var connection = Config.Conexion.GetConnection())
+                {
+                    using (var command = new SqlCommand("BuscarPersonal", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@Desde", desde);
+                        command.Parameters.AddWithValue("@Hasta", hasta);
+                        command.Parameters.AddWithValue("@Buscador", buscador);
+
+                        using (var adapter = new SqlDataAdapter(command))
+                        {
+                            // Llenar el DataTable con los datos obtenidos
+                            adapter.Fill(dt);
+                        }
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine($"Error al mostrar el personal: {ex.Message}");
+            }
+        }
 
 
 

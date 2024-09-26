@@ -56,5 +56,16 @@ namespace SistemaAsistencia.VIEWS
             control.Dock = DockStyle.Fill;
             PanelPadre.Controls.Add(control);
         }
+
+        private void btnRegistro_Click(object sender, EventArgs e)
+        {
+            PanelPadre.Controls.Clear();
+            RegistrosControl _RegistrosControl = new RegistrosControl();
+            _RegistrosControl.Dock = DockStyle.Fill;
+            PanelPadre.Controls.Add(_RegistrosControl);
+
+            // Llamar al método para cargar los datos de asistencias
+            _RegistrosControl.CargarDatosAsistencias();
+        }
     }
 }

@@ -21,8 +21,13 @@ namespace SistemaAsistencia.VIEWS
         {
             InicializarConexionSerial();
             serialPort.Write("A");
-        }
 
+            lbl_fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
+
+           
+            lbl_hora.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+        
         private void InicializarConexionSerial()
         {
             serialPort = new SerialPort
@@ -97,14 +102,14 @@ namespace SistemaAsistencia.VIEWS
 
                     }));
                 }
-                else if (datos.Length == 2)
-                {
-                    this.BeginInvoke(new MethodInvoker(delegate
-                    {
-                        lbl_fecha.Text = datos[0];      // Mostrar fecha
-                        lbl_hora.Text = datos[1];       // Mostrar hora
-                    }));
-                }
+                //else if (datos.Length == 2)
+                //{
+                //    this.BeginInvoke(new MethodInvoker(delegate
+                //    {
+                //        lbl_fecha.Text = datos[0];      // Mostrar fecha
+                //        lbl_hora.Text = datos[1];       // Mostrar hora
+                //    }));
+                //}
             }
             catch (TimeoutException)
             {
